@@ -104,4 +104,6 @@ venv.bak/
 .mypy_cache/
 
 # Experiment folders
-tasks/*/*/*/exp/*
+tasks/*/*/*/exp/
+tasks/*/*/*/etc/*
+tasks/*/*/*/data/
