@@ -51,3 +51,5 @@ if [ ! -f ${base_dir}/feats/.featextraction.done ]; then
 fi
 
 ## Build a baseline model
+python3.5 ${base_dir}/local/seqmodels/baseline.py
+
