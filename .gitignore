@@ -109,3 +109,5 @@ tasks/*/*/*/etc/*
 tasks/*/*/*/data/
 tasks/*/*/*/tools/
 tasks/*/*/*/feats
+tasks/*/*/*/scripts/tmpdir
+
