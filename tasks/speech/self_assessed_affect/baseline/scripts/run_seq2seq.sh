@@ -45,8 +45,8 @@ if [ ! -f ${base_dir}/feats/.featextraction.done ]; then
   for d in train val
     do
       echo " Extracting features for " $d
-      cat ${base_dir}/etc/filenames.train.tdd | awk '{print $1}' > filenames.$d.tmp
-  ${FALCON_DIR}/src/sigproc/do_world parallel wav2world_file ${data_dir}/wav/ filenames.train.tmp ../feats/world_feats_20msec
+      cat ${base_dir}/etc/filenames.$d.tdd | awk '{print $1}' > filenames.$d.tmp
+  ${FALCON_DIR}/src/sigproc/do_world parallel wav2world_file ${data_dir}/wav/ filenames.$d.tmp ../feats/world_feats_20msec
       rm -rf filenames.$d.tmp tmpdir
     done
   touch ${base_dir}/feats/.featextraction.done
