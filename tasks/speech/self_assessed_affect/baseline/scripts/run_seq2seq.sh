@@ -1,8 +1,6 @@
 #!/bin/bash
 
 ### This Baseline is going to be a simple sequence model on the features from entire wavefile
-#base_dir=`pwd`/../
-#echo "Base directory is " $base_dir
 
 
 ## Source stuff
@@ -46,7 +44,7 @@ if [ ! -f ${base_dir}/feats/.featextraction.done ]; then
     do
       echo " Extracting features for " $d
       cat ${base_dir}/etc/filenames.$d.tdd | awk '{print $1}' > filenames.$d.tmp
-  ${FALCON_DIR}/src/sigproc/do_world parallel wav2world_file ${data_dir}/wav/ filenames.$d.tmp ../feats/world_feats_20msec
+  ${FALCON_DIR}/src/sigproc/do_world parallel wav2world_file ${data_dir}/wav/ filenames.$d.tmp ../feats/world_feats_20msec || exit 0
       rm -rf filenames.$d.tmp tmpdir
     done
   touch ${base_dir}/feats/.featextraction.done
