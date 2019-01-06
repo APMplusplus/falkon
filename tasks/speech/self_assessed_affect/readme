@@ -1,0 +1,4 @@
+This repo serves as a baseline for the Self Assessed Affect Challenge (http://www.compare.openaudio.eu/tasks/)
+
+# Setup the directory structure
+$FALCON_DIR/bin/setup.sh
