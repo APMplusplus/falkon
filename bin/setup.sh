@@ -38,6 +38,6 @@
 # Very simple setup script
 LANG=C; export LANG
 
-mkdir -p local data/train data/test data/val exp feats scripts
+mkdir -p local data/train data/test data/val exp feats scripts tools
 
 
