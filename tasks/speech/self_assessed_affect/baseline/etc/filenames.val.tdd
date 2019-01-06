@@ -1,742 +1,742 @@
-devel_0001
-devel_0002
-devel_0003
-devel_0004
-devel_0005
-devel_0006
-devel_0007
-devel_0008
-devel_0009
-devel_0010
-devel_0011
-devel_0012
-devel_0013
-devel_0014
-devel_0015
-devel_0016
-devel_0017
-devel_0018
-devel_0019
-devel_0020
-devel_0021
-devel_0022
-devel_0023
-devel_0024
-devel_0025
-devel_0026
-devel_0027
-devel_0028
-devel_0029
-devel_0030
-devel_0031
-devel_0032
-devel_0033
-devel_0034
-devel_0035
-devel_0036
-devel_0037
-devel_0038
-devel_0039
-devel_0040
-devel_0041
-devel_0042
-devel_0043
-devel_0044
-devel_0045
-devel_0046
-devel_0047
-devel_0048
-devel_0049
-devel_0050
-devel_0051
-devel_0052
-devel_0053
-devel_0054
-devel_0055
-devel_0056
-devel_0057
-devel_0058
-devel_0059
-devel_0060
-devel_0061
-devel_0062
-devel_0063
-devel_0064
-devel_0065
-devel_0066
-devel_0067
-devel_0068
-devel_0069
-devel_0070
-devel_0071
-devel_0072
-devel_0073
-devel_0074
-devel_0075
-devel_0076
-devel_0077
-devel_0078
-devel_0079
-devel_0080
-devel_0081
-devel_0082
-devel_0083
-devel_0084
-devel_0085
-devel_0086
-devel_0087
-devel_0088
-devel_0089
-devel_0090
-devel_0091
-devel_0092
-devel_0093
-devel_0094
-devel_0095
-devel_0096
-devel_0097
-devel_0098
-devel_0099
-devel_0100
-devel_0101
-devel_0102
-devel_0103
-devel_0104
-devel_0105
-devel_0106
-devel_0107
-devel_0108
-devel_0109
-devel_0110
-devel_0111
-devel_0112
-devel_0113
-devel_0114
-devel_0115
-devel_0116
-devel_0117
-devel_0118
-devel_0119
-devel_0120
-devel_0121
-devel_0122
-devel_0123
-devel_0124
-devel_0125
-devel_0126
-devel_0127
-devel_0128
-devel_0129
-devel_0130
-devel_0131
-devel_0132
-devel_0133
-devel_0134
-devel_0135
-devel_0136
-devel_0137
-devel_0138
-devel_0139
-devel_0140
-devel_0141
-devel_0142
-devel_0143
-devel_0144
-devel_0145
-devel_0146
-devel_0147
-devel_0148
-devel_0149
-devel_0150
-devel_0151
-devel_0152
-devel_0153
-devel_0154
-devel_0155
-devel_0156
-devel_0157
-devel_0158
-devel_0159
-devel_0160
-devel_0161
-devel_0162
-devel_0163
-devel_0164
-devel_0165
-devel_0166
-devel_0167
-devel_0168
-devel_0169
-devel_0170
-devel_0171
-devel_0172
-devel_0173
-devel_0174
-devel_0175
-devel_0176
-devel_0177
-devel_0178
-devel_0179
-devel_0180
-devel_0181
-devel_0182
-devel_0183
-devel_0184
-devel_0185
-devel_0186
-devel_0187
-devel_0188
-devel_0189
-devel_0190
-devel_0191
-devel_0192
-devel_0193
-devel_0194
-devel_0195
-devel_0196
-devel_0197
-devel_0198
-devel_0199
-devel_0200
-devel_0201
-devel_0202
-devel_0203
-devel_0204
-devel_0205
-devel_0206
-devel_0207
-devel_0208
-devel_0209
-devel_0210
-devel_0211
-devel_0212
-devel_0213
-devel_0214
-devel_0215
-devel_0216
-devel_0217
-devel_0218
-devel_0219
-devel_0220
-devel_0221
-devel_0222
-devel_0223
-devel_0224
-devel_0225
-devel_0226
-devel_0227
-devel_0228
-devel_0229
-devel_0230
-devel_0231
-devel_0232
-devel_0233
-devel_0234
-devel_0235
-devel_0236
-devel_0237
-devel_0238
-devel_0239
-devel_0240
-devel_0241
-devel_0242
-devel_0243
-devel_0244
-devel_0245
-devel_0246
-devel_0247
-devel_0248
-devel_0249
-devel_0250
-devel_0251
-devel_0252
-devel_0253
-devel_0254
-devel_0255
-devel_0256
-devel_0257
-devel_0258
-devel_0259
-devel_0260
-devel_0261
-devel_0262
-devel_0263
-devel_0264
-devel_0265
-devel_0266
-devel_0267
-devel_0268
-devel_0269
-devel_0270
-devel_0271
-devel_0272
-devel_0273
-devel_0274
-devel_0275
-devel_0276
-devel_0277
-devel_0278
-devel_0279
-devel_0280
-devel_0281
-devel_0282
-devel_0283
-devel_0284
-devel_0285
-devel_0286
-devel_0287
-devel_0288
-devel_0289
-devel_0290
-devel_0291
-devel_0292
-devel_0293
-devel_0294
-devel_0295
-devel_0296
-devel_0297
-devel_0298
-devel_0299
-devel_0300
-devel_0301
-devel_0302
-devel_0303
-devel_0304
-devel_0305
-devel_0306
-devel_0307
-devel_0308
-devel_0309
-devel_0310
-devel_0311
-devel_0312
-devel_0313
-devel_0314
-devel_0315
-devel_0316
-devel_0317
-devel_0318
-devel_0319
-devel_0320
-devel_0321
-devel_0322
-devel_0323
-devel_0324
-devel_0325
-devel_0326
-devel_0327
-devel_0328
-devel_0329
-devel_0330
-devel_0331
-devel_0332
-devel_0333
-devel_0334
-devel_0335
-devel_0336
-devel_0337
-devel_0338
-devel_0339
-devel_0340
-devel_0341
-devel_0342
-devel_0343
-devel_0344
-devel_0345
-devel_0346
-devel_0347
-devel_0348
-devel_0349
-devel_0350
-devel_0351
-devel_0352
-devel_0353
-devel_0354
-devel_0355
-devel_0356
-devel_0357
-devel_0358
-devel_0359
-devel_0360
-devel_0361
-devel_0362
-devel_0363
-devel_0364
-devel_0365
-devel_0366
-devel_0367
-devel_0368
-devel_0369
-devel_0370
-devel_0371
-devel_0372
-devel_0373
-devel_0374
-devel_0375
-devel_0376
-devel_0377
-devel_0378
-devel_0379
-devel_0380
-devel_0381
-devel_0382
-devel_0383
-devel_0384
-devel_0385
-devel_0386
-devel_0387
-devel_0388
-devel_0389
-devel_0390
-devel_0391
-devel_0392
-devel_0393
-devel_0394
-devel_0395
-devel_0396
-devel_0397
-devel_0398
-devel_0399
-devel_0400
-devel_0401
-devel_0402
-devel_0403
-devel_0404
-devel_0405
-devel_0406
-devel_0407
-devel_0408
-devel_0409
-devel_0410
-devel_0411
-devel_0412
-devel_0413
-devel_0414
-devel_0415
-devel_0416
-devel_0417
-devel_0418
-devel_0419
-devel_0420
-devel_0421
-devel_0422
-devel_0423
-devel_0424
-devel_0425
-devel_0426
-devel_0427
-devel_0428
-devel_0429
-devel_0430
-devel_0431
-devel_0432
-devel_0433
-devel_0434
-devel_0435
-devel_0436
-devel_0437
-devel_0438
-devel_0439
-devel_0440
-devel_0441
-devel_0442
-devel_0443
-devel_0444
-devel_0445
-devel_0446
-devel_0447
-devel_0448
-devel_0449
-devel_0450
-devel_0451
-devel_0452
-devel_0453
-devel_0454
-devel_0455
-devel_0456
-devel_0457
-devel_0458
-devel_0459
-devel_0460
-devel_0461
-devel_0462
-devel_0463
-devel_0464
-devel_0465
-devel_0466
-devel_0467
-devel_0468
-devel_0469
-devel_0470
-devel_0471
-devel_0472
-devel_0473
-devel_0474
-devel_0475
-devel_0476
-devel_0477
-devel_0478
-devel_0479
-devel_0480
-devel_0481
-devel_0482
-devel_0483
-devel_0484
-devel_0485
-devel_0486
-devel_0487
-devel_0488
-devel_0489
-devel_0490
-devel_0491
-devel_0492
-devel_0493
-devel_0494
-devel_0495
-devel_0496
-devel_0497
-devel_0498
-devel_0499
-devel_0500
-devel_0501
-devel_0502
-devel_0503
-devel_0504
-devel_0505
-devel_0506
-devel_0507
-devel_0508
-devel_0509
-devel_0510
-devel_0511
-devel_0512
-devel_0513
-devel_0514
-devel_0515
-devel_0516
-devel_0517
-devel_0518
-devel_0519
-devel_0520
-devel_0521
-devel_0522
-devel_0523
-devel_0524
-devel_0525
-devel_0526
-devel_0527
-devel_0528
-devel_0529
-devel_0530
-devel_0531
-devel_0532
-devel_0533
-devel_0534
-devel_0535
-devel_0536
-devel_0537
-devel_0538
-devel_0539
-devel_0540
-devel_0541
-devel_0542
-devel_0543
-devel_0544
-devel_0545
-devel_0546
-devel_0547
-devel_0548
-devel_0549
-devel_0550
-devel_0551
-devel_0552
-devel_0553
-devel_0554
-devel_0555
-devel_0556
-devel_0557
-devel_0558
-devel_0559
-devel_0560
-devel_0561
-devel_0562
-devel_0563
-devel_0564
-devel_0565
-devel_0566
-devel_0567
-devel_0568
-devel_0569
-devel_0570
-devel_0571
-devel_0572
-devel_0573
-devel_0574
-devel_0575
-devel_0576
-devel_0577
-devel_0578
-devel_0579
-devel_0580
-devel_0581
-devel_0582
-devel_0583
-devel_0584
-devel_0585
-devel_0586
-devel_0587
-devel_0588
-devel_0589
-devel_0590
-devel_0591
-devel_0592
-devel_0593
-devel_0594
-devel_0595
-devel_0596
-devel_0597
-devel_0598
-devel_0599
-devel_0600
-devel_0601
-devel_0602
-devel_0603
-devel_0604
-devel_0605
-devel_0606
-devel_0607
-devel_0608
-devel_0609
-devel_0610
-devel_0611
-devel_0612
-devel_0613
-devel_0614
-devel_0615
-devel_0616
-devel_0617
-devel_0618
-devel_0619
-devel_0620
-devel_0621
-devel_0622
-devel_0623
-devel_0624
-devel_0625
-devel_0626
-devel_0627
-devel_0628
-devel_0629
-devel_0630
-devel_0631
-devel_0632
-devel_0633
-devel_0634
-devel_0635
-devel_0636
-devel_0637
-devel_0638
-devel_0639
-devel_0640
-devel_0641
-devel_0642
-devel_0643
-devel_0644
-devel_0645
-devel_0646
-devel_0647
-devel_0648
-devel_0649
-devel_0650
-devel_0651
-devel_0652
-devel_0653
-devel_0654
-devel_0655
-devel_0656
-devel_0657
-devel_0658
-devel_0659
-devel_0660
-devel_0661
-devel_0662
-devel_0663
-devel_0664
-devel_0665
-devel_0666
-devel_0667
-devel_0668
-devel_0669
-devel_0670
-devel_0671
-devel_0672
-devel_0673
-devel_0674
-devel_0675
-devel_0676
-devel_0677
-devel_0678
-devel_0679
-devel_0680
-devel_0681
-devel_0682
-devel_0683
-devel_0684
-devel_0685
-devel_0686
-devel_0687
-devel_0688
-devel_0689
-devel_0690
-devel_0691
-devel_0692
-devel_0693
-devel_0694
-devel_0695
-devel_0696
-devel_0697
-devel_0698
-devel_0699
-devel_0700
-devel_0701
-devel_0702
-devel_0703
-devel_0704
-devel_0705
-devel_0706
-devel_0707
-devel_0708
-devel_0709
-devel_0710
-devel_0711
-devel_0712
-devel_0713
-devel_0714
-devel_0715
-devel_0716
-devel_0717
-devel_0718
-devel_0719
-devel_0720
-devel_0721
-devel_0722
-devel_0723
-devel_0724
-devel_0725
-devel_0726
-devel_0727
-devel_0728
-devel_0729
-devel_0730
-devel_0731
-devel_0732
-devel_0733
-devel_0734
-devel_0735
-devel_0736
-devel_0737
-devel_0738
-devel_0739
-devel_0740
-devel_0741
-devel_0742
+devel_0001   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0001.wav
+devel_0002   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0002.wav
+devel_0003   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0003.wav
+devel_0004   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0004.wav
+devel_0005   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0005.wav
+devel_0006   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0006.wav
+devel_0007   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0007.wav
+devel_0008   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0008.wav
+devel_0009   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0009.wav
+devel_0010   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0010.wav
+devel_0011   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0011.wav
+devel_0012   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0012.wav
+devel_0013   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0013.wav
+devel_0014   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0014.wav
+devel_0015   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0015.wav
+devel_0016   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0016.wav
+devel_0017   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0017.wav
+devel_0018   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0018.wav
+devel_0019   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0019.wav
+devel_0020   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0020.wav
+devel_0021   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0021.wav
+devel_0022   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0022.wav
+devel_0023   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0023.wav
+devel_0024   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0024.wav
+devel_0025   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0025.wav
+devel_0026   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0026.wav
+devel_0027   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0027.wav
+devel_0028   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0028.wav
+devel_0029   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0029.wav
+devel_0030   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0030.wav
+devel_0031   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0031.wav
+devel_0032   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0032.wav
+devel_0033   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0033.wav
+devel_0034   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0034.wav
+devel_0035   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0035.wav
+devel_0036   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0036.wav
+devel_0037   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0037.wav
+devel_0038   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0038.wav
+devel_0039   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0039.wav
+devel_0040   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0040.wav
+devel_0041   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0041.wav
+devel_0042   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0042.wav
+devel_0043   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0043.wav
+devel_0044   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0044.wav
+devel_0045   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0045.wav
+devel_0046   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0046.wav
+devel_0047   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0047.wav
+devel_0048   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0048.wav
+devel_0049   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0049.wav
+devel_0050   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0050.wav
+devel_0051   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0051.wav
+devel_0052   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0052.wav
+devel_0053   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0053.wav
+devel_0054   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0054.wav
+devel_0055   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0055.wav
+devel_0056   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0056.wav
+devel_0057   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0057.wav
+devel_0058   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0058.wav
+devel_0059   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0059.wav
+devel_0060   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0060.wav
+devel_0061   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0061.wav
+devel_0062   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0062.wav
+devel_0063   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0063.wav
+devel_0064   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0064.wav
+devel_0065   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0065.wav
+devel_0066   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0066.wav
+devel_0067   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0067.wav
+devel_0068   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0068.wav
+devel_0069   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0069.wav
+devel_0070   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0070.wav
+devel_0071   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0071.wav
+devel_0072   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0072.wav
+devel_0073   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0073.wav
+devel_0074   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0074.wav
+devel_0075   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0075.wav
+devel_0076   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0076.wav
+devel_0077   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0077.wav
+devel_0078   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0078.wav
+devel_0079   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0079.wav
+devel_0080   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0080.wav
+devel_0081   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0081.wav
+devel_0082   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0082.wav
+devel_0083   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0083.wav
+devel_0084   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0084.wav
+devel_0085   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0085.wav
+devel_0086   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0086.wav
+devel_0087   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0087.wav
+devel_0088   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0088.wav
+devel_0089   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0089.wav
+devel_0090   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0090.wav
+devel_0091   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0091.wav
+devel_0092   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0092.wav
+devel_0093   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0093.wav
+devel_0094   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0094.wav
+devel_0095   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0095.wav
+devel_0096   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0096.wav
+devel_0097   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0097.wav
+devel_0098   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0098.wav
+devel_0099   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0099.wav
+devel_0100   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0100.wav
+devel_0101   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0101.wav
+devel_0102   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0102.wav
+devel_0103   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0103.wav
+devel_0104   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0104.wav
+devel_0105   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0105.wav
+devel_0106   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0106.wav
+devel_0107   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0107.wav
+devel_0108   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0108.wav
+devel_0109   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0109.wav
+devel_0110   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0110.wav
+devel_0111   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0111.wav
+devel_0112   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0112.wav
+devel_0113   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0113.wav
+devel_0114   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0114.wav
+devel_0115   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0115.wav
+devel_0116   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0116.wav
+devel_0117   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0117.wav
+devel_0118   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0118.wav
+devel_0119   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0119.wav
+devel_0120   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0120.wav
+devel_0121   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0121.wav
+devel_0122   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0122.wav
+devel_0123   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0123.wav
+devel_0124   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0124.wav
+devel_0125   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0125.wav
+devel_0126   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0126.wav
+devel_0127   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0127.wav
+devel_0128   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0128.wav
+devel_0129   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0129.wav
+devel_0130   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0130.wav
+devel_0131   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0131.wav
+devel_0132   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0132.wav
+devel_0133   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0133.wav
+devel_0134   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0134.wav
+devel_0135   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0135.wav
+devel_0136   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0136.wav
+devel_0137   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0137.wav
+devel_0138   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0138.wav
+devel_0139   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0139.wav
+devel_0140   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0140.wav
+devel_0141   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0141.wav
+devel_0142   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0142.wav
+devel_0143   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0143.wav
+devel_0144   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0144.wav
+devel_0145   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0145.wav
+devel_0146   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0146.wav
+devel_0147   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0147.wav
+devel_0148   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0148.wav
+devel_0149   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0149.wav
+devel_0150   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0150.wav
+devel_0151   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0151.wav
+devel_0152   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0152.wav
+devel_0153   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0153.wav
+devel_0154   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0154.wav
+devel_0155   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0155.wav
+devel_0156   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0156.wav
+devel_0157   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0157.wav
+devel_0158   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0158.wav
+devel_0159   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0159.wav
+devel_0160   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0160.wav
+devel_0161   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0161.wav
+devel_0162   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0162.wav
+devel_0163   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0163.wav
+devel_0164   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0164.wav
+devel_0165   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0165.wav
+devel_0166   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0166.wav
+devel_0167   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0167.wav
+devel_0168   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0168.wav
+devel_0169   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0169.wav
+devel_0170   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0170.wav
+devel_0171   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0171.wav
+devel_0172   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0172.wav
+devel_0173   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0173.wav
+devel_0174   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0174.wav
+devel_0175   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0175.wav
+devel_0176   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0176.wav
+devel_0177   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0177.wav
+devel_0178   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0178.wav
+devel_0179   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0179.wav
+devel_0180   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0180.wav
+devel_0181   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0181.wav
+devel_0182   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0182.wav
+devel_0183   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0183.wav
+devel_0184   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0184.wav
+devel_0185   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0185.wav
+devel_0186   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0186.wav
+devel_0187   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0187.wav
+devel_0188   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0188.wav
+devel_0189   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0189.wav
+devel_0190   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0190.wav
+devel_0191   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0191.wav
+devel_0192   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0192.wav
+devel_0193   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0193.wav
+devel_0194   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0194.wav
+devel_0195   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0195.wav
+devel_0196   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0196.wav
+devel_0197   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0197.wav
+devel_0198   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0198.wav
+devel_0199   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0199.wav
+devel_0200   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0200.wav
+devel_0201   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0201.wav
+devel_0202   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0202.wav
+devel_0203   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0203.wav
+devel_0204   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0204.wav
+devel_0205   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0205.wav
+devel_0206   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0206.wav
+devel_0207   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0207.wav
+devel_0208   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0208.wav
+devel_0209   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0209.wav
+devel_0210   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0210.wav
+devel_0211   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0211.wav
+devel_0212   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0212.wav
+devel_0213   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0213.wav
+devel_0214   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0214.wav
+devel_0215   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0215.wav
+devel_0216   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0216.wav
+devel_0217   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0217.wav
+devel_0218   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0218.wav
+devel_0219   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0219.wav
+devel_0220   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0220.wav
+devel_0221   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0221.wav
+devel_0222   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0222.wav
+devel_0223   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0223.wav
+devel_0224   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0224.wav
+devel_0225   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0225.wav
+devel_0226   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0226.wav
+devel_0227   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0227.wav
+devel_0228   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0228.wav
+devel_0229   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0229.wav
+devel_0230   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0230.wav
+devel_0231   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0231.wav
+devel_0232   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0232.wav
+devel_0233   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0233.wav
+devel_0234   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0234.wav
+devel_0235   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0235.wav
+devel_0236   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0236.wav
+devel_0237   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0237.wav
+devel_0238   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0238.wav
+devel_0239   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0239.wav
+devel_0240   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0240.wav
+devel_0241   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0241.wav
+devel_0242   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0242.wav
+devel_0243   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0243.wav
+devel_0244   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0244.wav
+devel_0245   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0245.wav
+devel_0246   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0246.wav
+devel_0247   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0247.wav
+devel_0248   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0248.wav
+devel_0249   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0249.wav
+devel_0250   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0250.wav
+devel_0251   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0251.wav
+devel_0252   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0252.wav
+devel_0253   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0253.wav
+devel_0254   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0254.wav
+devel_0255   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0255.wav
+devel_0256   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0256.wav
+devel_0257   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0257.wav
+devel_0258   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0258.wav
+devel_0259   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0259.wav
+devel_0260   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0260.wav
+devel_0261   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0261.wav
+devel_0262   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0262.wav
+devel_0263   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0263.wav
+devel_0264   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0264.wav
+devel_0265   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0265.wav
+devel_0266   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0266.wav
+devel_0267   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0267.wav
+devel_0268   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0268.wav
+devel_0269   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0269.wav
+devel_0270   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0270.wav
+devel_0271   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0271.wav
+devel_0272   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0272.wav
+devel_0273   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0273.wav
+devel_0274   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0274.wav
+devel_0275   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0275.wav
+devel_0276   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0276.wav
+devel_0277   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0277.wav
+devel_0278   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0278.wav
+devel_0279   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0279.wav
+devel_0280   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0280.wav
+devel_0281   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0281.wav
+devel_0282   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0282.wav
+devel_0283   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0283.wav
+devel_0284   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0284.wav
+devel_0285   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0285.wav
+devel_0286   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0286.wav
+devel_0287   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0287.wav
+devel_0288   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0288.wav
+devel_0289   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0289.wav
+devel_0290   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0290.wav
+devel_0291   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0291.wav
+devel_0292   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0292.wav
+devel_0293   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0293.wav
+devel_0294   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0294.wav
+devel_0295   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0295.wav
+devel_0296   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0296.wav
+devel_0297   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0297.wav
+devel_0298   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0298.wav
+devel_0299   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0299.wav
+devel_0300   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0300.wav
+devel_0301   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0301.wav
+devel_0302   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0302.wav
+devel_0303   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0303.wav
+devel_0304   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0304.wav
+devel_0305   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0305.wav
+devel_0306   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0306.wav
+devel_0307   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0307.wav
+devel_0308   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0308.wav
+devel_0309   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0309.wav
+devel_0310   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0310.wav
+devel_0311   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0311.wav
+devel_0312   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0312.wav
+devel_0313   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0313.wav
+devel_0314   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0314.wav
+devel_0315   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0315.wav
+devel_0316   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0316.wav
+devel_0317   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0317.wav
+devel_0318   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0318.wav
+devel_0319   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0319.wav
+devel_0320   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0320.wav
+devel_0321   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0321.wav
+devel_0322   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0322.wav
+devel_0323   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0323.wav
+devel_0324   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0324.wav
+devel_0325   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0325.wav
+devel_0326   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0326.wav
+devel_0327   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0327.wav
+devel_0328   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0328.wav
+devel_0329   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0329.wav
+devel_0330   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0330.wav
+devel_0331   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0331.wav
+devel_0332   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0332.wav
+devel_0333   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0333.wav
+devel_0334   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0334.wav
+devel_0335   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0335.wav
+devel_0336   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0336.wav
+devel_0337   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0337.wav
+devel_0338   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0338.wav
+devel_0339   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0339.wav
+devel_0340   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0340.wav
+devel_0341   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0341.wav
+devel_0342   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0342.wav
+devel_0343   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0343.wav
+devel_0344   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0344.wav
+devel_0345   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0345.wav
+devel_0346   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0346.wav
+devel_0347   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0347.wav
+devel_0348   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0348.wav
+devel_0349   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0349.wav
+devel_0350   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0350.wav
+devel_0351   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0351.wav
+devel_0352   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0352.wav
+devel_0353   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0353.wav
+devel_0354   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0354.wav
+devel_0355   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0355.wav
+devel_0356   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0356.wav
+devel_0357   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0357.wav
+devel_0358   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0358.wav
+devel_0359   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0359.wav
+devel_0360   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0360.wav
+devel_0361   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0361.wav
+devel_0362   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0362.wav
+devel_0363   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0363.wav
+devel_0364   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0364.wav
+devel_0365   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0365.wav
+devel_0366   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0366.wav
+devel_0367   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0367.wav
+devel_0368   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0368.wav
+devel_0369   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0369.wav
+devel_0370   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0370.wav
+devel_0371   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0371.wav
+devel_0372   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0372.wav
+devel_0373   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0373.wav
+devel_0374   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0374.wav
+devel_0375   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0375.wav
+devel_0376   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0376.wav
+devel_0377   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0377.wav
+devel_0378   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0378.wav
+devel_0379   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0379.wav
+devel_0380   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0380.wav
+devel_0381   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0381.wav
+devel_0382   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0382.wav
+devel_0383   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0383.wav
+devel_0384   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0384.wav
+devel_0385   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0385.wav
+devel_0386   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0386.wav
+devel_0387   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0387.wav
+devel_0388   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0388.wav
+devel_0389   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0389.wav
+devel_0390   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0390.wav
+devel_0391   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0391.wav
+devel_0392   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0392.wav
+devel_0393   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0393.wav
+devel_0394   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0394.wav
+devel_0395   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0395.wav
+devel_0396   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0396.wav
+devel_0397   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0397.wav
+devel_0398   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0398.wav
+devel_0399   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0399.wav
+devel_0400   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0400.wav
+devel_0401   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0401.wav
+devel_0402   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0402.wav
+devel_0403   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0403.wav
+devel_0404   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0404.wav
+devel_0405   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0405.wav
+devel_0406   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0406.wav
+devel_0407   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0407.wav
+devel_0408   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0408.wav
+devel_0409   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0409.wav
+devel_0410   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0410.wav
+devel_0411   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0411.wav
+devel_0412   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0412.wav
+devel_0413   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0413.wav
+devel_0414   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0414.wav
+devel_0415   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0415.wav
+devel_0416   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0416.wav
+devel_0417   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0417.wav
+devel_0418   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0418.wav
+devel_0419   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0419.wav
+devel_0420   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0420.wav
+devel_0421   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0421.wav
+devel_0422   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0422.wav
+devel_0423   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0423.wav
+devel_0424   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0424.wav
+devel_0425   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0425.wav
+devel_0426   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0426.wav
+devel_0427   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0427.wav
+devel_0428   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0428.wav
+devel_0429   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0429.wav
+devel_0430   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0430.wav
+devel_0431   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0431.wav
+devel_0432   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0432.wav
+devel_0433   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0433.wav
+devel_0434   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0434.wav
+devel_0435   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0435.wav
+devel_0436   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0436.wav
+devel_0437   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0437.wav
+devel_0438   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0438.wav
+devel_0439   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0439.wav
+devel_0440   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0440.wav
+devel_0441   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0441.wav
+devel_0442   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0442.wav
+devel_0443   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0443.wav
+devel_0444   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0444.wav
+devel_0445   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0445.wav
+devel_0446   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0446.wav
+devel_0447   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0447.wav
+devel_0448   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0448.wav
+devel_0449   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0449.wav
+devel_0450   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0450.wav
+devel_0451   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0451.wav
+devel_0452   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0452.wav
+devel_0453   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0453.wav
+devel_0454   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0454.wav
+devel_0455   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0455.wav
+devel_0456   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0456.wav
+devel_0457   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0457.wav
+devel_0458   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0458.wav
+devel_0459   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0459.wav
+devel_0460   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0460.wav
+devel_0461   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0461.wav
+devel_0462   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0462.wav
+devel_0463   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0463.wav
+devel_0464   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0464.wav
+devel_0465   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0465.wav
+devel_0466   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0466.wav
+devel_0467   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0467.wav
+devel_0468   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0468.wav
+devel_0469   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0469.wav
+devel_0470   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0470.wav
+devel_0471   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0471.wav
+devel_0472   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0472.wav
+devel_0473   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0473.wav
+devel_0474   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0474.wav
+devel_0475   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0475.wav
+devel_0476   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0476.wav
+devel_0477   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0477.wav
+devel_0478   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0478.wav
+devel_0479   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0479.wav
+devel_0480   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0480.wav
+devel_0481   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0481.wav
+devel_0482   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0482.wav
+devel_0483   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0483.wav
+devel_0484   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0484.wav
+devel_0485   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0485.wav
+devel_0486   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0486.wav
+devel_0487   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0487.wav
+devel_0488   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0488.wav
+devel_0489   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0489.wav
+devel_0490   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0490.wav
+devel_0491   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0491.wav
+devel_0492   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0492.wav
+devel_0493   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0493.wav
+devel_0494   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0494.wav
+devel_0495   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0495.wav
+devel_0496   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0496.wav
+devel_0497   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0497.wav
+devel_0498   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0498.wav
+devel_0499   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0499.wav
+devel_0500   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0500.wav
+devel_0501   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0501.wav
+devel_0502   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0502.wav
+devel_0503   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0503.wav
+devel_0504   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0504.wav
+devel_0505   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0505.wav
+devel_0506   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0506.wav
+devel_0507   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0507.wav
+devel_0508   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0508.wav
+devel_0509   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0509.wav
+devel_0510   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0510.wav
+devel_0511   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0511.wav
+devel_0512   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0512.wav
+devel_0513   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0513.wav
+devel_0514   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0514.wav
+devel_0515   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0515.wav
+devel_0516   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0516.wav
+devel_0517   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0517.wav
+devel_0518   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0518.wav
+devel_0519   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0519.wav
+devel_0520   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0520.wav
+devel_0521   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0521.wav
+devel_0522   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0522.wav
+devel_0523   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0523.wav
+devel_0524   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0524.wav
+devel_0525   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0525.wav
+devel_0526   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0526.wav
+devel_0527   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0527.wav
+devel_0528   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0528.wav
+devel_0529   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0529.wav
+devel_0530   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0530.wav
+devel_0531   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0531.wav
+devel_0532   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0532.wav
+devel_0533   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0533.wav
+devel_0534   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0534.wav
+devel_0535   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0535.wav
+devel_0536   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0536.wav
+devel_0537   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0537.wav
+devel_0538   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0538.wav
+devel_0539   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0539.wav
+devel_0540   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0540.wav
+devel_0541   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0541.wav
+devel_0542   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0542.wav
+devel_0543   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0543.wav
+devel_0544   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0544.wav
+devel_0545   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0545.wav
+devel_0546   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0546.wav
+devel_0547   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0547.wav
+devel_0548   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0548.wav
+devel_0549   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0549.wav
+devel_0550   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0550.wav
+devel_0551   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0551.wav
+devel_0552   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0552.wav
+devel_0553   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0553.wav
+devel_0554   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0554.wav
+devel_0555   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0555.wav
+devel_0556   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0556.wav
+devel_0557   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0557.wav
+devel_0558   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0558.wav
+devel_0559   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0559.wav
+devel_0560   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0560.wav
+devel_0561   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0561.wav
+devel_0562   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0562.wav
+devel_0563   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0563.wav
+devel_0564   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0564.wav
+devel_0565   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0565.wav
+devel_0566   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0566.wav
+devel_0567   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0567.wav
+devel_0568   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0568.wav
+devel_0569   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0569.wav
+devel_0570   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0570.wav
+devel_0571   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0571.wav
+devel_0572   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0572.wav
+devel_0573   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0573.wav
+devel_0574   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0574.wav
+devel_0575   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0575.wav
+devel_0576   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0576.wav
+devel_0577   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0577.wav
+devel_0578   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0578.wav
+devel_0579   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0579.wav
+devel_0580   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0580.wav
+devel_0581   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0581.wav
+devel_0582   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0582.wav
+devel_0583   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0583.wav
+devel_0584   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0584.wav
+devel_0585   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0585.wav
+devel_0586   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0586.wav
+devel_0587   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0587.wav
+devel_0588   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0588.wav
+devel_0589   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0589.wav
+devel_0590   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0590.wav
+devel_0591   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0591.wav
+devel_0592   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0592.wav
+devel_0593   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0593.wav
+devel_0594   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0594.wav
+devel_0595   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0595.wav
+devel_0596   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0596.wav
+devel_0597   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0597.wav
+devel_0598   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0598.wav
+devel_0599   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0599.wav
+devel_0600   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0600.wav
+devel_0601   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0601.wav
+devel_0602   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0602.wav
+devel_0603   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0603.wav
+devel_0604   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0604.wav
+devel_0605   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0605.wav
+devel_0606   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0606.wav
+devel_0607   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0607.wav
+devel_0608   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0608.wav
+devel_0609   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0609.wav
+devel_0610   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0610.wav
+devel_0611   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0611.wav
+devel_0612   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0612.wav
+devel_0613   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0613.wav
+devel_0614   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0614.wav
+devel_0615   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0615.wav
+devel_0616   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0616.wav
+devel_0617   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0617.wav
+devel_0618   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0618.wav
+devel_0619   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0619.wav
+devel_0620   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0620.wav
+devel_0621   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0621.wav
+devel_0622   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0622.wav
+devel_0623   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0623.wav
+devel_0624   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0624.wav
+devel_0625   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0625.wav
+devel_0626   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0626.wav
+devel_0627   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0627.wav
+devel_0628   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0628.wav
+devel_0629   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0629.wav
+devel_0630   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0630.wav
+devel_0631   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0631.wav
+devel_0632   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0632.wav
+devel_0633   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0633.wav
+devel_0634   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0634.wav
+devel_0635   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0635.wav
+devel_0636   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0636.wav
+devel_0637   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0637.wav
+devel_0638   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0638.wav
+devel_0639   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0639.wav
+devel_0640   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0640.wav
+devel_0641   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0641.wav
+devel_0642   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0642.wav
+devel_0643   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0643.wav
+devel_0644   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0644.wav
+devel_0645   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0645.wav
+devel_0646   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0646.wav
+devel_0647   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0647.wav
+devel_0648   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0648.wav
+devel_0649   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0649.wav
+devel_0650   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0650.wav
+devel_0651   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0651.wav
+devel_0652   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0652.wav
+devel_0653   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0653.wav
+devel_0654   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0654.wav
+devel_0655   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0655.wav
+devel_0656   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0656.wav
+devel_0657   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0657.wav
+devel_0658   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0658.wav
+devel_0659   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0659.wav
+devel_0660   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0660.wav
+devel_0661   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0661.wav
+devel_0662   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0662.wav
+devel_0663   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0663.wav
+devel_0664   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0664.wav
+devel_0665   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0665.wav
+devel_0666   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0666.wav
+devel_0667   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0667.wav
+devel_0668   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0668.wav
+devel_0669   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0669.wav
+devel_0670   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0670.wav
+devel_0671   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0671.wav
+devel_0672   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0672.wav
+devel_0673   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0673.wav
+devel_0674   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0674.wav
+devel_0675   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0675.wav
+devel_0676   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0676.wav
+devel_0677   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0677.wav
+devel_0678   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0678.wav
+devel_0679   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0679.wav
+devel_0680   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0680.wav
+devel_0681   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0681.wav
+devel_0682   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0682.wav
+devel_0683   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0683.wav
+devel_0684   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0684.wav
+devel_0685   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0685.wav
+devel_0686   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0686.wav
+devel_0687   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0687.wav
+devel_0688   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0688.wav
+devel_0689   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0689.wav
+devel_0690   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0690.wav
+devel_0691   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0691.wav
+devel_0692   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0692.wav
+devel_0693   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0693.wav
+devel_0694   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0694.wav
+devel_0695   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0695.wav
+devel_0696   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0696.wav
+devel_0697   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0697.wav
+devel_0698   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0698.wav
+devel_0699   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0699.wav
+devel_0700   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0700.wav
+devel_0701   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0701.wav
+devel_0702   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0702.wav
+devel_0703   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0703.wav
+devel_0704   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0704.wav
+devel_0705   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0705.wav
+devel_0706   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0706.wav
+devel_0707   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0707.wav
+devel_0708   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0708.wav
+devel_0709   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0709.wav
+devel_0710   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0710.wav
+devel_0711   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0711.wav
+devel_0712   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0712.wav
+devel_0713   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0713.wav
+devel_0714   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0714.wav
+devel_0715   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0715.wav
+devel_0716   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0716.wav
+devel_0717   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0717.wav
+devel_0718   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0718.wav
+devel_0719   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0719.wav
+devel_0720   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0720.wav
+devel_0721   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0721.wav
+devel_0722   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0722.wav
+devel_0723   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0723.wav
+devel_0724   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0724.wav
+devel_0725   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0725.wav
+devel_0726   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0726.wav
+devel_0727   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0727.wav
+devel_0728   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0728.wav
+devel_0729   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0729.wav
+devel_0730   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0730.wav
+devel_0731   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0731.wav
+devel_0732   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0732.wav
+devel_0733   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0733.wav
+devel_0734   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0734.wav
+devel_0735   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0735.wav
+devel_0736   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0736.wav
+devel_0737   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0737.wav
+devel_0738   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0738.wav
+devel_0739   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0739.wav
+devel_0740   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0740.wav
+devel_0741   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0741.wav
+devel_0742   /home2/srallaba/challenges/compare2018/ComParE2018_SelfAssessedAffect/wav/devel_0742.wav

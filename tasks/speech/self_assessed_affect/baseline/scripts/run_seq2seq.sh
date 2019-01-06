@@ -1,26 +1,55 @@
 #!/bin/bash
 
-### This Baseline is going to be a simple sequence model on the entire wavefile
-base_dir=`pwd`/../
-echo "Base directory is " $base_dir
+### This Baseline is going to be a simple sequence model on the features from entire wavefile
+#base_dir=`pwd`/../
+#echo "Base directory is " $base_dir
 
 
 ## Source stuff
 
-source ${base_dir}/etc/path.sh
-source ${base_dir}/etc/cmd.sh
+source ../etc/path.sh
+source ../etc/cmd.sh
 
-## Populate the data directory
+echo "Base dir " ${base_dir}
+echo "data dir " ${data_dir}
 
-# Filenames 
-cat ${data_dir}/lab/ComParE2018_SelfAssessedAffect.tsv | grep "train" | awk '{print $1}' | cut -d '.' -f 1 > ${base_dir}/etc/filenames.train.tdd
-cat ${data_dir}/lab/ComParE2018_SelfAssessedAffect.tsv | grep "devel" | awk '{print $1}' | cut -d '.' -f 1 > ${base_dir}/etc/filenames.val.tdd
+## Populate the etc directory
 
-# Class 
-cat ${data_dir}/lab/ComParE2018_SelfAssessedAffect.tsv | grep "train" | awk '{print $2}' > ${base_dir}/etc/classids.train.tdd
-cat ${data_dir}/lab/ComParE2018_SelfAssessedAffect.tsv | grep "devel" | awk '{print $2}' > ${base_dir}/data/val/classids.val.tdd
+if [ ! -f ${base_dir}/etc/.dataprep.done ]; then
+
+  rm -rf ${base_dir}/etc/filenames.train.tdd ${base_dir}/etc/filenames.val.tdd
+  cat ${data_dir}/lab/ComParE2018_SelfAssessedAffect.tsv | while read line
+    do
+      fname=`echo $line | awk '{print $1}' | cut -d '.' -f 1`
+      class=`echo $line | awk '{print $2}'`
+
+      if [[ $fname == *"train"* ]]; then
+         echo $fname " " ${data_dir}/wav/${fname}.wav >> ${base_dir}/etc/filenames.train.tdd
+         echo $fname " " ${class} >> ${base_dir}/etc/labels.train.tdd
+      elif [[ $fname == *"devel"* ]]; then
+         echo $fname " " ${data_dir}/wav/${fname}.wav >> ${base_dir}/etc/filenames.val.tdd
+         echo $fname " " ${class} >> ${base_dir}/etc/labels.val.tdd
+      else
+         echo " This is being ignored " $line
+      fi
+    done
+  touch ${base_dir}/etc/.dataprep.done
+
+fi
+
 
 ## Extract some form of feature representation
 
-## Build a baseline model
+if [ ! -f ${base_dir}/feats/.featextraction.done ]; then
 
+  for d in train val
+    do
+      echo " Extracting features for " $d
+      cat ${base_dir}/etc/filenames.train.tdd | awk '{print $1}' > filenames.$d.tmp
+  ${FALCON_DIR}/src/sigproc/do_world parallel wav2world_file ${data_dir}/wav/ filenames.train.tmp ../feats/world_feats_20msec
+      rm -rf filenames.$d.tmp tmpdir
+    done
+  touch ${base_dir}/feats/.featextraction.done
+fi
+
+## Build a baseline model

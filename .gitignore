@@ -107,3 +107,5 @@ venv.bak/
 tasks/*/*/*/exp/
 tasks/*/*/*/etc/*
 tasks/*/*/*/data/
+tasks/*/*/*/tools/
+tasks/*/*/*/feats
