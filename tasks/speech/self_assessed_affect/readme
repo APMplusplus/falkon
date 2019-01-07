@@ -2,3 +2,7 @@ This repo serves as a baseline for the Self Assessed Affect Challenge (http://ww
 
 # Setup the directory structure
 $FALCON_DIR/bin/setup.sh
+
+# Running baseline
+cd scripts
+sh run_{wateva}
