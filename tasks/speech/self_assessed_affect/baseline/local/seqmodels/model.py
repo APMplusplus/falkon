@@ -3,6 +3,7 @@ import os, sys
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 import torch.nn as nn
+import torch
 
 ## Locations
 FALCON_DIR = os.environ.get('FALCON_DIR')
@@ -36,7 +37,7 @@ class baseline_lstm(baseline_model):
           self.encoder_fc = layers.SequenceWise(nn.Linear(60, 32))
           self.encoder_dropout = layers.SequenceWise(nn.Dropout(0.3))
 
-          self.seq_model = nn.LSTM(32, 16, 4, bidirectional=True, batch_first=True)
+          self.seq_model = nn.LSTM(32, 16, 1, bidirectional=True, batch_first=True)
 
           self.final_fc = nn.Linear(32, 3)
 
@@ -45,17 +46,19 @@ class baseline_lstm(baseline_model):
            x = self.encoder_fc(c)
            x = self.encoder_dropout(x)
 
-           x, _ = self.seq_model(x, None)
-           x = self.final_fc(x)
-
-           return x[:,-1,:]
+           x, (c,h) = self.seq_model(x, None)
+           hidden_left , hidden_right = h[0,:,:], h[1,:,:]
+           hidden = torch.cat((hidden_left, hidden_right),1)
+           x = self.final_fc(hidden)
+           return x
 
         def forward_eval(self, c):
 
            x = self.encoder_fc(c)
 
-           x, _ = self.seq_model(x, None)
-           x = self.final_fc(x)
-
-           return x[:,-1,:]
+           x, (c,h) = self.seq_model(x, None)
+           hidden_left , hidden_right = h[0,:,:], h[1,:,:]
+           hidden = torch.cat((hidden_left, hidden_right),1)
+           x = self.final_fc(hidden)
+           return x
 
