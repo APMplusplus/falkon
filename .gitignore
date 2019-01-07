@@ -110,4 +110,4 @@ tasks/*/*/*/data/
 tasks/*/*/*/tools/
 tasks/*/*/*/feats
 tasks/*/*/*/scripts/tmpdir
-
+tasks/*/*/*/scripts/log*
