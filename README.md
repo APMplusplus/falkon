@@ -18,3 +18,4 @@ VariationalEncoderDecoder is a module built on top of LSTM++ <br>
 ImageCaptioning is a model built on top of VariationalEncoderDecoder
 
 
+src.nn hosts all of these. 
