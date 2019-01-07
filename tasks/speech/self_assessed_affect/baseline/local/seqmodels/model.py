@@ -36,7 +36,7 @@ class baseline_lstm(baseline_model):
           self.encoder_fc = layers.SequenceWise(nn.Linear(60, 32))
           self.encoder_dropout = layers.SequenceWise(nn.Dropout(0.3))
 
-          self.seq_model = nn.LSTM(32, 16, 2, bidirectional=True, batch_first=True)
+          self.seq_model = nn.LSTM(32, 16, 4, bidirectional=True, batch_first=True)
 
           self.final_fc = nn.Linear(32, 3)
 
@@ -44,6 +44,15 @@ class baseline_lstm(baseline_model):
 
            x = self.encoder_fc(c)
            x = self.encoder_dropout(x)
+
+           x, _ = self.seq_model(x, None)
+           x = self.final_fc(x)
+
+           return x[:,-1,:]
+
+        def forward_eval(self, c):
+
+           x = self.encoder_fc(c)
 
            x, _ = self.seq_model(x, None)
            x = self.final_fc(x)

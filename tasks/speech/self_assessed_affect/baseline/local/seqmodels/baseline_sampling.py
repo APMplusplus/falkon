@@ -42,7 +42,6 @@ max_epochs = 10
 updates = 0
 plot_flag = 1
 write_intermediate_flag = 1
-label_dict = defaultdict(int, l=0, m=1,h=2)
 
 
 ## Data loaders
@@ -54,7 +53,7 @@ class selfassessed_dataset(Dataset):
         self.tdd_file = tdd_file
         self.wav_dir = wav_dir
         self.mfcc_dir = ccoeffs_dir
-        self.ccoeffs_array = []
+        self.filenames_array = []
         self.labels_array = []
         f = open(self.tdd_file)
         fnames = f.readlines()
@@ -64,28 +63,15 @@ class selfassessed_dataset(Dataset):
         for (fname, label) in list(zip(fnames, labels)):
           fname = fname.split('\n')[0]
           fname = fname.split()[0]
-          ccoeffs_fname = ccoeffs_dir + '/' + fname + '.ccoeffs_ascii'
-          ccoeffs = np.loadtxt(ccoeffs_fname, usecols=range(1,61))
-          self.ccoeffs_array.append(ccoeffs)
+          self.filenames_array.append(fname)
           label = label.split('\n')[0]
           self.labels_array.append(label.split()[1])
 
     def __getitem__(self, index):
-          return self.ccoeffs_array[index], self.labels_array[index]
+          return self.filenames_array[index], self.labels_array[index]
 
     def __len__(self):
-           return len(self.labels_array)
-
-
-def collate_fn_chopping(batch):
-    input_lengths = [len(x[0]) for x in batch]
-    min_input_len = np.min(input_lengths)
-
-    a = np.array( [ x[0][:min_input_len]  for x in batch ], dtype=np.float)
-    b = np.array( [ label_dict[x[1]]  for x in batch ], dtype=np.int)
-    a_batch = torch.FloatTensor(a)
-    b_batch = torch.LongTensor(b)
-    return a_batch, b_batch
+           return len(self.filenames_array)
 
 
 tdd_file = ETC_DIR + '/filenames.train.tdd'
@@ -95,8 +81,7 @@ train_set = selfassessed_dataset(tdd_file, wav_dir, ccoeffs_dir)
 train_loader = DataLoader(train_set,
                           batch_size=16,
                           shuffle=True,
-                          num_workers=4,
-                          collate_fn=collate_fn_chopping
+                          num_workers=4
                           )
 
 tdd_file = ETC_DIR + '/filenames.val.tdd'
@@ -106,8 +91,7 @@ val_set = selfassessed_dataset(tdd_file, wav_dir, ccoeffs_dir)
 val_loader = DataLoader(val_set,
                           batch_size=16,
                           shuffle=True,
-                          num_workers=1,
-                          collate_fn=collate_fn_chopping
+                          num_workers=1
                           )
 
 
@@ -121,6 +105,7 @@ optimizer_adam = torch.optim.Adam(model.parameters(), lr=0.001)
 optimizer_sgd = torch.optim.SGD(model.parameters(), lr=0.001)
 optimizer = optimizer_adam
 updates = 0
+label_dict = defaultdict(int, l=0, m=1,h=2)
 
 
 ## Val and Train
@@ -131,10 +116,25 @@ def val():
     global updates
     y_true = []
     y_pred = []
-    for i, (ccoeffs, labels) in enumerate(val_loader):
+    for i, data in enumerate(val_loader):
+      updates += 1
+      inputs_batch = []
+      targets_batch = []
+      files, labels = data[0], data[1]
+      for (file,label) in list(zip(files, labels)):
 
-      inputs = torch.FloatTensor(ccoeffs)
-      targets = torch.LongTensor(labels)
+        ccoeffs_file = FEATS_DIR + '/' + file + '.ccoeffs_ascii'
+        ccoeffs = np.loadtxt(ccoeffs_file, usecols=range(1,61))
+
+        start_frame = np.random.randint(len(ccoeffs) - max_timesteps)
+        end_frame = start_frame + max_timesteps
+        c = ccoeffs[start_frame:end_frame]   
+        label_int = label_dict[label]
+        inputs_batch.append(c)
+        targets_batch.append(label_int) 
+
+      inputs = torch.FloatTensor(inputs_batch)
+      targets = torch.LongTensor(targets_batch)
       inputs, targets = Variable(inputs), Variable(targets)
       if torch.cuda.is_available():
         inputs = inputs.cuda()
@@ -158,11 +158,25 @@ def train():
   start_time = time.time()
   l = 0
   global updates
-  for i, (ccoeffs,labels) in enumerate(train_loader):
+  for i, data in enumerate(train_loader):
     updates += 1
+    inputs_batch = []
+    targets_batch = []
+    files, labels = data[0], data[1]
+    for (file,label) in list(zip(files, labels)):
 
-    inputs = torch.FloatTensor(ccoeffs)
-    targets = torch.LongTensor(labels)
+        ccoeffs_file = FEATS_DIR + '/' + file + '.ccoeffs_ascii'
+        ccoeffs = np.loadtxt(ccoeffs_file, usecols=range(1,61))
+
+        start_frame = np.random.randint(len(ccoeffs) - max_timesteps)
+        end_frame = start_frame + max_timesteps
+        c = ccoeffs[start_frame:end_frame]   
+        label_int = label_dict[label]
+        inputs_batch.append(c)
+        targets_batch.append(label_int) 
+
+    inputs = torch.FloatTensor(inputs_batch)
+    targets = torch.LongTensor(targets_batch)
     inputs, targets = Variable(inputs), Variable(targets)
     if torch.cuda.is_available():
         inputs = inputs.cuda()
