@@ -5,8 +5,8 @@
 
 ## Source stuff
 
-source ../etc/path.sh
-source ../etc/cmd.sh
+. ../etc/path.sh || exit 0
+. ../etc/cmd.sh || exit 0
 
 echo "Base dir " ${base_dir}
 echo "data dir " ${data_dir}
