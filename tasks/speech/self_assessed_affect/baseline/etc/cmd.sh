@@ -1,2 +1,2 @@
 
-export FALCON_DIR=/home2/srallaba/development/repos/falkon/
+export FALCON_DIR=/home/srallaba/development/repos/falkon/
