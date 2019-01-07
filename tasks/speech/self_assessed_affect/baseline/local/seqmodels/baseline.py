@@ -8,6 +8,7 @@ from torch.autograd import Variable
 from model import baseline_lstm
 import time
 from collections import defaultdict
+from utils import *
 
 ## Locations
 FALCON_DIR = os.environ.get('FALCON_DIR')
@@ -37,7 +38,7 @@ g.close()
 logger = l.Logger(exp_dir + '/logs/' + exp_name)
 model_name = exp_dir + '/models/model_' + exp_name + '_'
 max_timesteps = 100
-max_epochs = 100
+max_epochs = 10
 updates = 0
 plot_flag = 1
 write_intermediate_flag = 1
@@ -104,15 +105,18 @@ optimizer_adam = torch.optim.Adam(model.parameters(), lr=0.001)
 optimizer_sgd = torch.optim.SGD(model.parameters(), lr=0.001)
 optimizer = optimizer_adam
 updates = 0
-label_dict = defaultdict(int)
+label_dict = defaultdict(int, l=0, m=1,h=2)
 
 
 ## Val and Train
 def val():
+  print(label_dict)
   model.eval()
   with torch.no_grad():
     l = 0
     global updates
+    y_true = []
+    y_pred = []
     for i, data in enumerate(val_loader):
       updates += 1
       inputs_batch = []
@@ -139,7 +143,13 @@ def val():
 
       logits = model(inputs)
       loss = criterion(logits, targets)
+      y_true.append(targets)
+      y_pred.append(logits)
       l += loss.item()
+
+  predicteds = return_classes(logits)
+  recall = get_metrics(predicteds, targets)
+  print("Unweighted Recall for the validation set:  ", recall)
   return l/(i+1)
 
 
@@ -200,4 +210,8 @@ def main():
     g.write("Train loss after epoch " + str(epoch) + ' ' + str(train_loss)  + " and the val loss: " + str(val_loss) + ' It took ' +  str(time.time() - epoch_start_time) + '\n')
     g.close()
 
+def debug():
+   val()
+
 main()    
+#debug()
