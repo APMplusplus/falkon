@@ -11,6 +11,12 @@
 echo "Base dir " ${base_dir}
 echo "data dir " ${data_dir}
 
+# check if the data directory eists
+if [ ! -d "${data_dir}" ]; then
+   echo "Seems Data not found"
+   exit 0
+fi
+
 ## Populate the etc directory
 
 if [ ! -f ${base_dir}/etc/.dataprep.done ]; then
