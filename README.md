@@ -9,12 +9,12 @@ Layers -> Modules -> Models
 
 For example,
 
-Conv1d++ class is a layer that enables temporal convolutions during eval. &nbsp;
-ResidualDilatedCausalConv1d is a module built on top of Conv1d++ &nbsp;
+Conv1d++ class is a layer that enables temporal convolutions during eval.<br>
+ResidualDilatedCausalConv1d is a module built on top of Conv1d++ <br>
 Wavenet is a model built on top of ResidualDilatedCausalConv1d
 
-LSTM++ class is a layer that enables learning initial hidden states based on condition. &nbsp;
-VariationalEncoderDecoder is a module built on top of LSTM++ &nbsp;
+LSTM++ class is a layer that enables learning initial hidden states based on condition. <br>
+VariationalEncoderDecoder is a module built on top of LSTM++ <br>
 ImageCaptioning is a model built on top of VariationalEncoderDecoder
 
 
