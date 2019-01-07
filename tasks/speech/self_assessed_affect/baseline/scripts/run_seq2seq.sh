@@ -56,6 +56,6 @@ if [ ! -f ${base_dir}/feats/.featextraction.done ]; then
   touch ${base_dir}/feats/.featextraction.done
 fi
 
-## Build a baseline model
+## Build a baseline model - Make it choose the type of model to build based on hparams file
 python3.5 ${base_dir}/local/seqmodels/baseline.py
 
