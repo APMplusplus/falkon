@@ -2,7 +2,7 @@
 <h2> References </h2>
 
  
-- [ ] [The INTERSPEECH 2018 Computational Paralinguistics Challenge: Atypical & Self-Assessed Affect, Crying & Heart Beats](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/0051.pdf) 
+* [The INTERSPEECH 2018 Computational Paralinguistics Challenge: Atypical & Self-Assessed Affect, Crying & Heart Beats](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/0051.pdf) 
 
 - [ ] [Deep Learning in Paralinguistic Recognition Tasks: Are Hand-crafted Features Still Relevant?](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/1238.pdf)
 
