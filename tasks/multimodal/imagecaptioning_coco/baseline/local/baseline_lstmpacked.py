@@ -260,7 +260,7 @@ def train():
     
     
 ## Main Loop
-for epoch in range(10):
+for epoch in range(max_epochs):
     epoch_start_time = time.time()
     train_loss = train()
     val_loss = val()
