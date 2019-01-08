@@ -5,8 +5,8 @@ This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kal
 
 The goal is to make it easier to build and compare against baselines across tasks.
 
-[X] Sentiment Detection from Speech
-[X] Image Captioning
+- [X] Sentiment Detection from Speech
+- [X] Image Captioning
 
 Layers -> Modules -> Models
 
