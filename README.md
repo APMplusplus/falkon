@@ -3,7 +3,21 @@ Towards an ecosystem of tasks related to Language Technologies
 
 This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kaldi) and festvox(https://github.com/festvox/festvox) but has quirks of its own.  
 
-The goal is to make it easier to build and compare against baselines across tasks
+The goal is to make it easier to build and compare against baselines across tasks.
+
+Tasks:
+- [X] Self Assessed Affect Detection from Speech
+- [X] Image Captioning
+- [ ] Atypical Emotion Recognition from Speech
+- [ ] Cry Classification
+- [ ] Speech Synthesis
+- [ ] Machine Translation
+- [ ] Visual Question Answering
+- [ ] Voice Conversion
+- [ ] Spoofing Detection from Speech
+- [ ] Sentiment Analysis
+- [ ] Toxicity Detection from Text
+- [ ] Multi Target Speaker Detection and Identification
 
 Layers -> Modules -> Models
 
