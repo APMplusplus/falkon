@@ -35,9 +35,9 @@ class baseline_lstm(baseline_model):
           super(baseline_lstm, self).__init__()
 
           self.encoder_fc = layers.SequenceWise(nn.Linear(60, 32))
-          self.encoder_dropout = layers.SequenceWise(nn.Dropout(0.3))
+          self.encoder_dropout = layers.SequenceWise(nn.Dropout(0.7))
 
-          self.seq_model = nn.LSTM(32, 16, 1, bidirectional=True, batch_first=True)
+          self.seq_model = nn.LSTM(32, 64, 1, bidirectional=True, batch_first=True)
 
           self.final_fc = nn.Linear(32, 3)
 
@@ -61,4 +61,54 @@ class baseline_lstm(baseline_model):
            hidden = torch.cat((hidden_left, hidden_right),1)
            x = self.final_fc(hidden)
            return x
+
+
+class attentionlstm(baseline_lstm):
+
+        def __init__(self):
+           super(attentionlstm, self).__init__()
+
+           self.attention_w = nn.Linear(128, 32)
+           self.attention_u = nn.Parameter(torch.randn((32,16)))
+
+        def attend(self, A):
+
+           assert len(A.shape) == 3
+           batch_size = A.shape[0]
+           #print("Shape of A: ", A.shape)
+
+           # Multiply
+           alpha = F.tanh(self.attention_w(A))
+           alpha = F.softmax(alpha, dim = -1)
+           #print("Shape of alpha: ", alpha.shape) 
+
+           # Sum
+           #beta = torch.bmm(alpha, self.attention_u)
+           beta = torch.sum(alpha, dim = 1)
+
+           # Return
+           #print("Shape of beta is ", beta.shape)
+           return beta
+
+        def forward(self, c):
+
+           x = self.encoder_fc(c)
+           x = self.encoder_dropout(x)
+
+           x, (c,h) = self.seq_model(x, None)
+           weighted_representation = self.attend(x)
+           #print("Shape of weighted representation from attention is ", weighted_representation.shape)
+           x = self.final_fc(weighted_representation)
+           return x
+
+        def forward_eval(self, c):
+
+           x = self.encoder_fc(c)
+
+           x, (c,h) = self.seq_model(x, None)
+           weighted_representation = self.attend(x)
+           x = self.final_fc(weighted_representation)
+
+           return x
+
 

@@ -119,7 +119,7 @@ if torch.cuda.is_available():
 criterion = nn.CrossEntropyLoss()
 optimizer_adam = torch.optim.Adam(model.parameters(), lr=0.001)
 optimizer_sgd = torch.optim.SGD(model.parameters(), lr=0.001)
-optimizer = optimizer_adam
+optimizer = optimizer_sgd
 updates = 0
 
 
