@@ -15,6 +15,9 @@ Tasks:
 - [ ] Visual Question Answering
 - [ ] Voice Conversion
 - [ ] Spoofing Detection from Speech
+- [ ] Sentiment Analysis
+- [ ] Toxicity Detection from Text
+- [ ] Multi Target Speaker Detection and Identification
 
 Layers -> Modules -> Models
 
