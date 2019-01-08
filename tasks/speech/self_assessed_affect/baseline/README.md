@@ -4,7 +4,7 @@
  
 * [The INTERSPEECH 2018 Computational Paralinguistics Challenge: Atypical & Self-Assessed Affect, Crying & Heart Beats](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/0051.pdf) 
 
-- [ ] [Deep Learning in Paralinguistic Recognition Tasks: Are Hand-crafted Features Still Relevant?](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/1238.pdf)
+* [Deep Learning in Paralinguistic Recognition Tasks: Are Hand-crafted Features Still Relevant?](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/1238.pdf) 
 
 - [ ] [Investigation on Joint Representation Learning for Robust Feature Extraction in Speech Emotion Recognition](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/1832.pdf)
 
