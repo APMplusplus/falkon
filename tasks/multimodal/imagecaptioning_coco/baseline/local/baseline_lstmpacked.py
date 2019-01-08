@@ -191,7 +191,7 @@ def val(partial_flag= 1):
                print ("  Val mein Original: ", sentence)
                bleu_score_sentence = return_sentence_bleu(original_caption, predicted_caption)
                if log_flag:
-                   logger.scalar_summary('Dev BLEU', bleu_score_sentence , updates)     
+                   logger.scalar_summary('Dev BLEU', float(bleu_score_sentence)*100 , updates)     
                print("Smoothed BLEU score of a sample sentence is ", float(bleu_score_sentence)*100)
                print('\n')
                return l/(i+1)

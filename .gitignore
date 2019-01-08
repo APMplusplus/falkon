@@ -105,7 +105,7 @@ venv.bak/
 
 # Experiment folders
 tasks/*/*/*/exp/
-tasks/*/*/*/etc/*
+#tasks/*/*/*/etc/*
 tasks/*/*/*/data/
 tasks/*/*/*/tools/
 tasks/*/*/*/feats
