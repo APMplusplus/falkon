@@ -112,4 +112,4 @@ tasks/*/*/*/feats
 tasks/*/*/*/scripts/tmpdir
 tasks/*/*/*/scripts/log*
 tasks/*/*/*/scripts/*tmp*
-
+*.swp
