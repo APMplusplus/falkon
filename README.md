@@ -3,7 +3,10 @@ Towards an ecosystem of tasks related to Language Technologies
 
 This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kaldi) and festvox(https://github.com/festvox/festvox) but has quirks of its own.  
 
-The goal is to make it easier to build and compare against baselines across tasks
+The goal is to make it easier to build and compare against baselines across tasks.
+
+[X] Sentiment Detection from Speech
+[X] Image Captioning
 
 Layers -> Modules -> Models
 
