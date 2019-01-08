@@ -5,9 +5,16 @@ This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kal
 
 The goal is to make it easier to build and compare against baselines across tasks.
 
-Updated Tasks:
-- [X] Sentiment Detection from Speech
+Tasks:
+- [X] Self Assessed Affect Detection from Speech
 - [X] Image Captioning
+- [ ] Atypical Emotion Recognition from Speech
+- [ ] Cry Classification
+- [ ] Speech Synthesis
+- [ ] Machine Translation
+- [ ] Visual Question Answering
+- [ ] Voice Conversion
+- [ ] Spoofing Detection from Speech
 
 Layers -> Modules -> Models
 
