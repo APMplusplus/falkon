@@ -12,7 +12,7 @@
 
 * [An End-to-End Deep Learning Framework for Speech Emotion Recognition of Atypical Individuals](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/2581.pdf)
 
-- [ ] [Attention-based Sequence Classification for Affect Detection](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/1610.pdf) - UAR:61
+- [ ] [Attention-based Sequence Classification for Affect Detection](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/1610.pdf) - UAR:63.1
 
 - [ ] [Computational Paralinguistics: Automatic Assessment of Emotions, Mood and Behavioural State from Acoustics of Speech](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/2019.pdf)
 
