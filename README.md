@@ -8,6 +8,7 @@ The goal is to make it easier to build and compare against baselines across task
 Tasks:
 - [X] Self Assessed Affect Detection from Speech
 - [X] Image Captioning
+- [ ] Automatic Speech Recognition
 - [ ] Atypical Emotion Recognition from Speech
 - [ ] Cry Classification
 - [ ] Speech Synthesis
