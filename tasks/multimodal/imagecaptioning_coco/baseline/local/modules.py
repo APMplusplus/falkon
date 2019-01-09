@@ -21,7 +21,7 @@ class residualconvmodule(nn.Module):
     def weightnorm_conv1d(self, in_channels, out_channels, kernel_size, stride, padding, dilation):
         dropout = 0
         std_mul = 1.0
-        m = AdvancedConv1d(in_channels,out_channels, kernel_size=kernel_size, stride=stride, padding = padding, dilation = dilation)
+        m = Conv1dplusplus(in_channels,out_channels, kernel_size=kernel_size, stride=stride, padding = padding, dilation = dilation)
         std = math.sqrt((std_mul * (1.0 - dropout)) / (m.kernel_size[0] * in_channels))
         m.weight.data.normal_(mean=0, std=std)
         m.bias.data.zero_()
