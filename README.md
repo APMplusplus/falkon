@@ -19,7 +19,7 @@ Tasks:
 - [ ] Sentiment Analysis
 - [ ] Toxicity Detection from Text
 - [ ] Multi Target Speaker Detection and Identification
-
+-----------------------------------------
 - [ ] Gravitational Lens Identification
 
 Layers -> Modules -> Models
