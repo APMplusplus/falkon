@@ -8,6 +8,7 @@ import torch.nn as nn
 from torch.autograd import Variable
 import torch.nn.functional as F
 from scipy.io import wavfile as wf
+from nltk.translate.bleu_score import *
 
 def load_data(feats_path, file, k):
    max = 0
@@ -188,4 +189,10 @@ def read_pmfile(file):
           pitch_mark = line.split('\n')[0].split()[0]
           timestamp_array.append(pitch_mark)
    return timestamp_array
+
+
+def return_utterance_bleu(original_signal, sampled_signal):
+    chencherry = SmoothingFunction()
+    bleu_score_utterance = sentence_bleu([original_signal], sampled_signal, smoothing_function=chencherry.method1)
+    return bleu_score_utterance
 
