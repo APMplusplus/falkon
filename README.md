@@ -6,12 +6,12 @@ This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kal
 The goal is to make it easier to build and compare against baselines across tasks.
 
 Tasks:
-- [X] Self Assessed Affect Detection from Speech
-- [X] Image Captioning
+- [X] Self Assessed Affect Detection from Speech [Week 01]
+- [X] Image Captioning [Week 01]
 - [ ] Automatic Speech Recognition
 - [ ] Atypical Emotion Recognition from Speech
 - [ ] Cry Classification
-- [X] Speech Synthesis
+- [X] Speech Synthesis [Week 01]
 - [ ] Machine Translation
 - [ ] Visual Question Answering
 - [ ] Voice Conversion
@@ -36,4 +36,4 @@ ImageCaptioning is a model built on top of VariationalEncoderDecoder
 
 src.nn hosts all of these. 
 
-The directoy 'tasks' contains the individual tasks. Updated a sample speech task. The timeline on this repo looks like end of Summer 2019. 
+The directoy 'tasks' contains the individual tasks. Updated a sample speech task. The timeline on this repo looks like end of Summer 2019 (33 weeks). 
