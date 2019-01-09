@@ -11,7 +11,7 @@ Tasks:
 - [ ] Automatic Speech Recognition
 - [ ] Atypical Emotion Recognition from Speech
 - [ ] Cry Classification
-- [ ] Speech Synthesis
+- [X] Speech Synthesis
 - [ ] Machine Translation
 - [ ] Visual Question Answering
 - [ ] Voice Conversion
