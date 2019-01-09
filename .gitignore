@@ -112,4 +112,5 @@ tasks/*/*/*/feats
 tasks/*/*/*/scripts/tmpdir
 tasks/*/*/*/scripts/log*
 tasks/*/*/*/scripts/*tmp*
+tasks/speech/text2speech/*
 *.swp
