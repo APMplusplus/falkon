@@ -21,13 +21,13 @@ Language Technologies:
 - [ ] Toxicity Detection from Text
 - [ ] Multi Target Speaker Detection and Identification
 - [ ] Morphological Inflection 
------------------------------------------------
-Residual Capability Tasks:
-- [ ] Gravitational Lens Identification
-- [ ] Financial Sequence Prediction
-- [ ] Channel Capacity prediction for SDR
-- [ ] Whale Species Identification 
------------------------------------------------
+% -----------------------------------------------
+% Residual Capability Tasks:
+% - [ ] Gravitational Lens Identification
+% - [ ] Financial Sequence Prediction
+% - [ ] Channel Capacity prediction for SDR
+% - [ ] Whale Species Identification 
+% -----------------------------------------------
 Layers -> Modules -> Models
 
 For example,
