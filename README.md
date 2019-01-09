@@ -5,7 +5,7 @@ This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kal
 
 The goal is to make it easier to build and compare against baselines across tasks.
 
-Tasks:
+Tasks: <br>
 Language Technologies:
 - [X] Self Assessed Affect Detection from Speech
 - [X] Image Captioning
