@@ -6,6 +6,7 @@ This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kal
 The goal is to make it easier to build and compare against baselines across tasks.
 
 Tasks:
+Language Technologies:
 - [X] Self Assessed Affect Detection from Speech
 - [X] Image Captioning
 - [ ] Automatic Speech Recognition
@@ -21,9 +22,11 @@ Tasks:
 - [ ] Multi Target Speaker Detection and Identification
 - [ ] Morphological Inflection 
 -----------------------------------------------
+Residual Capability Tasks:
 - [ ] Gravitational Lens Identification
 - [ ] Financial Sequence Prediction
 - [ ] Channel Capacity prediction for SDR
+- [ ] Whale Species Identification 
 -----------------------------------------------
 Layers -> Modules -> Models
 
