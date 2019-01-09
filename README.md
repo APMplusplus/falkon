@@ -22,6 +22,8 @@ Tasks:
 - [ ] Morphological Inflection 
 -----------------------------------------------
 - [ ] Gravitational Lens Identification
+- [ ] Financial Sequence Prediction
+- [ ] Channel Capacity prediction for SDR
 -----------------------------------------------
 Layers -> Modules -> Models
 
