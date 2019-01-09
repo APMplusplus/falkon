@@ -19,9 +19,10 @@ Tasks:
 - [ ] Sentiment Analysis
 - [ ] Toxicity Detection from Text
 - [ ] Multi Target Speaker Detection and Identification
------------------------------------------
+- [ ] Morphological Inflection 
+-----------------------------------------------
 - [ ] Gravitational Lens Identification
-
+-----------------------------------------------
 Layers -> Modules -> Models
 
 For example,
