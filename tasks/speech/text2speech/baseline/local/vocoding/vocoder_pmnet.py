@@ -2,7 +2,7 @@ import torch
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 from utils import *
-from model import *
+from model_pmnet import *
 import time
 import sys, os
 import matplotlib

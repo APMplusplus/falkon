@@ -143,7 +143,7 @@ def gumbel_argmax(logits, dim):
    return logits + sample_gumbel(logits.size(), out=logits.data.new())
    return torch.max(logits + sample_gumbel(logits.size(), out=logits.data.new()), dim)[1]
 
-# Avasaram ledura yedava
+# Avasaram ledura 
 class SequenceCrossEntropyLoss(nn.Module):
 
     def __init__(self):
