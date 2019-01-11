@@ -69,4 +69,4 @@ fi
 #python3.5 ${base_dir}/local/vocoding/baseline_vocoder.py
 
 ## Some sort of evaluation
-python3.5 ${base_dir}/local/vocoding/evaluate_rawsamples.py
+python3.5 ${base_dir}/local/vocoding/vocoder_pmnet.py

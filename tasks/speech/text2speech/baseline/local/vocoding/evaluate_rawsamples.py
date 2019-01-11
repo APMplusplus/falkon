@@ -34,5 +34,16 @@ original = np.load(original_npyfile)
 fs, synthesized = wavfile.read(synthesized_wavfile)
 synthesized = mulaw_quantize(synthesized)
 print(len(original), len(synthesized))
-utterance_bleu = return_utterance_bleu(original, synthesized)
-print(float(utterance_bleu) * 100)
+
+utterance_bleu_unigram = return_utterance_bleu(original, synthesized, weights=(1,0,0,0))
+print("Unigram match: ", float(utterance_bleu_unigram) * 100)
+
+utterance_bleu_bigram = return_utterance_bleu(original, synthesized, weights=(0,1,0,0))
+print("Bigram match: ", float(utterance_bleu_bigram) * 100)
+
+utterance_bleu_trigram = return_utterance_bleu(original, synthesized, weights=(0,0,1,0))
+print("Trigram match: ", float(utterance_bleu_trigram) * 100)
+
+utterance_bleu_4gram = return_utterance_bleu(original, synthesized, weights=(0,0,0,1))
+print("4gram match: ", float(utterance_bleu_4gram) * 100)
+

@@ -24,8 +24,8 @@ class cnnmodel(nn.Module):
         self.kernel_size = 3
         self.stride = 1
 
-        layers = 24
-        stacks = 4
+        layers = 12
+        stacks = 2
         layers_per_stack = layers // stacks
 
         self.conv_modules = nn.ModuleList()
@@ -51,7 +51,7 @@ class cnnmodel(nn.Module):
            x = self.encoder_dropout(x)
         return x
 
-    def upsample_ccoeffs(self, c, frame_period=16):
+    def upsample_ccoeffs(self, c, frame_period=80):
         if print_flag:
            print("Shape of ccoeffs in upsampling routine is ", c.shape)
         c = c.transpose(1,2)
@@ -69,7 +69,7 @@ class cnnmodel(nn.Module):
        x = self.encode(x.long(), 1.0)
 
        # Do something about the ccoeffs
-       c = self.upsample_ccoeffs(c)       
+       c = self.upsample_ccoeffs(c, frame_period)       
 
        # Feed to Decoder
        x = x.transpose(1,2)

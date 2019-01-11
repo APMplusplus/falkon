@@ -54,27 +54,30 @@ class residualconvmodule(nn.Module):
 
         # Feed to the module
         if incremental_flag:
-           print_flag = 0
+
            if print_flag:
               print("   Module: The shape of residual in the module is ", residual.shape) 
            assert residual.shape[1] == x.shape[1]
            x = F.relu(self.conv.incremental_forward(x))
 
         else:
-           print_flag = 0
+
            #x = x.transpose(1,2)
            x = F.relu(self.conv(x))
            x = x.transpose(1,2)
            # Causal
            x = x[:,:residual.shape[2],:] 
 
+       # Expert and Gating
+        a,b = x.split(x.shape[-1] // 2, dim = -1)
+ 
+ 
         if print_flag:
            print("   Module: The shape of residual in the module is ", residual.shape)
            print("   Module: Shape of x after residual convs is ", x.shape)
            print("   Module: Shape of c in the module is ", c.shape)
+           print("   Module: Shape of a and b in the module is ", a.shape, b.shape)
 
-        # Expert and Gating
-        a,b = x.split(x.shape[-1] // 2, dim = -1)
  
         # Local conditioning
         ca = self.local_fca(c.double())

@@ -191,8 +191,8 @@ def read_pmfile(file):
    return timestamp_array
 
 
-def return_utterance_bleu(original_signal, sampled_signal):
+def return_utterance_bleu(original_signal, sampled_signal, **kwargs):
     chencherry = SmoothingFunction()
-    bleu_score_utterance = sentence_bleu([original_signal], sampled_signal, smoothing_function=chencherry.method1)
+    bleu_score_utterance = sentence_bleu([original_signal], sampled_signal, smoothing_function=chencherry.method1, **kwargs)
     return bleu_score_utterance
 
