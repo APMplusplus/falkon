@@ -25,7 +25,7 @@ sys.path.append(FALCON_DIR)
 from src.nn import logger as l
 
 ## Flags and stuff 
-exp_name = 'exp_baseline'
+exp_name = 'exp_baselinenorelu'
 exp_dir = EXP_DIR + '/' + exp_name
 if not os.path.exists(exp_dir):
    os.mkdir(exp_dir)

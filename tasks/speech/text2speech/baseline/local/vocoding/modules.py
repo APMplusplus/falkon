@@ -58,12 +58,12 @@ class residualconvmodule(nn.Module):
            if print_flag:
               print("   Module: The shape of residual in the module is ", residual.shape) 
            assert residual.shape[1] == x.shape[1]
-           x = F.relu(self.conv.incremental_forward(x))
+           x = self.conv.incremental_forward(x)
 
         else:
 
            #x = x.transpose(1,2)
-           x = F.relu(self.conv(x))
+           x = self.conv(x)
            x = x.transpose(1,2)
            # Causal
            x = x[:,:residual.shape[2],:] 

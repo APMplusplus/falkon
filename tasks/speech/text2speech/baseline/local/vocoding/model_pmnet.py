@@ -25,7 +25,7 @@ class cnnmodel(nn.Module):
         self.stride = 1
 
         layers = 12
-        stacks = 2
+        stacks = 4
         layers_per_stack = layers // stacks
 
         self.conv_modules = nn.ModuleList()
@@ -74,7 +74,7 @@ class cnnmodel(nn.Module):
        # Feed to Decoder
        x = x.transpose(1,2)
        for module in self.conv_modules:
-          x = F.relu(module(x, c))
+          x = module(x, c)
 
        x = x.transpose(1,2)
 
@@ -127,7 +127,7 @@ class cnnmodel(nn.Module):
           assert len(x.shape) == 3
           
           for module in self.conv_modules:
-             x = F.relu(module.incremental_forward(x, ct))
+             x = (module.incremental_forward(x, ct))
 
           if print_flag:
              print("  Model: Shape of input to the final fc in forward_incremental of model is ", x.shape, " and the time steps: ", i )      
