@@ -4,6 +4,7 @@ Towards an ecosystem of tasks related to Language Technologies. Inspired by [Goo
 This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kaldi) and festvox(https://github.com/festvox/festvox) but has quirks of its own.  
 
 The goal is to make it easier to build and compare against baselines across tasks.
+Since there are many tasks, it might not be feasible to put all dependencies. Two alternatives: (1) Use a virtual env for each task like AWS (2) Put a docker image
 
 Tasks:
 - [X] Self Assessed Affect Detection from Speech [Week 01]
