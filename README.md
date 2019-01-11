@@ -12,6 +12,7 @@ Tasks:
 - [ ] Atypical Emotion Recognition from Speech
 - [ ] Cry Classification
 - [X] Speech Synthesis [Week 01]
+- [ ] Speaker Diarization
 - [ ] Machine Translation
 - [ ] Visual Question Answering
 - [ ] Voice Conversion
