@@ -114,3 +114,4 @@ tasks/*/*/*/scripts/log*
 tasks/*/*/*/scripts/*tmp*
 #tasks/speech/text2speech/*
 *.swp
+*.save
