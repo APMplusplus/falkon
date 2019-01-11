@@ -190,6 +190,30 @@ def read_pmfile(file):
           timestamp_array.append(pitch_mark)
    return timestamp_array
 
+# https://github.com/r9y9/wavenet_vocoder/blob/master/wavenet_vocoder/wavenet.py
+def receptive_field_size(total_layers, num_cycles, kernel_size,
+                         dilation=lambda x: 2**x):
+    """
+    layers = [ 10, 12]
+    stacks = [2] 
+    kernel_sizes = [3]
+
+    for layer in layers:
+       for stack in stacks:
+         for kernel_size in kernel_sizes:
+            print("Receptive field with ", layer, " layers ", " and ", stack, " stacks with kernel size ", kernel_size, " is ", receptive_field_size(layer, stack, kernel_size))
+       print('\n')
+      
+    """
+    assert total_layers % num_cycles == 0
+    layers_per_cycle = total_layers // num_cycles
+    dilations = [dilation(i % layers_per_cycle) for i in range(total_layers)]
+    print("Dilations are: ", dilations)
+    return (kernel_size - 1) * sum(dilations) + 1
+
+
+
+      
 
 def return_utterance_bleu(original_signal, sampled_signal, **kwargs):
     chencherry = SmoothingFunction()
