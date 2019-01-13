@@ -17,7 +17,7 @@ Tasks:
 - [ ] Machine Translation
 - [ ] Visual Question Answering
 - [ ] Voice Conversion
-- [X] Spoofing Detection from Speech
+- [X] Spoofing Detection from Speech [Week 02]
 - [ ] Sentiment Analysis
 - [ ] Toxicity Detection from Text
 - [ ] Multi Target Speaker Detection and Identification
