@@ -156,25 +156,51 @@ class SequenceCrossEntropyLoss(nn.Module):
         losses = self.criterion(inputs, targets)
         return losses.sum()/inputs.shape[0]
 
+def cut_slack(sig, mel, factor, T=8000, frame_period=256):
 
-def ensure_frameperiod(mel, sig, factor=80):
+    if len(sig) == T:
+       return sig, mel
+    elif len(sig) > T:
+       difference_samples = int(len(sig) - T)
+       difference_frames = int(difference_samples / frame_period)
+       #print("  In util: difference_samples, difference_frames: ", difference_samples, difference_frames)
+       if difference_frames < 1:
+          difference_frames = 1
+       return ensure_frameperiod(mel[:-difference_frames,:], sig[:-difference_samples], factor)
+
+def ensure_frameperiod(mel, sig, factor=80, T = 8000):
    length = mel.shape[0]
    l = len(sig)
-
+   #print("  In util: Shapes of mel and sig are :", mel.shape, sig.shape, length, l, factor)
    if float(factor * length) == l:
+
+      # Check if max time steps requirement is met 
+      #sig, mel = cut_slack(sig, mel, factor)
       return sig, mel
    else:
       num_samples = factor * length
-      if num_samples > l:
-         difference = int((num_samples - l))
-         for k in range(difference):
-           sig =  np.append(sig, sig[-1])
-         return sig, mel
+      if num_samples > T:
+         #print("  In util: Number of samples after upsampling , ", num_samples, " will be greater than T ", T )
+         # We dont want this 
+         mel = mel[:-1,:]     
+         #print("  In util: adjusted shapes are: ", mel.shape, sig.shape)
+         return ensure_frameperiod(mel, sig, factor) 
 
-      elif num_samples < l:
-         difference = int((l - num_samples))
-         return sig[:len(sig)-difference], mel
-         
+      elif num_samples < T:
+         # We dont want this case
+         #difference = int((l - num_samples))
+         #return sig[:len(sig)-difference], mel
+         # Repeat the last frame of mel and check the condition
+         #print("  In util: Number of samples after upsampling , ", num_samples, " will be less than T ", T )
+         #a = mel[-1,:]
+         #a = np.expand_dims(a,axis=0)
+         #mel = np.append(mel,a,axis=0)
+         difference = int((T - num_samples))
+         for i in range(difference):
+             sig = np.append(sig, 0)
+         #print("  In util: adjusted shapes are: ", mel.shape, sig.shape)    
+         return ensure_frameperiod(mel, sig, factor)
+
       else:
          print("This is hard")
          sys.exit()         

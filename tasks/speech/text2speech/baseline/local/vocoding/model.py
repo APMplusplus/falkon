@@ -10,8 +10,8 @@ from layers import *
 import numpy as np
 from utils import *
 
-print_flag = 0
-frame_period= 16
+print_flag = 1
+frame_period= 256
 
 class cnnmodel(nn.Module): 
 
@@ -38,6 +38,8 @@ class cnnmodel(nn.Module):
         self.final_fc1 = SequenceWise(nn.Linear(64, 512))
         self.final_fc2 = SequenceWise(nn.Linear(512, 259))
         
+        self.upsample_fc = SequenceWise(nn.Linear(80,60))
+        
         self.nlayers = 1
         self.nhid = 128
 
@@ -59,6 +61,7 @@ class cnnmodel(nn.Module):
         c = c.transpose(1,2)
         if print_flag:
            print("Shape of ccoeffs after upsampling is ", c.shape)
+        c = self.upsample_fc(c)   
         return c #[:,:-1,:]
 
 
@@ -109,7 +112,7 @@ class cnnmodel(nn.Module):
        samples = []
 
        # Do something about the ccoeffs
-       c = self.upsample_ccoeffs(c)    
+       c = self.upsample_ccoeffs(c, frame_period)    
        if print_flag:
            print("  Model: Shape of upsampled c is ", c.shape)
            #sys.exit()
@@ -121,16 +124,16 @@ class cnnmodel(nn.Module):
 
           # Feed to Decoder
           ct = c[:,i,:].unsqueeze(1)
-          if print_flag:
-             print("  Model: Shape of ct in the model is ", ct.shape)
+          #if print_flag:
+             #print("  Model: Shape of ct in the model is ", ct.shape)
 
           assert len(x.shape) == 3
           
           for module in self.conv_modules:
              x = F.relu(module.incremental_forward(x, ct))
 
-          if print_flag:
-             print("  Model: Shape of input to the final fc in forward_incremental of model is ", x.shape, " and the time steps: ", i )      
+          #if print_flag:
+             #print("  Model: Shape of input to the final fc in forward_incremental of model is ", x.shape, " and the time steps: ", i )      
 
           x = F.relu(self.final_fc1(x))
           x = self.final_fc2(x)

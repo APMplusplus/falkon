@@ -80,8 +80,8 @@ class residualconvmodule(nn.Module):
 
  
         # Local conditioning
-        ca = self.local_fca(c.double())
-        cb = self.local_fcb(c.double())
+        ca = self.local_fca(c)
+        cb = self.local_fcb(c)
         if print_flag:
            print("   Module: Shape of ca and cb in the module: ", ca.shape, cb.shape)
 
