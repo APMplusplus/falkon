@@ -39,7 +39,7 @@ model_name = exp_dir + '/models/model_' + exp_name + '_'
 max_timesteps = 100
 max_epochs = 10
 updates = 0
-plot_flag = 1
+log_flag = 1
 write_intermediate_flag = 0
 phones_dict =  defaultdict(lambda: len(phones_dict))
 phones_dict[0]
@@ -129,7 +129,7 @@ val_loader = DataLoader(val_set,
 #    print(i, feats.shape, phones.shape)
 
 ## Model
-model = baseline_lstm(len(phones_dict))
+model = attentionlstm(len(phones_dict))
 print(model)
 if torch.cuda.is_available():
    model.cuda()
@@ -159,8 +159,11 @@ def val():
     loss = criterion(ccoeffs_predicted, ccoeffs)
     l += loss.item()
     
- print(" Val Loss after processing ", updates, " batches: ", l/(i+1))
-        
+    if log_flag:
+       logger.scalar_summary('Val Loss', l * 1.0 / (i+1) , updates)  
+    
+ return l/(i+1)
+
 def train():
   model.train()
   optimizer.zero_grad()
@@ -189,9 +192,22 @@ def train():
     
     if i % 10 == 1:
         print(" Train Loss after processing ", updates, " batches: ", l/(i+1))
+        
+    if log_flag:
+       logger.scalar_summary('Train Loss', l * 1.0 / (i+1) , updates)           
     
-    
+  return l/(i+1)
+
 
 for epoch in range(max_epochs):
-    train()
-    val()
+    epoch_start_time = time.time()
+    train_loss = train()
+    val_loss = val()
+    g = open(logfile_name,'a')
+    g.write("Train loss after epoch " + str(epoch) + ' ' + str(train_loss)  + " and the val loss: " + str(val_loss) + ' It took ' +  str(time.time() - epoch_start_time) + '\n')
+    g.close()
+    
+    if epoch % 10 == 1:
+     fname = model_name + '_epoch_' + str(epoch).zfill(3) + '.pth'
+     with open(fname, 'wb') as f:
+      torch.save(model, f)
