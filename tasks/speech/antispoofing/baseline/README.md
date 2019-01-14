@@ -5,7 +5,7 @@ Since this is related to challenge, I will organize this per year for now. Let m
 
 <h3> 2015 </h2>
 
-* [ASVspoof 2015: Automatic Speaker Verification Spoofing and Countermeasures Challenge Evaluation Plan (http://www.asvspoof.org/asvSpoof.pdf)
+* [ASVspoof 2015: Automatic Speaker Verification Spoofing and Countermeasures Challenge Evaluation Plan](http://www.asvspoof.org/asvSpoof.pdf)
 
 * [ASVspoof 2015: the First Automatic Speaker Verification Spoofing and Countermeasures Challenge](http://www.asvspoof.org/is2015_asvspoof.pdf)
 
