@@ -9,7 +9,7 @@ Since this is related to challenge, I will organize this per year for now. Let m
 
 * [ASVspoof 2015: the First Automatic Speaker Verification Spoofing and Countermeasures Challenge](http://www.asvspoof.org/is2015_asvspoof.pdf)
 
-- [ ] [Development of CRIM System for the Automatic Speaker Verification Spoofing and Countermeasures Challenge 2015](http://www.asvspoof.org/asvspoof2015/CRIM.pdf)
+- [X] [Development of CRIM System for the Automatic Speaker Verification Spoofing and Countermeasures Challenge 2015](http://www.asvspoof.org/asvspoof2015/CRIM.pdf)
 
 - [ ] [Robust Deep Feature for Spoofing Detection - The SJTU System for ASVspoof 2015 Challenge](http://www.asvspoof.org/asvspoof2015/sjtu.pdf)
 
