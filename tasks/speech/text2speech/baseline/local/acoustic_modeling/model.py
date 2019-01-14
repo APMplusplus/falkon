@@ -1,198 +1,142 @@
-import torch
+import numpy as np
+import os, sys
+from torch.utils.data import Dataset
+from torch.utils.data import DataLoader
 import torch.nn as nn
-import sys
-from torch.autograd import Variable
+import torch
+
+## Locations
+FALCON_DIR = os.environ.get('FALCON_DIR')
+BASE_DIR = os.environ.get('base_dir')
+DATA_DIR = os.environ.get('data_dir')
+assert ( all (['FALCON_DIR', 'BASE_DIR', 'DATA_DIR']) is not None)
+
+FEATS_DIR = BASE_DIR + '/feats/world_feats_20msec'
+ETC_DIR = BASE_DIR + '/etc'
+
+sys.path.append(FALCON_DIR)
+import src.nn.layers as layers
+
 import torch.nn.functional as F
 import random
 import math
-from modules import *
-from layers import *
-import numpy as np
-from utils import *
 
-print_flag = 1
-frame_period= 256
+print_flag = 0
 
-class cnnmodel(nn.Module): 
+# Input: Phones of Shape(B,T1) and World ccoeffs of dim 60 Shape (B,T2,C)
+# Output: ccoeffs of Shape (B,T2,C)
+class baseline_model(nn.Module):
 
-    def __init__(self):
-        super(cnnmodel, self).__init__()
+      def __init__(self):
+          super(baseline_model, self).__init__()
 
-        self.embedding = nn.Embedding(259, 128)
-        self.encoder_fc = SequenceWise(nn.Linear(128, 64))
-        self.encoder_dropout = nn.Dropout(0.3)
-        self.kernel_size = 3
-        self.stride = 1
+class baseline_lstm(baseline_model):
 
-        layers = 12
-        stacks = 2
-        layers_per_stack = layers // stacks
+        def __init__(self, vocab_size):
+          super(baseline_lstm, self).__init__()
 
-        self.conv_modules = nn.ModuleList()
-        for layer in range(layers):
-            dilation = 2**(layer % layers_per_stack)
-            self.padding = int((self.kernel_size - 1) * dilation)
-            conv = residualconvmodule(64,64, self.kernel_size, self.stride, self.padding,dilation)
-            self.conv_modules.append(conv)
+          self.vocab_size = vocab_size
+          self.embed_size = 128
+          
+          # Encoder
+          self.encoder_embedding = nn.Embedding(self.vocab_size, self.embed_size)
+          self.seq_model = nn.LSTM(128, 64, 1, batch_first=True)
 
-        self.final_fc1 = SequenceWise(nn.Linear(64, 512))
-        self.final_fc2 = SequenceWise(nn.Linear(512, 259))
+          # Decoder
+          self.decoder_initialfc = nn.Linear(64, 128)
+          self.decoder_lstm = nn.LSTM(128, 66, 1, batch_first=True)
+          self.final_fc = nn.Linear(66, 128)
+
+        def encoder(self, x):
+            
+           # Do something about the phones
+           x = self.encoder_embedding(x)
+
+           # Pass through some sequence model
+           x, (c,h) = self.seq_model(x, None)
+
+           return c[0]
+       
+        def decoder(self, encoder_output, ccoeffs):
+                
+            # Loop through the length of decoder
+            max_steps = ccoeffs.shape[1]
+            outputs = []
+            initial_input = encoder_output.new(encoder_output.shape[0],1)
+            x = initial_input.zero_()
+            x = self.encoder_embedding(x.long())
+            assert len(x.shape) == 3
+            
+            for i in range(max_steps):
+                
+                assert x.shape[1] == 1
+                x, hidden = self.decoder_lstm(x, None)
+                o = x.squeeze(1)
+                outputs.append(o)
+                
+                # Modify shape for next input
+                x = self.final_fc(x)
+                
+            decoder_outputs = torch.stack(outputs, 1)
+            return decoder_outputs
+       
+        def forward(self, x, c):
+            encoder_output = self.encoder(x)
+            if print_flag:
+                print("Shape of encoder lstm output: ", encoder_output.shape)
+            
+            decoder_output =  self.decoder(encoder_output, c)
+            if print_flag:
+                print("Shape of decoder lstm output: ", decoder_output.shape)
+                
+            return decoder_output
         
-        self.upsample_fc = SequenceWise(nn.Linear(80,60))
-        
-        self.nlayers = 1
-        self.nhid = 128
 
-    def encode(self, x, teacher_forcing_ratio):
-        x = self.embedding(x.long())
-        if len(x.shape) < 3:
-           x = x.unsqueeze(1)
-        x = F.relu(self.encoder_fc(x))
-        if teacher_forcing_ratio > 0.1:
-           #print("Dropping out")
+
+class attentionlstm(baseline_lstm):
+
+        def __init__(self):
+           super(attentionlstm, self).__init__()
+
+           self.attention_w = nn.Linear(128, 32)
+           self.attention_u = nn.Parameter(torch.randn((32,16)))
+
+        def attend(self, A):
+
+           assert len(A.shape) == 3
+           batch_size = A.shape[0]
+           #print("Shape of A: ", A.shape)
+
+           # Multiply
+           alpha = F.tanh(self.attention_w(A))
+           alpha = F.softmax(alpha, dim = -1)
+           #print("Shape of alpha: ", alpha.shape) 
+
+           # Sum
+           #beta = torch.bmm(alpha, self.attention_u)
+           beta = torch.sum(alpha, dim = 1)
+
+           # Return
+           #print("Shape of beta is ", beta.shape)
+           return beta
+
+        def forward(self, c):
+
+           x = self.encoder_fc(c)
            x = self.encoder_dropout(x)
-        return x
 
-    def upsample_ccoeffs(self, c, frame_period=80):
-        if print_flag:
-           print("Shape of ccoeffs in upsampling routine is ", c.shape)
-        c = c.transpose(1,2)
-        c = F.interpolate(c, size=[c.shape[-1]*frame_period])
-        c = c.transpose(1,2)
-        if print_flag:
-           print("Shape of ccoeffs after upsampling is ", c.shape)
-        c = self.upsample_fc(c)   
-        return c #[:,:-1,:]
+           x, (c,h) = self.seq_model(x, None)
+           weighted_representation = self.attend(x)
+           #print("Shape of weighted representation from attention is ", weighted_representation.shape)
+           x = self.final_fc(weighted_representation)
+           return x
 
+        def forward_eval(self, c):
 
-    def forward(self,x, c, tf=1):
+           x = self.encoder_fc(c)
 
+           x, (c,h) = self.seq_model(x, None)
+           weighted_representation = self.attend(x)
+           x = self.final_fc(weighted_representation)
 
-       # Do something about the wav
-       x = self.encode(x.long(), 1.0)
-
-       # Do something about the ccoeffs
-       c = self.upsample_ccoeffs(c, frame_period)       
-
-       # Feed to Decoder
-       x = x.transpose(1,2)
-       for module in self.conv_modules:
-          x = F.relu(module(x, c))
-
-       x = x.transpose(1,2)
-
-       x = F.relu(self.final_fc1(x))
-       x = self.final_fc2(x)
-
-       return x[:,:-1,:]
-
-
-    def clear_buffers(self):
-
-       for module in self.conv_modules:
-           module.clear_buffer()
-
-    def forward_incremental(self,x, c, gen_flag = 0):
-
-       self.clear_buffers()
-       print(c)
-       # Get the length to predict
-       max_length = c.shape[1] * frame_period
-       print("Max Length is ", max_length)
-       #max_length = 8000
-       bsz = c.shape[0]
-       if print_flag:
-          print("  Model: Shape of x and c in the model: ", x.shape, c.shape, " and the max length is  ", max_length)
-
-       x = c.new(bsz,1)
-       a = 0
-       x.fill_(a)
-
-       outputs = []
-       samples = []
-
-       # Do something about the ccoeffs
-       c = self.upsample_ccoeffs(c, frame_period)    
-       if print_flag:
-           print("  Model: Shape of upsampled c is ", c.shape)
-           #sys.exit()
-
-       for i in range(max_length-1):
-
-          # Do something about the wav
-          x = self.encode(x.long(), 0.0)
-
-          # Feed to Decoder
-          ct = c[:,i,:].unsqueeze(1)
-          #if print_flag:
-             #print("  Model: Shape of ct in the model is ", ct.shape)
-
-          assert len(x.shape) == 3
-          
-          for module in self.conv_modules:
-             x = F.relu(module.incremental_forward(x, ct))
-
-          #if print_flag:
-             #print("  Model: Shape of input to the final fc in forward_incremental of model is ", x.shape, " and the time steps: ", i )      
-
-          x = F.relu(self.final_fc1(x))
-          x = self.final_fc2(x)
-          #x += sample_gumbel(x.size(), out=x.data.new())
-          probs = F.softmax(x.view(bsz, -1), dim=1)
-          predicted = torch.max(x.view(bsz, -1), dim=1)[1]
-          #print("Shape of probs: ", probs.shape)
-          sample = np.random.choice(np.arange(259), p = probs.view(-1).data.cpu().numpy())
-          #print(sample, predicted.shape)
-          #assert sample.shape == predicted.shape
-          predicted = np.array([sample])
-          #v, predicted = torch.max(x,2)
-          #print("I picked ", i, predicted)
-          sample_onehotk = x.new(x.shape[0], 259)
-          sample_onehotk.zero_()
-          sample_onehotk[:,predicted] = 1
-          #outputs.append(predicted)
-          outputs.append(x)
-          #samples.append(predicted)
-          samples.append(sample_onehotk)
-          x = torch.LongTensor(predicted).cuda()
-
-          '''
-          # Sample the next input
-          probs = F.softmax(x.view(bsz, -1), dim=1)
-          #print("Shape of probs is ", probs.shape)
-          #print(sample)
-          #import sys
-          #sys.exit()
-          
-          
-          #print("Not using gumbel noise") 
-          #x += sample_gumbel(x.size(), out=x.data.new())
-          #sample = torch.max(x.view(bsz, -1), dim=1)[1]
-          
-          sample = np.random.choice(np.arange(259), p = probs.view(-1).data.cpu().numpy())
-          sample_copy = sample
-          x = x.view(bsz,-1)
-          x.zero_()
-          #print("Shape of x: ", x.shape)
-          x[:,sample_copy] = 1
-          outputs += [x.data]
-          sample = torch.LongTensor(np.array([sample]))
-          sample = sample.unsqueeze(0)
-          sample = sample.cuda()
-          x = sample
-          print("Picked sample: ", sample_copy)
-          
-          
-          if print_flag:
-             print("  Model: Shape of next input in forward_incremental of model is ", x.shape )
-   
-          '''
-
-       outputs = torch.stack(outputs)
-       samples = torch.stack(samples)
-       if gen_flag:
-          return samples
-       return outputs
-
-
-
+           return x
