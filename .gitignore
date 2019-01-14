@@ -117,3 +117,5 @@ tasks/*/*/*/scripts/*tmp*
 *.save
 log_*
 t
+tasks/speech/*/*/voices
+
