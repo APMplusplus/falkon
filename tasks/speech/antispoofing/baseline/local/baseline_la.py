@@ -134,8 +134,8 @@ def val():
       l += loss.item()
 
   predicteds = return_classes(logits)
-  recall = get_metrics(predicteds, targets)
-  print("Unweighted Recall for the validation set:  ", recall)
+  recall = get_eer(predicteds, targets)
+  print("EER for the validation set:  ", recall)
   return l/(i+1)
 
 

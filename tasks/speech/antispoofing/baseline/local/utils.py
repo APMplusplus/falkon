@@ -13,3 +13,10 @@ def get_metrics(predicted_tensor, target_tensor):
    targets = target_tensor.cpu().numpy()
    #print(predicteds, targets)
    return recall_score(predicteds, targets,average='macro')
+
+def get_eer(predicted_tensor, target_tensor):
+   predicteds = predicted_tensor.cpu().numpy()
+   targets = target_tensor.cpu().numpy()
+   fpr, tpr, threshold = roc_curve(y, y_pred, pos_label=1)
+   EER = threshold(np.argmin(abs(tpr-fpr)))
+   return EER
