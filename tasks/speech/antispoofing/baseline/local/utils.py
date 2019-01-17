@@ -9,6 +9,12 @@ def return_classes(logits, dim=-1):
    #print(predicted.shape)
    return predicted 
 
+def return_valsnclasses(logits, dim=-1):
+   #print(logits.shape)
+   vals, predicted = torch.max(logits,dim)    
+   #print(predicted.shape)
+   return vals, predicted 
+
 def get_metrics(predicted_tensor, target_tensor):
    predicteds = predicted_tensor.cpu().numpy()
    targets = target_tensor.cpu().numpy()

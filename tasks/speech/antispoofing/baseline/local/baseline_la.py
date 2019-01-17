@@ -43,7 +43,9 @@ updates = 0
 plot_flag = 1
 write_intermediate_flag = 1
 label_dict = defaultdict(int, bonafide=0, spoof=1)
+int2label = {i:w for w,i in label_dict.items()}
 
+fnames_array = []
 
 class antispoofing_dataset(Dataset):
     
@@ -57,6 +59,7 @@ class antispoofing_dataset(Dataset):
         for line in f:
           line = line.split('\n')[0]
           fname = line.split()[0]
+          fnames_array.append(fname)
           feats_fname = feats_dir + '/' + fname + '.npz'
           feats = np.load(feats_fname)
           feats = feats['arr_0']
@@ -93,8 +96,8 @@ train_loader = DataLoader(train_set,
 tdd_file = ETC_DIR + '/tdd.la.dev'
 val_set = antispoofing_dataset(tdd_file)
 val_loader = DataLoader(val_set,
-                          batch_size=16,
-                          shuffle=True,
+                          batch_size=1,
+                          shuffle=False,
                           num_workers=1,
                           collate_fn=collate_fn_chopping
                           )
@@ -112,7 +115,11 @@ optimizer = optimizer_adam
 updates = 0
 
 def val():
+  model_name = exp_dir + '/models/' + '/model_exp_baseline__epoch_008.pth'
+  with open(model_name, 'rb') as f:
+      model = torch.load(f)
   model.eval()
+  g = open('t', 'w')
   with torch.no_grad():
     l = 0
     global updates
@@ -132,10 +139,15 @@ def val():
       y_true.append(targets)
       y_pred.append(logits)
       l += loss.item()
+      vals, predicteds = return_valsnclasses(logits)
+      g.write(str(fnames_array[i]) + ' - ' + str(int2label[predicteds.item()]) + ' ' + str(vals.item()) + '\n')
 
-  predicteds = return_classes(logits)
-  recall = get_eer(predicteds, targets)
-  print("EER for the validation set:  ", recall)
+      if i % 300 == 1:
+         print("Processed ", i, " files")
+
+  #recall = get_eer(predicteds, targets)
+  #print("EER for the validation set:  ", recall)
+  g.close()
   return l/(i+1)
 
 
@@ -177,14 +189,18 @@ def main():
   for epoch in range(max_epochs):
     epoch_start_time = time.time()
     train_loss = train()
-    val_loss = val()
-
+    #val_loss = val()
+    val_loss = 0
     g = open(logfile_name,'a')
     g.write("Train loss after epoch " + str(epoch) + ' ' + str(train_loss)  + " and the val loss: " + str(val_loss) + ' It took ' +  str(time.time() - epoch_start_time) + '\n')
     g.close()
 
+    fname = model_name + '_epoch_' + str(epoch).zfill(3) + '.pth'
+    with open(fname, 'wb') as f:
+      torch.save(model, f)
+
 def debug():
    val()
 
-main()    
-#debug()
+#main()    
+debug()

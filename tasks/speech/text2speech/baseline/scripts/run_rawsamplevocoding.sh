@@ -66,7 +66,7 @@ if [ ! -f ${base_dir}/feats/.featextraction.done ]; then
 fi
 
 ## Build a baseline model - Make it choose the type of model to build based on hparams file
-#python3.5 ${base_dir}/local/vocoding/baseline_vocoder.py
+python3.5 ${base_dir}/local/vocoding/vocoder_pmnet.py
 
 ## Some sort of evaluation
-python3.5 ${base_dir}/local/vocoding/baseline_vocoder_80dim.py
+#python3.5 ${base_dir}/local/vocoding/baseline_vocoder_80dim.py

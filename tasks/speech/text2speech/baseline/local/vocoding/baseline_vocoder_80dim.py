@@ -25,7 +25,7 @@ sys.path.append(FALCON_DIR)
 from src.nn import logger as l
 
 ## Flags and stuff 
-exp_name = 'exp_baseline_80dim'
+exp_name = 'exp_baseline_80dim_nomoduleactivation_xdropoutseq_sampleonehotkreturned'
 exp_dir = EXP_DIR + '/' + exp_name
 if not os.path.exists(exp_dir):
    os.mkdir(exp_dir)
@@ -56,10 +56,11 @@ write_intermediate_flag = 1
 model_name = exp_dir + '/models/model_' + exp_name + '_'
 log_flag = 1
 plot_flag = 1
-save_intermediate_flag = 0
+save_intermediate_flag = 1
 updates = 0
 max_timesteps = 8192
 frame_period = 256
+retrain_flag = 1
 
 # Add visualization for model like https://github.com/szagoruyko/functional-zoo/blob/master/resnet-18-export.ipynb
 
@@ -99,6 +100,11 @@ val_loader = DataLoader(val_set,
                           num_workers=4
                           )
 
+test_loader = DataLoader(val_set,
+                          batch_size=1,
+                          shuffle=False,
+                          num_workers=4
+                          )
 
 # https://pytorch.org/docs/stable/_modules/torch/utils/data/sampler.html
 
@@ -108,6 +114,11 @@ model = cnnmodel()
 #model.double()
 print(model)
 
+if retrain_flag:
+    model_name = exp_dir + '/models/' + '/model_exp_baseline_80dim_nomoduleactivation_xdropoutseq_sampleonehotkreturned__epoch_091.pth'
+    with open(model_name, 'rb') as f:
+      model = torch.load(f)
+      
 if torch.cuda.is_available():
    model.cuda()
 criterion = nn.CrossEntropyLoss(ignore_index=0) # This is not ok but lets continue for now. use reduce=false though. 
@@ -120,12 +131,21 @@ optimizer = optimizer_adam
 
 
 def val(partial_flag = 1):
+ global model   
+ if partial_flag:
+     data_loader = val_loader
+ else:
+     data_loader = test_loader
+     model_name = exp_dir + '/models/' + '/model_exp_baseline_80dim_nomoduleactivation_xdropoutseq_sampleonehotkreturned__epoch_091.pth'
+     with open(model_name, 'rb') as f:
+      model = torch.load(f)
+ 
  model.eval()
  l = 0
  with torch.no_grad():
     x_batch = []
     c_batch = []
-    for i, file in enumerate(val_loader):
+    for i, file in enumerate(data_loader):
        file = file[0]
        print(file) 
        wav_file = WAV_DIR + '/' + file + '.npy'
@@ -160,6 +180,9 @@ def val(partial_flag = 1):
        if torch.cuda.is_available():
              x = x.cuda()
              c = c.cuda()
+       if not partial_flag:
+           x = x.unsqueeze(0)
+           c = c.unsqueeze(0)
        x[:,0] = 0
        print("Shape of x and c ", x.shape, c.shape)
        x_hat = model.forward_incremental(x, c, 1)
@@ -202,8 +225,8 @@ def val(partial_flag = 1):
               plt.close()
               
               if save_intermediate_flag:
-                  sf.write('intermediate_predictions/segment_' + str(updates).zfill(4) + '_original'  + '.wav', np.asarray(x), 16000,format='wav',subtype="PCM_16")
-                  sf.write('intermediate_predictions/segment_' + str(updates).zfill(4) + '_predicted' + '.wav', np.asarray(x_hat), 16000,format='wav',subtype="PCM_16")      
+                  sf.write(plot_dir + '/segment_' + str(updates).zfill(4) + '_original'  + '.wav', np.asarray(x), 16000,format='wav',subtype="PCM_16")
+                  sf.write(plot_dir + '/segment_' + str(updates).zfill(4) + '_predicted' + '.wav', np.asarray(x_hat), 16000,format='wav',subtype="PCM_16")      
    
 
        if partial_flag:
@@ -324,7 +347,9 @@ def main():
 def debug():
     val(1)
     
+def generate():
+    val(0)    
   
-main()  
+#main()  
 #debug()    
-#generate()
+generate()
