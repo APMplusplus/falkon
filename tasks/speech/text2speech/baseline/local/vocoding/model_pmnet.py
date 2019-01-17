@@ -24,7 +24,7 @@ class cnnmodel(nn.Module):
         self.kernel_size = 3
         self.stride = 1
 
-        layers = 12
+        layers = 24
         stacks = 4
         layers_per_stack = layers // stacks
 

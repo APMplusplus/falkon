@@ -127,6 +127,15 @@ def quantize_wavfile(file):
    return y_1
 
 
+def quantize_wav(A):
+
+   x_1 = (A/32768.0).astype(np.float32) 
+
+   y_1 = mulaw_quantize(x_1,256)
+
+   return y_1
+
+
 def sample_gumbel(shape, eps=1e-10, out=None):
    """
    Sample from Gumbel(0, 1)
