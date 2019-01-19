@@ -9,6 +9,7 @@ from model import baseline_lstm
 import time
 from collections import defaultdict
 from utils import *
+import pickle
 
 ## Locations
 FALCON_DIR = os.environ.get('FALCON_DIR')
@@ -38,7 +39,7 @@ g.close()
 logger = l.Logger(exp_dir + '/logs/' + exp_name)
 model_name = exp_dir + '/models/model_' + exp_name + '_'
 max_timesteps = 100
-max_epochs = 100
+max_epochs = 10
 updates = 0
 plot_flag = 1
 write_intermediate_flag = 1
@@ -84,6 +85,7 @@ def collate_fn_chopping(batch):
     b_batch = torch.LongTensor(b)
     return a_batch, b_batch
 
+'''
 tdd_file = ETC_DIR + '/tdd.la.train'
 train_set = antispoofing_dataset(tdd_file)
 train_loader = DataLoader(train_set,
@@ -101,7 +103,13 @@ val_loader = DataLoader(val_set,
                           num_workers=1,
                           collate_fn=collate_fn_chopping
                           )
+'''
 
+with open(DATA_DIR + '/train_loader.pkl', 'rb') as f:
+     train_loader = pickle.load(f)
+
+with open(DATA_DIR + '/val_loader.pkl', 'rb') as f:
+     val_loader = pickle.load(f)
 
 ## Model
 model = baseline_lstm()
@@ -136,7 +144,7 @@ def val(partial_flag = 1):
       y_pred.append(predicteds)
       l += loss.item()
 
-      if i % 10 == 1:
+      if i % 100 == 1:
          print("Val loss: ", l/(i+1)) 
 
   recall = get_eer(predicteds, targets)
@@ -169,8 +177,8 @@ def train():
     optimizer.step()
     l += loss.item()
   
-    # This 10 cannot be hardcoded
-    if i % 10 == 1 and write_intermediate_flag:
+    # This 100 cannot be hardcoded
+    if i % 100 == 1 and write_intermediate_flag:
        g = open(logfile_name, 'a')
        g.write("  Train loss after " + str(updates) +  " batches: " + str(l/(i+1)) + ". It took  " + str(time.time() - start_time) + '\n')
        g.close()
@@ -194,5 +202,5 @@ def main():
 def debug():
    val()
 
-#main()    
-debug()
+main()    
+#debug()

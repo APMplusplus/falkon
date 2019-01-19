@@ -85,8 +85,8 @@ val_loader = DataLoader(val_set,
                           )
 
 
-with open(DATA_DIR + 'train_loader.pkl', 'wb') as f:
+with open(DATA_DIR + '/train_loader.pkl', 'wb') as f:
      pickle.dump(train_loader, f, protocol=pickle.HIGHEST_PROTOCOL)
 
-with open(DATA_DIR + 'val_loader.pkl', 'wb') as f:
+with open(DATA_DIR + '/val_loader.pkl', 'wb') as f:
      pickle.dump(val_loader, f, protocol=pickle.HIGHEST_PROTOCOL)
