@@ -9,6 +9,7 @@ from model import baseline_lstm
 import time
 from collections import defaultdict
 from utils import *
+import pickle
 
 ## Locations
 FALCON_DIR = os.environ.get('FALCON_DIR')
@@ -24,13 +25,13 @@ sys.path.append(FALCON_DIR)
 from src.nn import logger as l
 
 ## Flags and variables - This is not the best way to code log file since we want log file to get appended when reloading model
-exp_name = 'exp_baseline'
+exp_name = 'exp_baselinedebugging'
 exp_dir = EXP_DIR + '/' + exp_name
 if not os.path.exists(exp_dir):
    os.mkdir(exp_dir)
    os.mkdir(exp_dir + '/logs')
    os.mkdir(exp_dir + '/models')
-model_name = exp_dir + '/models/model_' + exp_name + '__epoch_000.pth'   # model_exp_baseline__epoch_000.pth
+model_name = exp_dir + '/models/model_' + exp_name + '__epoch_006.pth'   # model_exp_baseline__epoch_000.pth
 label_dict = defaultdict(int, bonafide=0, spoof=1)
 int2label = {i:w for w,i in label_dict.items()}
 
@@ -115,8 +116,10 @@ def val():
 
       logits = model.forward_eval(inputs)
       loss = criterion(logits, targets)
-      y_true.append(targets)
-      y_pred.append(logits)
+      predicteds = return_classes(logits).cpu().numpy()
+      for (t,p) in list(zip(targets, predicteds)):  
+         y_true.append(t.item())
+         y_pred.append(p)
       l += loss.item()
       vals, predicteds = return_valsnclasses(logits)
       g.write(str(fnames_array[i]) + ' - ' + str(int2label[predicteds.item()]) + ' ' + str(vals.item()) + '\n')
@@ -124,6 +127,8 @@ def val():
       if i % 300 == 1:
          print("Processed ", i, " files and loss: ", l/(i+1))
 
+  recall = get_metrics(y_true, y_pred)
+  print("Recall for the validation set:  ", recall)
   g.close()
   return l/(i+1)
 

@@ -25,7 +25,7 @@ sys.path.append(FALCON_DIR)
 from src.nn import logger as l
 
 ## Flags and variables - This is not the best way to code log file since we want log file to get appended when reloading model
-exp_name = 'exp_baseline'
+exp_name = 'exp_baselinedebugging'
 exp_dir = EXP_DIR + '/' + exp_name
 if not os.path.exists(exp_dir):
    os.mkdir(exp_dir)
@@ -37,7 +37,7 @@ g = open(logfile_name, 'w')
 g.close()
 # This is for visualization
 logger = l.Logger(exp_dir + '/logs/' + exp_name)
-model_name = exp_dir + '/models/model_' + exp_name + '_'
+model_name = exp_dir + '/models/model_' + exp_name
 max_timesteps = 100
 max_epochs = 10
 updates = 0
@@ -139,17 +139,18 @@ def val(partial_flag = 1):
 
       logits = model.forward_eval(inputs)
       loss = criterion(logits, targets)
-      predicteds = return_classes(logits) 
-      y_true.append(targets)
-      y_pred.append(predicteds)
+      predicteds = return_classes(logits).cpu().numpy() 
+      for (t,p) in list(zip(targets, predicteds)):  
+         y_true.append(t.item())
+         y_pred.append(p)
       l += loss.item()
 
-      if i % 100 == 1:
-         print("Val loss: ", l/(i+1)) 
+      #if i % 100 == 1:
+      #   print("Val loss: ", l/(i+1)) 
 
-  recall = get_eer(predicteds, targets)
-  print("EER for the validation set:  ", recall)
-  return l/(i+1)
+  recall = get_metrics(y_true, y_pred)
+  print("Recall for the validation set:  ", recall)
+  return l/(i+1), recall
 
 
 
@@ -190,9 +191,9 @@ def main():
   for epoch in range(max_epochs):
     epoch_start_time = time.time()
     train_loss = train()
-    val_loss = val()
+    val_loss, recall = val()
     g = open(logfile_name,'a')
-    g.write("Train loss after epoch " + str(epoch) + ' ' + str(train_loss)  + " and the val loss: " + str(val_loss) + ' It took ' +  str(time.time() - epoch_start_time) + '\n')
+    g.write("Train loss after epoch " + str(epoch) + ' ' + str(train_loss)  + " and the val loss: " + str(val_loss) + ' It took ' +  str(time.time() - epoch_start_time) + " Val Recall is " + str(recall) + '\n')
     g.close()
 
     fname = model_name + '_epoch_' + str(epoch).zfill(3) + '.pth'
