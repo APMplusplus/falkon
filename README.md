@@ -5,7 +5,7 @@ This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kal
 The goal is to make it easier to build and compare against baselines across tasks.
 Since there are many tasks, it might not be feasible to put all dependencies. Two alternatives: (1) Use a virtual env for each task like AWS (2) Put a docker image
 
-# H3 Feel free to contribute. Easiest ways to get started are (1) Picking up a task (from below) or one of your choice and adding it (2) Picking up an issue and working on it.
+### Feel free to contribute. Easiest ways to get started are (1) Picking up a task (from below) or one of your choice and adding it (2) Picking up an issue and working on it.
 
 Tasks:
 - [X] Self Assessed Affect Detection from Speech [Week 01]
