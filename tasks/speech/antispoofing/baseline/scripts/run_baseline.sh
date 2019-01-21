@@ -36,6 +36,9 @@
 ##                                                                       ##
 ##  Setup the current directory for building a falcon baseline           ##
 ##                                                                       ##
+##  If the user wants to use a custom base directory, they can specify   ##
+##  it with the -b tag.                                                  ##
+##                                                                       ##
 ###########################################################################
 
 ## Source stuff
@@ -57,5 +60,17 @@ fi
 cat ${data_dir}/ASVspoof2019_LA_protocols/ASVspoof2019.LA.cm.train.trn.txt | awk '{print $2 " "  $5}' > ../etc/tdd.la.train || exit 0
 cat ${data_dir}/ASVspoof2019_LA_protocols/ASVspoof2019.LA.cm.dev.trl.txt | awk '{print $2 " "  $5}' > ../etc/tdd.la.dev || exit 0
 
+
+# handles optional tags that the user specifies
+BASETAG=""
+while getopts b: option
+do
+case "${option}"
+in
+b) BASETAG="-base_dir ${OPTARG}";;
+esac
+done
+
+
 ## Build a baseline model 
-python3.5 ${base_dir}/local/baseline_la.py
+python3.5 ${base_dir}/local/baseline_la.py ${BASETAG}
