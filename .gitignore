@@ -118,4 +118,7 @@ tasks/*/*/*/scripts/*tmp*
 log_*
 t
 tasks/speech/*/*/voices
-
+t.*
+tasks/*/*/topline
+*.wav
+*top*

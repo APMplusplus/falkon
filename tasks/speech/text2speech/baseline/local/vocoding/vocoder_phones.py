@@ -2,7 +2,7 @@ import torch
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 from utils import *
-from model import *
+from model_pmnet import *
 import time
 import sys, os
 import matplotlib
@@ -18,21 +18,20 @@ DATA_DIR = os.environ.get('data_dir')
 EXP_DIR = os.environ.get('exp_dir')
 assert ( all (['FALCON_DIR', 'BASE_DIR', 'DATA_DIR', 'EXP_DIR']) is not None)
 
-FEATS_DIR = '/home//srallaba/projects/tts/data/cmu_us_rms_arctic/feats_80dim/'
 ETC_DIR = BASE_DIR + '/etc'
+pm_dir = DATA_DIR + '/pm'
 
 sys.path.append(FALCON_DIR)
 from src.nn import logger as l
 
 ## Flags and stuff 
-exp_name = 'exp_baseline_80dim_nomoduleactivation_xdropoutseq_sampleonehotkreturned'
+exp_name = 'exp_phones'
 exp_dir = EXP_DIR + '/' + exp_name
 if not os.path.exists(exp_dir):
    os.mkdir(exp_dir)
    os.mkdir(exp_dir + '/logs')
    os.mkdir(exp_dir + '/models')
    os.mkdir(exp_dir + '/plots')
-   
 # This is just a command line utility
 logfile_name = exp_dir + '/logs/log_' + exp_name
 print(logfile_name)
@@ -43,12 +42,12 @@ plot_dir = exp_dir + '/plots'
 # This is for visualization
 logger = l.Logger(exp_dir + '/logs/' + exp_name)
 model_name = exp_dir + '/models/model_' + exp_name + '_'
-max_epochs = 100
+max_epochs = 1000
 updates = 0
 log_flag = 1
 debug_flag = 0
 wav_dir = DATA_DIR + '/wav'
-ccoeffs_dir = FEATS_DIR
+ccoeffs_dir = BASE_DIR + '/feats/rms_arctic_1msec'
 print_flag = 1
 debug_flag = 0
 start_time = time.time()
@@ -56,11 +55,10 @@ write_intermediate_flag = 1
 model_name = exp_dir + '/models/model_' + exp_name + '_'
 log_flag = 1
 plot_flag = 1
-save_intermediate_flag = 1
+save_intermediate_flag = 0
 updates = 0
-max_timesteps = 8192
-frame_period = 256
-retrain_flag = 1
+max_timesteps = 8000
+frame_period = 16
 
 # Add visualization for model like https://github.com/szagoruyko/functional-zoo/blob/master/resnet-18-export.ipynb
 
@@ -71,12 +69,11 @@ class arctic_dataset(Dataset):
         self.tdd_file = tdd_file
         self.wav_dir = wav_dir
         self.mfcc_dir = ccoeffs_dir
-        print("MFCC dir is ", self.mfcc_dir)
         self.filenames_array = []
         f = open(self.tdd_file)
         for line in f:
           line = line.split('\n')[0]
-          fname = line.split()[1]
+          fname = line.split()[0]
           self.filenames_array.append(fname)
 
     def __getitem__(self, index):
@@ -85,26 +82,23 @@ class arctic_dataset(Dataset):
     def __len__(self):
            return len(self.filenames_array)
 
-WAV_DIR = '/home//srallaba/projects/tts/data/cmu_us_rms_arctic/wav_80dim'
-train_set = arctic_dataset(DATA_DIR + '/etc/txt.done.data.train', wav_dir=WAV_DIR, ccoeffs_dir=FEATS_DIR)
+wav_dir = '/home/srallaba/development/cmu_us_rms/segments/ax/wav/'
+ccoeffs_dir = '/home/srallaba/development/cmu_us_rms/segments/ax/ccoeffs/'
+
+train_set = arctic_dataset(BASE_DIR + '/etc/tdd.phones.train',wav_dir, ccoeffs_dir)
 train_loader = DataLoader(train_set,
-                          batch_size=4,
+                          batch_size=16,
                           shuffle=True,
                           num_workers=4
                           )
 
-val_set = arctic_dataset(DATA_DIR + '/etc/txt.done.data.test', wav_dir=WAV_DIR, ccoeffs_dir=FEATS_DIR)
+val_set = arctic_dataset(BASE_DIR + '/etc/tdd.phones.test', wav_dir, ccoeffs_dir)
 val_loader = DataLoader(val_set,
                           batch_size=1,
                           shuffle=True,
                           num_workers=4
                           )
 
-test_loader = DataLoader(val_set,
-                          batch_size=1,
-                          shuffle=False,
-                          num_workers=4
-                          )
 
 # https://pytorch.org/docs/stable/_modules/torch/utils/data/sampler.html
 
@@ -114,11 +108,6 @@ model = cnnmodel()
 #model.double()
 print(model)
 
-if retrain_flag:
-    model_name = exp_dir + '/models/' + '/model_exp_baseline_80dim_nomoduleactivation_xdropoutseq_sampleonehotkreturned__epoch_091.pth'
-    with open(model_name, 'rb') as f:
-      model = torch.load(f)
-      
 if torch.cuda.is_available():
    model.cuda()
 criterion = nn.CrossEntropyLoss(ignore_index=0) # This is not ok but lets continue for now. use reduce=false though. 
@@ -131,74 +120,46 @@ optimizer = optimizer_adam
 
 
 def val(partial_flag = 1):
- global model   
- if partial_flag:
-     data_loader = val_loader
- else:
-     data_loader = test_loader
-     model_name = exp_dir + '/models/' + '/model_exp_baseline_80dim_nomoduleactivation_xdropoutseq_sampleonehotkreturned__epoch_091.pth'
-     with open(model_name, 'rb') as f:
-      model = torch.load(f)
- 
  model.eval()
  l = 0
  with torch.no_grad():
     x_batch = []
     c_batch = []
-    for i, file in enumerate(data_loader):
+    for i, file in enumerate(val_loader):
        file = file[0]
        print(file) 
-       wav_file = WAV_DIR + '/' + file + '.npy'
-       mfcc_file = ccoeffs_dir + '/' + file + '.npy'
-       wav_quantized = np.load(wav_file)
-       ccoeffs = np.load(mfcc_file)
+       wav_file = wav_dir + '/' + file + '.npy'
+       x = np.load(wav_file)
+       mfcc_file = ccoeffs_dir + '/' + file + '.npy' 
+       c = np.load(mfcc_file)
+       x , c = ensure_frameperiod_pm(c , x, frame_period)
+       c = c[:,1:61]
        
-       if partial_flag:
+       if 10 > 2:
+      
+          
            
-           start_sample = np.random.randint(len(wav_quantized) - max_timesteps)
-           end_sample = start_sample + max_timesteps
-           start_frame = int(start_sample / frame_period )
-           end_frame = int(end_sample / frame_period )
-
-           x = wav_quantized[start_sample:end_sample]
-           c = ccoeffs[start_frame:end_frame]
-           x,c = ensure_frameperiod(c, x, frame_period)
-           assert len(x) == max_timesteps
-           assert len(x) == len(c) * frame_period
-           c_batch.append(c)
-           x_batch.append(x)
-           print("Shape of x and c ", x.shape, c.shape)
-           x,c = x_batch, c_batch   
-           
-       else:
-           
-           x,c = wav_quantized, ccoeffs
-           
-       x = torch.LongTensor(x)
-       c = torch.FloatTensor(c)
-       x, c = Variable(x), Variable(c)
-       if torch.cuda.is_available():
+          x = torch.LongTensor(x)
+          c = torch.FloatTensor(c)
+          x, c = Variable(x), Variable(c)
+          if torch.cuda.is_available():
              x = x.cuda()
              c = c.cuda()
-       if not partial_flag:
-           x = x.unsqueeze(0)
-           c = c.unsqueeze(0)
-       x[:,0] = 0
-       print("Shape of x and c ", x.shape, c.shape)
-       x_hat = model.forward_incremental(x, c, 1)
-       x = x[:,1:]
+          x = x.unsqueeze(0)
+          c = c.unsqueeze(0)
+          #print("Shape of x and c ", x.shape, c.shape)
+          x_hat = model.forward_incremental(x, c, 1)
+          x = x[:,1:]
           
-       loss = criterion(x_hat.contiguous().view(-1,259), x.contiguous().view(-1))
-       l += loss.item()
-       print("Shapes of original and predicted files are: ", x.shape, x_hat.shape, " and the loss is ", loss.item())
-       #if print_flag:
-          #print("Shapes of original and predicted files are: ", x.shape, x_hat.shape, " and the loss is ", loss.item()) 
+          loss = criterion(x_hat.contiguous().view(-1,259), x.contiguous().view(-1))
+          l += loss.item()
+          #print("Shapes of original and predicted files are: ", x.shape, x_hat.shape, " and the loss is ", loss.item())
 
-       if log_flag:
-          # Log the scalars
-          logger.scalar_summary('Val Loss', l * 1.0 / (i+1) , updates)   
+          if log_flag:
+            # Log the scalars
+            logger.scalar_summary('Val Loss', l * 1.0 / (i+1) , updates)   
           
-       if plot_flag:
+          if plot_flag:
               axes = plt.gca()
               axes.set_ylim([-0.9,0.9])
               
@@ -221,17 +182,16 @@ def val(partial_flag = 1):
               plt.subplot(212)
               plt.plot(x_hat)
               
-              plt.savefig(plot_dir + '/plot_step' + str(updates).zfill(4) + '.png')
+              plt.savefig(plot_dir + '/plot_step_' + str(updates).zfill(4)  + '_phoneid_' + str(i).zfill(4) + '.png')
               plt.close()
               
-              if save_intermediate_flag:
-                  sf.write(plot_dir + '/segment_' + str(updates).zfill(4) + '_original'  + '.wav', np.asarray(x), 16000,format='wav',subtype="PCM_16")
-                  sf.write(plot_dir + '/segment_' + str(updates).zfill(4) + '_predicted' + '.wav', np.asarray(x_hat), 16000,format='wav',subtype="PCM_16")      
-   
 
-       if partial_flag:
-          return l/(i+1)
-
+          if partial_flag == 1:
+             return l/(i+1)
+          
+          elif partial_flag == 2 and i == 20:   
+            return l/(i+1)
+        
        return l/(i+1)  
            
     if plot_flag:
@@ -246,37 +206,30 @@ def train():
   l = 0
   global updates 
   for i, files in enumerate(train_loader):
+    #print(i, files)
     updates += 1
     x_batch = []
     c_batch = []
+    #print(updates)
     for file in files:
-
-       wav_file = WAV_DIR + '/' + file + '.npy'
+       #print(file) 
+       
+       wav_file = wav_dir + '/' + file + '.npy'
        mfcc_file = ccoeffs_dir + '/' + file + '.npy'
-       #print(mfcc_file)
-       wav_quantized = np.load(wav_file)
-       ccoeffs = np.load(mfcc_file)
-      
-       start_sample = np.random.randint(len(wav_quantized) - max_timesteps)
-       end_sample = start_sample + max_timesteps
-       start_frame = int(start_sample /frame_period )
-       end_frame = int(end_sample / frame_period ) 
-       #print(start_sample, start_frame, end_sample, end_frame)
-       x = wav_quantized[start_sample:end_sample]
-       c = ccoeffs[start_frame:end_frame]
-       #print(" Main: Shapes of x and c: ", x.shape, c.shape, frame_period)
-       if c.shape[0] < 1:
-          continue
-       x,c = ensure_frameperiod(c, x, frame_period)
-       #print(" Main: Shapes of x and c: ", x.shape, c.shape)
-       assert len(x) == max_timesteps
-       assert len(x) == len(c) * frame_period
-       x_batch.append(x)
-       c_batch.append(c)
-       #print ('\n')
-
+       x = np.load(wav_file)
+       c = np.load(mfcc_file)
+       #print(len(c), len(x))
+       x, c = ensure_frameperiod_pm(c, x, 16)
+       assert len(c) * frame_period == len(x)
+       
+       if len(x) > 0:
+         #print(x.shape, c.shape)  
+         x_batch.append(x)
+         c_batch.append(c[:, 1:61])
+       else:
+          continue 
+         
     x,c = x_batch, c_batch
-
     x = torch.LongTensor(x)
     c = torch.FloatTensor(c)
     x,c = Variable(x), Variable(c)
@@ -291,14 +244,15 @@ def train():
 
     optimizer.zero_grad()
     loss = criterion(x_hat.contiguous().view(-1,259), x.contiguous().view(-1))
+    #print(x_hat.shape, x.shape) 
+    #loss = F.kl_div(x_hat.contiguous().view(-1,259).cpu(), x.contiguous().view(-1).cpu().float())
     loss.backward()
     torch.nn.utils.clip_grad_norm_(model.parameters(), 0.25)
     optimizer.step()
 
     l += loss.item()
-    
+
     if i % 100 == 1 and write_intermediate_flag:
-       print("Current loss is ", l/(i+1))
        g = open(logfile_name, 'a')
        g.write("  Train loss after " + str(updates) +  " batches: " + str(l/(i+1)) + ". It took  " + str(time.time() - start_time) + '\n')
        g.close()
@@ -328,7 +282,7 @@ def main():
    epoch_start_time = time.time()
    train_loss = train()
    if 10 > 2: #epoch % 2 == 1 :
-      val_loss = val(1)
+      val_loss = val(2)
       print(val_loss)
       g = open(logfile_name,'a')
       g.write("Train loss after epoch " + str(epoch) + ' ' + str(train_loss)  + " and the val loss: " + str(val_loss) + ' It took ' +  str(time.time() - epoch_start_time) + '\n')
@@ -345,11 +299,9 @@ def main():
       torch.save(model, f)
 
 def debug():
-    val(1)
+    val(2)
     
-def generate():
-    val(0)    
   
-#main()  
+main()  
 #debug()    
-generate()
+#generate()

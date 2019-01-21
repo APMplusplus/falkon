@@ -1,4 +1,3 @@
-import argparse
 import numpy as np
 import os, sys
 import torch
@@ -12,11 +11,9 @@ from collections import defaultdict
 from utils import *
 import pickle
 
-args = parse_args()
-
 ## Locations
 FALCON_DIR = os.environ.get('FALCON_DIR')
-BASE_DIR = os.environ.get('base_dir') if args.base_dir == '' else args.base_dir
+BASE_DIR = os.environ.get('base_dir')
 DATA_DIR = os.environ.get('data_dir')
 EXP_DIR = os.environ.get('exp_dir')
 FEATS_DIR = os.environ.get('feats_dir')
@@ -34,38 +31,14 @@ if not os.path.exists(exp_dir):
    os.mkdir(exp_dir)
    os.mkdir(exp_dir + '/logs')
    os.mkdir(exp_dir + '/models')
-# This is just a command line utility
-logfile_name = exp_dir + '/logs/log_' + exp_name
-g = open(logfile_name, 'w')
-g.close()
-# This is for visualization
-logger = l.Logger(exp_dir + '/logs/' + exp_name)
-model_name = exp_dir + '/models/model_' + exp_name
-max_timesteps = 100
-max_epochs = 10
-updates = 0
-plot_flag = 1
-write_intermediate_flag = 1
+model_name = exp_dir + '/models/model_' + exp_name + '__epoch_006.pth'   # model_exp_baseline__epoch_000.pth
 label_dict = defaultdict(int, bonafide=0, spoof=1)
 int2label = {i:w for w,i in label_dict.items()}
 
 fnames_array = []
 
-def parse_args():
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument('-base_dir',
-                    help='base directory;',
-                    type=str,
-                    default='')
-
-    return parser.parse_args()
-
 class antispoofing_dataset(Dataset):
-    '''
-    getitem returns an x,y pair
-    all labels are either 'bonafide' or 'spoof'
-    '''
+
     def __init__(self, tdd_file = ETC_DIR + '/tdd.la.train', feats_dir=FEATS_DIR):
 
         self.tdd_file = tdd_file
@@ -74,7 +47,7 @@ class antispoofing_dataset(Dataset):
         self.feats_array = [] 
         f = open(self.tdd_file)
         for line in f:
-          line = line.split('\n')[0]  # removes trailing '\n' in line
+          line = line.split('\n')[0]
           fname = line.split()[0]
           fnames_array.append(fname)
           feats_fname = feats_dir + '/' + fname + '.npz'
@@ -92,19 +65,6 @@ class antispoofing_dataset(Dataset):
 
 
 def collate_fn_chopping(batch):
-    '''
-    Separates given batch into array of y values and array of truncated x's
-
-    All given x values are truncated to have the same length as the x value
-    with the minimum length
-
-    Args:
-        batch: raw batch of data; array of x,y pairs
-    
-    Return:
-        a_batch: batch-length array of float-array x values
-        b_batch: batch-length array of int y values
-    '''
     input_lengths = [len(x[0]) for x in batch]
     min_input_len = np.min(input_lengths)
 
@@ -114,31 +74,15 @@ def collate_fn_chopping(batch):
     b_batch = torch.LongTensor(b)
     return a_batch, b_batch
 
-'''
-tdd_file = ETC_DIR + '/tdd.la.train'
-train_set = antispoofing_dataset(tdd_file)
-train_loader = DataLoader(train_set,
-                          batch_size=16,
-                          shuffle=True,
-                          num_workers=4,
-                          collate_fn=collate_fn_chopping
-                          )
-
 tdd_file = ETC_DIR + '/tdd.la.dev'
 val_set = antispoofing_dataset(tdd_file)
 val_loader = DataLoader(val_set,
-                          batch_size=16,
+                          batch_size=1,
                           shuffle=False,
                           num_workers=1,
                           collate_fn=collate_fn_chopping
                           )
-'''
 
-with open(DATA_DIR + '/train_loader.pkl', 'rb') as f:
-     train_loader = pickle.load(f)
-
-with open(DATA_DIR + '/val_loader.pkl', 'rb') as f:
-     val_loader = pickle.load(f)
 
 ## Model
 model = baseline_lstm()
@@ -151,8 +95,12 @@ optimizer_sgd = torch.optim.SGD(model.parameters(), lr=0.001)
 optimizer = optimizer_adam
 updates = 0
 
-def val(partial_flag = 1):
+def val():
+  global model
+  with open(model_name, 'rb') as f:
+    model = torch.load(f)
   model.eval()
+  g = open('t', 'w')
   with torch.no_grad():
     l = 0
     y_true = []
@@ -168,69 +116,28 @@ def val(partial_flag = 1):
 
       logits = model.forward_eval(inputs)
       loss = criterion(logits, targets)
-      predicteds = return_classes(logits).cpu().numpy() 
+      predicteds = return_classes(logits).cpu().numpy()
       for (t,p) in list(zip(targets, predicteds)):  
          y_true.append(t.item())
          y_pred.append(p)
       l += loss.item()
+      vals, predicteds = return_valsnclasses(logits)
+      g.write(str(fnames_array[i]) + ' - ' + str(int2label[predicteds.item()]) + ' ' + str(vals.item()) + '\n')
 
-      #if i % 100 == 1:
-      #   print("Val loss: ", l/(i+1)) 
+      if i % 300 == 1:
+         print("Processed ", i, " files and loss: ", l/(i+1))
 
   recall = get_metrics(y_true, y_pred)
   print("Recall for the validation set:  ", recall)
-  return l/(i+1), recall
+  g.close()
+  return l/(i+1)
 
-
-
-def train():
-  model.train()
-  optimizer.zero_grad()
-  start_time = time.time()
-  l = 0
-  global updates
-  for i, (ccoeffs,labels) in enumerate(train_loader):
-    updates += 1
-
-    inputs = torch.FloatTensor(ccoeffs)
-    targets = torch.LongTensor(labels)
-    inputs, targets = Variable(inputs), Variable(targets)
-    if torch.cuda.is_available():
-        inputs = inputs.cuda()
-        targets = targets.cuda()
-
-    logits = model(inputs)
-    optimizer.zero_grad()
-    loss = criterion(logits, targets)
-    loss.backward()
-    torch.nn.utils.clip_grad_norm_(model.parameters(), 0.25)
-    optimizer.step()
-    l += loss.item()
-  
-    # This 100 cannot be hardcoded
-    if i % 100 == 1 and write_intermediate_flag:
-       g = open(logfile_name, 'a')
-       g.write("  Train loss after " + str(updates) +  " batches: " + str(l/(i+1)) + ". It took  " + str(time.time() - start_time) + '\n')
-       g.close()
-
-  return l/(i+1)  
 
 
 def main():
-  for epoch in range(max_epochs):
-    epoch_start_time = time.time()
-    train_loss = train()
-    val_loss, recall = val()
-    g = open(logfile_name,'a')
-    g.write("Train loss after epoch " + str(epoch) + ' ' + str(train_loss)  + " and the val loss: " + str(val_loss) + ' It took ' +  str(time.time() - epoch_start_time) + " Val Recall is " + str(recall) + '\n')
-    g.close()
-
-    fname = model_name + '_epoch_' + str(epoch).zfill(3) + '.pth'
-    with open(fname, 'wb') as f:
-      torch.save(model, f)
+    val_loss = val()
 
 def debug():
    val()
 
 main()    
-#debug()

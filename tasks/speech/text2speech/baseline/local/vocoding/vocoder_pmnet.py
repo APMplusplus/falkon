@@ -25,7 +25,7 @@ sys.path.append(FALCON_DIR)
 from src.nn import logger as l
 
 ## Flags and stuff 
-exp_name = 'exp_baselinenorelu_0.6dropout_upsamplefc'
+exp_name = 'exp_pmnet_baselinenorelu_0.6dropout_upsamplefc_seqwiseinputdropout0.3_kl'
 exp_dir = EXP_DIR + '/' + exp_name
 if not os.path.exists(exp_dir):
    os.mkdir(exp_dir)
@@ -42,7 +42,7 @@ plot_dir = exp_dir + '/plots'
 # This is for visualization
 logger = l.Logger(exp_dir + '/logs/' + exp_name)
 model_name = exp_dir + '/models/model_' + exp_name + '_'
-max_epochs = 2000
+max_epochs = 1000
 updates = 0
 log_flag = 1
 debug_flag = 0
@@ -103,7 +103,7 @@ val_loader = DataLoader(val_set,
 
 
 model = cnnmodel()
-model.double()
+#model.double()
 print(model)
 
 if torch.cuda.is_available():
@@ -148,7 +148,7 @@ def val(partial_flag = 1):
           sample_end = int(period_end * 16000)
           x = wav_quantized[sample_start:sample_end]
           c = ccoeffs[frame_start:frame_end]
-          x,c = ensure_frameperiod(c,x, frame_period)
+          x,c = ensure_frameperiod_pm(c,x, frame_period)
           assert len(x) == len(c) * frame_period
           if len(x) == 0:
               continue
@@ -224,8 +224,10 @@ def train():
     updates += 1
     x_batch = []
     c_batch = []
+    #print(updates)
     for file in files:
-
+       #print(file) 
+   
        wav_file = wav_dir + '/' + file + '.wav'
        mfcc_file = ccoeffs_dir + '/' + file + '.ccoeffs_ascii'
        wav_quantized = quantize_wavfile(wav_file)
@@ -259,9 +261,10 @@ def train():
        sample_end = int(period_end * 16000)
        x = wav_quantized[sample_start:sample_end]
        c = ccoeffs[frame_start:frame_end]
-       x,c = ensure_frameperiod(c,x, frame_period)
+       #print('here')
+       x,c = ensure_frameperiod_pm(c,x, factor=frame_period)
        assert len(x) == len(c) * frame_period
-       
+       #print('back')
            
        ######################################
        if len(x) > 0:
@@ -284,7 +287,9 @@ def train():
     x = x[:,1:]
 
     optimizer.zero_grad()
-    loss = criterion(x_hat.contiguous().view(-1,259), x.contiguous().view(-1))
+    #loss = criterion(x_hat.contiguous().view(-1,259), x.contiguous().view(-1))
+    print(x_hat.shape, x.shape) 
+    loss = F.kl_div(x_hat.contiguous().view(-1,259).cpu(), x.contiguous().view(-1).cpu().float())
     loss.backward()
     torch.nn.utils.clip_grad_norm_(model.parameters(), 0.25)
     optimizer.step()

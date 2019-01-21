@@ -20,11 +20,11 @@ class cnnmodel(nn.Module):
 
         self.embedding = nn.Embedding(259, 128)
         self.encoder_fc = SequenceWise(nn.Linear(128, 64))
-        self.encoder_dropout = nn.Dropout(0.6)
+        self.encoder_dropout = SequenceWise(nn.Dropout(0.3))
         self.kernel_size = 3
         self.stride = 1
 
-        layers = 12
+        layers = 24
         stacks = 4
         layers_per_stack = layers // stacks
 

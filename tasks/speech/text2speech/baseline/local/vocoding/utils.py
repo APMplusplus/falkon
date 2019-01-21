@@ -127,6 +127,15 @@ def quantize_wavfile(file):
    return y_1
 
 
+def quantize_wav(A):
+
+   x_1 = (A/32768.0).astype(np.float32) 
+
+   y_1 = mulaw_quantize(x_1,256)
+
+   return y_1
+
+
 def sample_gumbel(shape, eps=1e-10, out=None):
    """
    Sample from Gumbel(0, 1)
@@ -184,7 +193,7 @@ def ensure_frameperiod(mel, sig, factor=80, T = 8000):
          # We dont want this 
          mel = mel[:-1,:]     
          #print("  In util: adjusted shapes are: ", mel.shape, sig.shape)
-         return ensure_frameperiod(mel, sig, factor) 
+         return ensure_frameperiod(mel, sig, factor, T) 
 
       elif num_samples < T:
          # We dont want this case
@@ -199,13 +208,34 @@ def ensure_frameperiod(mel, sig, factor=80, T = 8000):
          for i in range(difference):
              sig = np.append(sig, 0)
          #print("  In util: adjusted shapes are: ", mel.shape, sig.shape)    
-         return ensure_frameperiod(mel, sig, factor)
+         return ensure_frameperiod(mel, sig, factor, T)
 
       else:
          print("This is hard")
          sys.exit()         
      
- 
+def ensure_frameperiod_pm(mel, sig, factor=80):
+   length = mel.shape[0]
+   l = len(sig)
+
+   if float(factor * length) == l:
+      return sig, mel
+   else:
+      num_samples = factor * length
+      if num_samples > l:
+         difference = int((num_samples - l))
+         for k in range(difference):
+           sig =  np.append(sig, sig[-1])
+         return sig, mel
+
+      elif num_samples < l:
+         difference = int((l - num_samples))
+         return sig[:len(sig)-difference], mel
+         
+      else:
+         print("This is hard")
+         sys.exit()         
+
 def read_pmfile(file):
    f = open(file)
    lines = f.readlines()

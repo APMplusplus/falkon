@@ -38,7 +38,7 @@ g.close()
 logger = l.Logger(exp_dir + '/logs/' + exp_name)
 model_name = exp_dir + '/models/model_' + exp_name + '_'
 max_timesteps = 100
-max_epochs = 10
+max_epochs = 100
 updates = 0
 plot_flag = 1
 write_intermediate_flag = 1
@@ -143,10 +143,10 @@ def val(epoch):
       logits = model.forward_eval(inputs)
       loss = criterion(logits, targets)
       y_true.append(targets)
-      predicteds = return_classes(logits)
-      y_pred.append(predicteds)
+      y_pred.append(logits)
       l += loss.item()
 
+  predicteds = return_classes(logits)
   recall = get_metrics(predicteds, targets)
   print("Unweighted Recall for the validation set:  ", recall)
   

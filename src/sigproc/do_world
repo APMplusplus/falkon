@@ -198,7 +198,7 @@ then
      
     if [ ! -f ${TRAIN_FILENAME}.ccoeffs_ascii ]; then
 
-       #echo "Extracting features for " $TRAIN_FILENAME
+       echo "Extracting features for " $TRAIN_FILENAME
        python3.5 ${FALCON_DIR}/src/sigproc/extract_worldcoeffs.py ${SRC_DIR}/${TRAIN_FILENAME}.wav ${FEATS_DIR}
        $0 combine_coeffs_world_singlefile $4  ${TRAIN_FILENAME}
 
