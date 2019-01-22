@@ -113,3 +113,29 @@ class attentionlstm(baseline_lstm):
 
            return x
 
+class robust_lstm(baseline_model):
+    def __init__(self):
+        super(robust_lstm, self).__init__()
+        self.seq_model = nn.LSTM(57, 64, 1, bidirectional=True, batch_first=True)
+        self.fc = nn.Sequential(nn.Linear(128, 5), nn.ReLU())
+        self.out = nn.Linear(5, 2)
+
+    def forward(self, c):
+        '''
+        c has shape (batch_size, time_steps, emb_dim)
+        '''
+        o1, (h, _) = self.seq_model(c, None) # h shape: (2, batch_size, 64)
+        hidden_left , hidden_right = h[0,:,:], h[1,:,:]
+        hidden = torch.cat((hidden_left, hidden_right),1)
+        o2 = self.fc(hidden)
+        return self.out(o2)
+
+    def forward_eval(self, c):
+        '''
+        c has shape (batch_size, time_steps, emb_dim)
+        '''
+        o1, (h, _) = self.seq_model(c, None) # h shape: (2, batch_size, 64)
+        hidden_left , hidden_right = h[0,:,:], h[1,:,:]
+        hidden = torch.cat((hidden_left, hidden_right),1)
+        o2 = self.fc(hidden)
+        return self.out(o2)

@@ -1,3 +1,4 @@
+import argparse
 import numpy as np
 import os, sys
 import torch
@@ -12,9 +13,11 @@ from utils import *
 import pickle
 import torch.nn.functional as F
 
+args = parse_args()
+
 ## Locations
 FALCON_DIR = os.environ.get('FALCON_DIR')
-BASE_DIR = os.environ.get('base_dir')
+BASE_DIR = os.environ.get('base_dir') if args.base_dir == '' else args.base_dir
 DATA_DIR = os.environ.get('data_dir')
 EXP_DIR = os.environ.get('exp_dir')
 FEATS_DIR = os.environ.get('feats_dir')
@@ -49,8 +52,21 @@ int2label = {i:w for w,i in label_dict.items()}
 log_flag = 1
 fnames_array = []
 
+def parse_args():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('-base_dir',
+                    help='base directory;',
+                    type=str,
+                    default='')
+
+    return parser.parse_args()
+
 class antispoofing_dataset(Dataset):
-    
+    '''
+    getitem returns an x,y pair
+    all labels are either 'bonafide' or 'spoof'
+    '''
     def __init__(self, tdd_file = ETC_DIR + '/tdd.la.train', feats_dir=FEATS_DIR):
 
         self.tdd_file = tdd_file
@@ -59,7 +75,7 @@ class antispoofing_dataset(Dataset):
         self.feats_array = [] 
         f = open(self.tdd_file)
         for line in f:
-          line = line.split('\n')[0]
+          line = line.split('\n')[0]  # removes trailing '\n' in line
           fname = line.split()[0]
           fnames_array.append(fname)
           feats_fname = feats_dir + '/' + fname + '.npz'
@@ -77,6 +93,19 @@ class antispoofing_dataset(Dataset):
 
 
 def collate_fn_chopping(batch):
+    '''
+    Separates given batch into array of y values and array of truncated x's
+
+    All given x values are truncated to have the same length as the x value
+    with the minimum length
+
+    Args:
+        batch: raw batch of data; array of x,y pairs
+    
+    Return:
+        a_batch: batch-length array of float-array x values
+        b_batch: batch-length array of int y values
+    '''
     input_lengths = [len(x[0]) for x in batch]
     min_input_len = np.min(input_lengths)
 

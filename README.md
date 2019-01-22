@@ -12,7 +12,7 @@ Since there are many tasks, it might not be feasible to put all dependencies. Tw
 Tasks:
 - [X] Self Assessed Affect Detection from Speech [Week 01]
 - [X] Image Captioning [Week 01]
-- [ ] Automatic Speech Recognition
+- [ ] Automatic Speech Recognition [Week 04]
 - [ ] Atypical Emotion Recognition from Speech
 - [ ] Cry Classification
 - [X] Speech Synthesis [Week 01]
