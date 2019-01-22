@@ -1,6 +1,8 @@
 
 <h2> References </h2>
 
+[Mindmap](https://sketchboard.me/pBp4kGVCgTsR#/)
+
 Since this is related to challenge, I will organize this per year for now. Let me know better design.
 
 <h3> 2015 </h2>
