@@ -39,7 +39,7 @@ class baseline_lstm(baseline_model):
 
           self.seq_model = nn.LSTM(32, 64, 1, bidirectional=True, batch_first=True)
 
-          self.final_fc = nn.Linear(32, 3)
+          self.final_fc = nn.Linear(32, 6)
 
         def forward(self, c):
 
@@ -93,7 +93,7 @@ class attentionlstm(baseline_lstm):
         def forward(self, c):
 
            x = self.encoder_fc(c)
-           x = self.encoder_dropout(x)
+           #x = self.encoder_dropout(x)
 
            x, (c,h) = self.seq_model(x, None)
            weighted_representation = self.attend(x)

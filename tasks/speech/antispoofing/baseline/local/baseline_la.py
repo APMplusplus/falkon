@@ -10,6 +10,7 @@ import time
 from collections import defaultdict
 from utils import *
 import pickle
+import torch.nn.functional as F
 
 ## Locations
 FALCON_DIR = os.environ.get('FALCON_DIR')
@@ -25,7 +26,7 @@ sys.path.append(FALCON_DIR)
 from src.nn import logger as l
 
 ## Flags and variables - This is not the best way to code log file since we want log file to get appended when reloading model
-exp_name = 'exp_baselinedebugging'
+exp_name = 'exp_regularizer'
 exp_dir = EXP_DIR + '/' + exp_name
 if not os.path.exists(exp_dir):
    os.mkdir(exp_dir)
@@ -39,13 +40,13 @@ g.close()
 logger = l.Logger(exp_dir + '/logs/' + exp_name)
 model_name = exp_dir + '/models/model_' + exp_name
 max_timesteps = 100
-max_epochs = 10
+max_epochs = 100
 updates = 0
 plot_flag = 1
 write_intermediate_flag = 1
 label_dict = defaultdict(int, bonafide=0, spoof=1)
 int2label = {i:w for w,i in label_dict.items()}
-
+log_flag = 1
 fnames_array = []
 
 class antispoofing_dataset(Dataset):
@@ -117,10 +118,11 @@ print(model)
 if torch.cuda.is_available():
    model.cuda()
 criterion = nn.CrossEntropyLoss()
-optimizer_adam = torch.optim.Adam(model.parameters(), lr=0.001)
+optimizer_adam = torch.optim.Adam(model.parameters(), lr=0.0001)
 optimizer_sgd = torch.optim.SGD(model.parameters(), lr=0.001)
-optimizer = optimizer_adam
+optimizer = optimizer_sgd
 updates = 0
+regularizer = nn.MSELoss()
 
 def val(partial_flag = 1):
   model.eval()
@@ -138,12 +140,20 @@ def val(partial_flag = 1):
         targets = targets.cuda()
 
       logits = model.forward_eval(inputs)
+      logits_softmax = F.softmax(logits,dim=-1)
+      targets_onehotk = get_onehotk_tensor(targets)
       loss = criterion(logits, targets)
+      regularizer_term = regularizer(logits_softmax, targets_onehotk)
       predicteds = return_classes(logits).cpu().numpy() 
       for (t,p) in list(zip(targets, predicteds)):  
          y_true.append(t.item())
          y_pred.append(p)
+      loss += regularizer_term
       l += loss.item()
+
+  if log_flag:
+     # Log the scalars
+     logger.scalar_summary('Val Loss', l * 1.0 / (i+1) , updates) 
 
       #if i % 100 == 1:
       #   print("Val loss: ", l/(i+1)) 
@@ -159,6 +169,7 @@ def train():
   optimizer.zero_grad()
   start_time = time.time()
   l = 0
+  r = 0
   global updates
   for i, (ccoeffs,labels) in enumerate(train_loader):
     updates += 1
@@ -171,18 +182,29 @@ def train():
         targets = targets.cuda()
 
     logits = model(inputs)
+    logits_softmax = F.softmax(logits,dim=-1)
+    targets_onehotk = get_onehotk_tensor(targets)
+    #print("Shape of logits_softmax is ", logits_softmax.shape, " and that of the targets is ", targets.shape)
     optimizer.zero_grad()
     loss = criterion(logits, targets)
+    l += loss.item() 
+    regularizer_term = regularizer(logits_softmax, targets_onehotk)
+    r += regularizer_term.item() 
+    loss += regularizer_term
     loss.backward()
     torch.nn.utils.clip_grad_norm_(model.parameters(), 0.25)
     optimizer.step()
-    l += loss.item()
   
     # This 100 cannot be hardcoded
     if i % 100 == 1 and write_intermediate_flag:
        g = open(logfile_name, 'a')
-       g.write("  Train loss after " + str(updates) +  " batches: " + str(l/(i+1)) + ". It took  " + str(time.time() - start_time) + '\n')
+       g.write("  Train loss after " + str(updates) +  " batches: " + str(l/(i+1)) + " " + str(r/(i+1)) + ". It took  " + str(time.time() - start_time) + '\n')
        g.close()
+
+    if log_flag:
+            # Log the scalars
+            logger.scalar_summary('Train CE Loss', l * 1.0 / (i+1) , updates) 
+            logger.scalar_summary('Train MSE Loss', r * 1.0 / (i+1) , updates) 
 
   return l/(i+1)  
 

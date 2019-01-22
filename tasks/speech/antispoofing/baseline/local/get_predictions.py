@@ -25,13 +25,13 @@ sys.path.append(FALCON_DIR)
 from src.nn import logger as l
 
 ## Flags and variables - This is not the best way to code log file since we want log file to get appended when reloading model
-exp_name = 'exp_baselinedebugging'
+exp_name = 'exp_regularizer'
 exp_dir = EXP_DIR + '/' + exp_name
 if not os.path.exists(exp_dir):
    os.mkdir(exp_dir)
    os.mkdir(exp_dir + '/logs')
    os.mkdir(exp_dir + '/models')
-model_name = exp_dir + '/models/model_' + exp_name + '__epoch_006.pth'   # model_exp_baseline__epoch_000.pth
+model_name = exp_dir + '/models/model_' + exp_name + '_epoch_009.pth'   # model_exp_baseline__epoch_000.pth
 label_dict = defaultdict(int, bonafide=0, spoof=1)
 int2label = {i:w for w,i in label_dict.items()}
 

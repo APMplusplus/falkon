@@ -1,6 +1,8 @@
 from sklearn.metrics import *
 import torch
 import numpy as np
+from keras.utils import to_categorical
+import sys
 
 # Utility to return predictions
 def return_classes(logits, dim=-1):
@@ -30,3 +32,11 @@ def get_eer(predicted_tensor, target_tensor):
    EER = threshold[np.argmin(np.absolute(tpr-fpr))]
    return EER
 
+def get_onehotk_tensor(A, num_classes = 2):
+   a = A.cpu().numpy()
+   #print(a.shape)
+   a = to_categorical(a)
+   #print(a.shape)
+   A = torch.FloatTensor(a).cuda()
+   #print(A.shape)
+   return A

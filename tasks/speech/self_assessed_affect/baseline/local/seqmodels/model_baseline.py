@@ -34,12 +34,12 @@ class baseline_lstm(baseline_model):
         def __init__(self):
           super(baseline_lstm, self).__init__()
 
-          self.encoder_fc = layers.SequenceWise(nn.Linear(57, 32))
-          self.encoder_dropout = layers.SequenceWise(nn.Dropout(0.7))
+          self.encoder_fc = layers.SequenceWise(nn.Linear(60, 32))
+          self.encoder_dropout = layers.SequenceWise(nn.Dropout(0.3))
 
-          self.seq_model = nn.LSTM(32, 64, 1, bidirectional=True, batch_first=True)
-          self.prefinal_fc = SequenceWise(nn.Linear(128, 32))
-          self.final_fc = nn.Linear(128, 2)
+          self.seq_model = nn.LSTM(32, 32, 1, bidirectional=True, batch_first=True)
+
+          self.final_fc = nn.Linear(32, 3)
 
         def forward(self, c):
 
@@ -68,7 +68,7 @@ class attentionlstm(baseline_lstm):
         def __init__(self):
            super(attentionlstm, self).__init__()
 
-           self.attention_w = nn.Linear(128, 32)
+           self.attention_w = nn.Linear(64, 32)
            self.attention_u = nn.Parameter(torch.randn((32,16)))
 
         def attend(self, A):
@@ -93,12 +93,11 @@ class attentionlstm(baseline_lstm):
         def forward(self, c):
 
            x = self.encoder_fc(c)
-           x = self.encoder_dropout(x)
+           #x = self.encoder_dropout(x)
 
-           x, (c,h) = self.seq_model(x, None)
+           x, (h,c) = self.seq_model(x, None)
            weighted_representation = self.attend(x)
            #print("Shape of weighted representation from attention is ", weighted_representation.shape)
-           x = F.relu(self.prefinal_fc(x))
            x = self.final_fc(weighted_representation)
            return x
 
@@ -106,10 +105,10 @@ class attentionlstm(baseline_lstm):
 
            x = self.encoder_fc(c)
 
-           x, (c,h) = self.seq_model(x, None)
+           x, (h, c) = self.seq_model(x, None)
            weighted_representation = self.attend(x)
-           x = F.relu(self.prefinal_fc(x))
            x = self.final_fc(weighted_representation)
 
            return x
+
 
