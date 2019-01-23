@@ -25,6 +25,7 @@ Tasks:
 - [ ] Toxicity Detection from Text
 - [ ] Multi Target Speaker Detection and Identification
 - [ ] Morphological Inflection 
+- [ ] Speech Feature Extraction
 
 Layers -> Modules -> Models
 
