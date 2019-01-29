@@ -26,6 +26,8 @@ Tasks:
 - [ ] Multi Target Speaker Detection and Identification
 - [ ] Morphological Inflection 
 - [ ] Speech Feature Extraction
+- [X] Source Separation
+- [ ] Speech Enhancement
 
 Layers -> Modules -> Models
 
