@@ -1,5 +1,7 @@
 import numpy as np
 from keras.utils import to_categorical
+import torch
+from sklearn.metrics import *
 
 def return_frames(arr, ccoeffs, period=25, shift=10):
 
@@ -28,3 +30,15 @@ def get_onehotk_tensor(A, num_classes = 2):
    A = torch.FloatTensor(a).cuda()
    #print(A.shape)
    return A
+
+
+# Utility to return predictions
+def return_classes(logits, dim=-1):
+   #print(logits.shape)
+   _, predicted = torch.max(logits,dim)    
+   #print(predicted.shape)
+   return predicted 
+
+def get_metrics(predicteds, targets):
+   print(classification_report(targets, predicteds))
+   return recall_score(predicteds, targets,average='macro')
