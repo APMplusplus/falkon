@@ -15,7 +15,7 @@ FALCON_DIR = os.environ.get('FALCON_DIR')
 BASE_DIR = os.environ.get('base_dir')
 DATA_DIR = os.environ.get('data_dir')
 EXP_DIR = os.environ.get('exp_dir')
-FEATS_DIR = os.environ.get('feats_dir')
+FEATS_DIR = '/home/srallaba/challenges/antispoofing2019/feats/soundnet_feats/LA'
 assert ( all (['FALCON_DIR', 'BASE_DIR', 'DATA_DIR', 'EXP_DIR']) is not None)
 
 ETC_DIR = BASE_DIR + '/etc'
