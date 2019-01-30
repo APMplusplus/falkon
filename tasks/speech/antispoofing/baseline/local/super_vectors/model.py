@@ -12,14 +12,12 @@ class DNN(nn.Module):
         self.output = nn.Linear(32, 2)
 
     def forward(self, x):
-        x = torch.mean(x, 0)
         x = self.fc1(x)
         x = self.fc2(x)
         x = self.output(x)
         return x
 
     def forward_eval(self, x):
-        x = torch.mean(x, 0)
         x = self.fc1(x)
         x = self.fc2(x)
         x = self.output(x)
