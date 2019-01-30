@@ -87,6 +87,7 @@ def collate_fn_split(batch):
 
     Args:
         batch: raw batch of data; batch-length array of x,y pairs
+            x is an nd array, y is a string
     
     Return:
         a_batch: batch-length array of float-array x values
@@ -96,10 +97,8 @@ def collate_fn_split(batch):
     # min_input_len = np.min(input_lengths)
 
     # a = np.array( [ x[0][:min_input_len]  for x in batch ], dtype=np.float)
-    print(type(batch[0][0]))
-    print(len(batch[0][0]))
-    print(type(batch[0][1]))
-    print(len(batch[0][1]))
+    print(batch[0][0].shape)
+    print(batch[0][1])
     a = np.array( [ x[0]  for x in batch ], dtype=np.float)
     print('a', a.shape)
     b = np.array( [ label_dict[x[1]]  for x in batch ], dtype=np.int)
