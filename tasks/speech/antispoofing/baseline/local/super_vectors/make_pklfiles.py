@@ -42,7 +42,7 @@ class antispoofing_dataset(Dataset):
           fname = line.split()[0]
           fnames_array.append(fname)
           feats_fname = feats_dir + '/' + fname + '.npz'
-          feats = np.load(feats_fname)
+          feats = np.load(feats_fname, encoding='latin1')
           feats = feats['arr_0']
           self.feats_array.append(feats)
           label = line.split()[1]
