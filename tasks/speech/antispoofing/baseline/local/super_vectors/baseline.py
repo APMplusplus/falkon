@@ -118,7 +118,7 @@ val_loader = DataLoader(val_set,
                           collate_fn=collate_fn_split
                           )
 
-def val(model):
+def val(model, criterion):
     model.eval()
     with torch.no_grad():
         l = 0
@@ -194,7 +194,7 @@ def main(verbose=True):
     for epoch in range(max_epochs):
         epoch_start_time = time.time()
         train_loss = train(model, optimizer, criterion)
-        val_loss, recall = val(model)
+        val_loss, recall = val(model, criterion)
         g = open(logfile_name,'a')
         g.write("Train loss after epoch " + str(epoch) + ' ' + str(train_loss)  + " and the val loss: " + str(val_loss) + ' It took ' +  str(time.time() - epoch_start_time) + " Val Recall is " + str(recall) + '\n')
         g.close()
