@@ -96,7 +96,7 @@ def collate_fn_split(batch):
     # min_input_len = np.min(input_lengths)
 
     # a = np.array( [ x[0][:min_input_len]  for x in batch ], dtype=np.float)
-    print(batch[0].shape)
+    print(len(batch))
     a = np.array( [ x[0]  for x in batch ], dtype=np.float)
     print('a', a.shape)
     b = np.array( [ label_dict[x[1]]  for x in batch ], dtype=np.int)
