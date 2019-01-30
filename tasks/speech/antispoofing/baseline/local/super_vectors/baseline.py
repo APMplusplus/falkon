@@ -79,7 +79,7 @@ class antispoofing_dataset(Dataset):
     def __len__(self):
            return 10000 # len(self.labels_array)
 
-def collate_fn_split(batch):
+def collate_fn_chopping(batch):
     '''
     Separates given batch into array of y values and array of truncated x's
 
