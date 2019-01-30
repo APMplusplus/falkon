@@ -59,16 +59,18 @@ class antispoofing_dataset(Dataset):
         self.labels_array = []
         self.feats_array = [] 
         f = open(self.tdd_file)
-        for line in f:
-          line = line.split('\n')[0]  # removes trailing '\n' in line
-          fname = line.split()[0]
-          fnames_array.append(fname)
-          feats_fname = feats_dir + '/' + fname + '.npz'
-          feats = np.load(feats_fname, encoding='latin1')
-          feats = feats['arr_0']
-          self.feats_array.append(feats)
-          label = line.split()[1]
-          self.labels_array.append(label)
+        for i, line in enumerate(f):
+            if(i >= 1000):
+                break
+            line = line.split('\n')[0]  # removes trailing '\n' in line
+            fname = line.split()[0]
+            fnames_array.append(fname)
+            feats_fname = feats_dir + '/' + fname + '.npz'
+            feats = np.load(feats_fname, encoding='latin1')
+            feats = feats['arr_0']
+            self.feats_array.append(feats)
+            label = line.split()[1]
+            self.labels_array.append(label)
 
     def __getitem__(self, index):
           return self.feats_array[index], self.labels_array[index]
