@@ -127,9 +127,9 @@ def train(model, optimizer, criterion):
     
         # This 100 cannot be hardcoded
         if i % 100 == 1 and write_intermediate_flag:
-        g = open(logfile_name, 'a')
-        g.write("  Train loss after " + str(updates) +  " batches: " + str(l/(i+1)) + " " + str(r/(i+1)) + ". It took  " + str(time.time() - start_time) + '\n')
-        g.close()
+            g = open(logfile_name, 'a')
+            g.write("  Train loss after " + str(updates) +  " batches: " + str(l/(i+1)) + " " + str(r/(i+1)) + ". It took  " + str(time.time() - start_time) + '\n')
+            g.close()
 
         if log_flag:
             logger.scalar_summary('Train CE Loss', l * 1.0 / (i+1) , updates) 
