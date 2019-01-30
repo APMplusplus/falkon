@@ -60,8 +60,8 @@ class antispoofing_dataset(Dataset):
         self.feats_array = [] 
         f = open(self.tdd_file)
         for i, line in enumerate(f):
-            if(i >= 1000):
-                break
+            # if(i >= 10000):
+            #     break
             line = line.split('\n')[0]  # removes trailing '\n' in line
             fname = line.split()[0]
             fnames_array.append(fname)
@@ -76,7 +76,7 @@ class antispoofing_dataset(Dataset):
           return self.feats_array[index], self.labels_array[index]
 
     def __len__(self):
-           return len(self.labels_array)
+           return 10000 # len(self.labels_array)
 
 def collate_fn_split(batch):
     '''
@@ -100,6 +100,7 @@ def collate_fn_split(batch):
     b_batch = torch.LongTensor(b)
     return a_batch, b_batch
 
+'''
 tdd_file = ETC_DIR + '/tdd.la.train'
 train_set = antispoofing_dataset(tdd_file)
 train_loader = DataLoader(train_set,
@@ -117,6 +118,13 @@ val_loader = DataLoader(val_set,
                           num_workers=1,
                           collate_fn=collate_fn_split
                           )
+'''
+
+with open(DATA_DIR + '/train_soundnet_loader.pkl', 'rb') as f:
+     train_loader = pickle.load(f)
+
+with open(DATA_DIR + '/val_soundnet_loader.pkl', 'rb') as f:
+     val_loader = pickle.load(f)
 
 def val(model, criterion):
     model.eval()
