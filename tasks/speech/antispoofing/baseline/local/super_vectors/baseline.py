@@ -1,7 +1,10 @@
 import numpy as np
+import os, sys
 import time
 import torch
 
+from collections import defaultdict
+from torch.autograd import Variable
 from torch.utils.data import Dataset
 
 from model import *
