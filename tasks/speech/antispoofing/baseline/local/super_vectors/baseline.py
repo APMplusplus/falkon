@@ -78,36 +78,12 @@ class antispoofing_dataset(Dataset):
     def __len__(self):
            return len(self.labels_array)
 
-def collate_fn_chopping(batch):
-    '''
-    Separates given batch into array of y values and array of truncated x's
-
-    All given x values are truncated to have the same length as the x value
-    with the minimum length
-
-    Args:
-        batch: raw batch of data; array of x,y pairs
-    
-    Return:
-        a_batch: batch-length array of float-array x values
-        b_batch: batch-length array of int y values
-    '''
-    input_lengths = [len(x[0]) for x in batch]
-    min_input_len = np.min(input_lengths)
-
-    a = np.array( [ x[0][:min_input_len]  for x in batch ], dtype=np.float)
-    b = np.array( [ label_dict[x[1]]  for x in batch ], dtype=np.int)
-    a_batch = torch.FloatTensor(a)
-    b_batch = torch.LongTensor(b)
-    return a_batch, b_batch
-
 tdd_file = ETC_DIR + '/tdd.la.train'
 train_set = antispoofing_dataset(tdd_file)
 train_loader = DataLoader(train_set,
                           batch_size=16,
                           shuffle=True,
-                          num_workers=4,
-                          collate_fn=collate_fn_chopping
+                          num_workers=4
                           )
 
 tdd_file = ETC_DIR + '/tdd.la.dev'
@@ -115,8 +91,7 @@ val_set = antispoofing_dataset(tdd_file)
 val_loader = DataLoader(val_set,
                           batch_size=16,
                           shuffle=False,
-                          num_workers=1,
-                          collate_fn=collate_fn_chopping
+                          num_workers=1
                           )
 
 def val(model):
