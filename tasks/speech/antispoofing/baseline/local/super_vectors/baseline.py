@@ -87,22 +87,16 @@ def collate_fn_split(batch):
 
     Args:
         batch: raw batch of data; batch-length array of x,y pairs
-            x is an nd array, y is a string
+          - x is a numpy array of size 3; x[2], which has shape (454, 128),
+            is the input feature used in the model
+          - y is a string
     
     Return:
         a_batch: batch-length array of float-array x values
         b_batch: batch-length array of int y values
     '''
-    # input_lengths = [len(x[0]) for x in batch]
-    # min_input_len = np.min(input_lengths)
-
-    # a = np.array( [ x[0][:min_input_len]  for x in batch ], dtype=np.float)
-    print(batch[0][0].shape)
-    print(batch[0][1])
-    a = np.array( [ x[0]  for x in batch ], dtype=np.float)
-    print('a', a.shape)
+    a = np.array( [ x[0][2]  for x in batch ], dtype=np.float)
     b = np.array( [ label_dict[x[1]]  for x in batch ], dtype=np.int)
-    print('b', b.shape)
     a_batch = torch.FloatTensor(a)
     b_batch = torch.LongTensor(b)
     return a_batch, b_batch
