@@ -6,6 +6,7 @@ import torch
 from collections import defaultdict
 from torch.autograd import Variable
 from torch.utils.data import Dataset
+from torch.utils.data import DataLoader
 
 from model import *
 from utils import *
