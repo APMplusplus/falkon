@@ -73,4 +73,4 @@ done
 
 
 ## Build a baseline model 
-python3.5 ${base_dir}/local/baseline_la.py ${BASETAG}
+python3.5 ${base_dir}/local/seq_models/baseline_la.py ${BASETAG}

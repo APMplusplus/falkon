@@ -58,4 +58,4 @@ cat ${data_dir}/ASVspoof2019_LA_protocols/ASVspoof2019.LA.cm.train.trn.txt | awk
 cat ${data_dir}/ASVspoof2019_LA_protocols/ASVspoof2019.LA.cm.dev.trl.txt | awk '{print $2 " "  $5}' > ../etc/tdd.la.dev || exit 0
 
 ## Build a baseline model 
-python3.5 ${base_dir}/local/make_pklfiles.py
+python3.5 ${base_dir}/local/super_vectors/make_pklfiles.py
