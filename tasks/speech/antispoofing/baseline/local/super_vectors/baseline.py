@@ -75,6 +75,24 @@ class antispoofing_dataset(Dataset):
     def __len__(self):
            return len(self.labels_array)
 
+tdd_file = ETC_DIR + '/tdd.la.train'
+train_set = antispoofing_dataset(tdd_file)
+train_loader = DataLoader(train_set,
+                          batch_size=16,
+                          shuffle=True,
+                          num_workers=4,
+                          collate_fn=collate_fn_chopping
+                          )
+
+tdd_file = ETC_DIR + '/tdd.la.dev'
+val_set = antispoofing_dataset(tdd_file)
+val_loader = DataLoader(val_set,
+                          batch_size=16,
+                          shuffle=False,
+                          num_workers=1,
+                          collate_fn=collate_fn_chopping
+                          )
+
 def val(model):
     model.eval()
     with torch.no_grad():
