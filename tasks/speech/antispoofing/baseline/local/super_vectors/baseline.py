@@ -23,7 +23,7 @@ sys.path.append(FALCON_DIR)
 from src.nn import logger as l
 
 ## Flags and variables - This is not the best way to code log file since we want log file to get appended when reloading model
-exp_name = 'exp_regularizer'
+exp_name = 'exp_dnn'
 exp_dir = EXP_DIR + '/' + exp_name
 if not os.path.exists(exp_dir):
    os.mkdir(exp_dir)
