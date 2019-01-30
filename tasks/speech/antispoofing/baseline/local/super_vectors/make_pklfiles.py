@@ -5,7 +5,6 @@ import torch.nn as nn
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 from torch.autograd import Variable
-from model import baseline_lstm
 import time
 from collections import defaultdict
 from utils import *
