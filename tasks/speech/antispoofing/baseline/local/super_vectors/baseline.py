@@ -95,9 +95,9 @@ def collate_fn_split(batch):
         a_batch: batch-length array of float-array x values
         b_batch: batch-length array of int y values
     '''
-    print(x[0][2].shape)
-    a = np.array( [ x[0][2]  for x in batch ], dtype=np.float)
-    b = np.array( [ label_dict[x[1]]  for x in batch ], dtype=np.int)
+    print(batch[0][0][2].shape)
+    a = np.array( [x[0][2]  for x in batch], dtype=np.float)
+    b = np.array( [label_dict[x[1]]  for x in batch], dtype=np.int)
     a_batch = torch.FloatTensor(a)
     b_batch = torch.LongTensor(b)
     return a_batch, b_batch
