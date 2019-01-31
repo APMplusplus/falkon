@@ -112,22 +112,24 @@ train_loader = DataLoader(train_set,
                           num_workers=4,
                           collate_fn=collate_fn_split
                           )
+'''
 
 tdd_file = ETC_DIR + '/tdd.la.dev'
 val_set = antispoofing_dataset(tdd_file)
 val_loader = DataLoader(val_set,
-                          batch_size=16,
+                          batch_size=1,
                           shuffle=False,
                           num_workers=1,
-                          collate_fn=collate_fn_split
+                          collate_fn=collate_fn_chopping
                           )
-'''
 
 with open(DATA_DIR + '/train_soundnet_loader.pkl', 'rb') as f:
      train_loader = pickle.load(f)
 
+'''
 with open(DATA_DIR + '/val_soundnet_loader.pkl', 'rb') as f:
      val_loader = pickle.load(f)
+'''
 
 def val(model, criterion, ouf_path='output.txt'):
     model.eval()
@@ -153,6 +155,9 @@ def val(model, criterion, ouf_path='output.txt'):
             l += loss.item()
             vals, predicteds = return_valsnclasses(logits)
             g.write(str(fnames_array[i]) + ' - ' + str(int2label[predicteds.item()]) + ' ' + str(vals.item()) + '\n')
+
+            if i % 300 == 1:
+                print("Processed ", i, " files and loss: ", l/(i+1))
 
     if log_flag:
         logger.scalar_summary('Val Loss', l * 1.0 / (i+1) , updates)
