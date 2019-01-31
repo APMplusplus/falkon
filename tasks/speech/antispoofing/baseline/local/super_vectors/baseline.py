@@ -1,3 +1,7 @@
+'''
+Baseline for SoundNet-based classifier
+'''
+
 import numpy as np
 import os, sys
 import pickle
@@ -63,8 +67,8 @@ class antispoofing_dataset(Dataset):
         self.feats_array = [] 
         f = open(self.tdd_file)
         for i, line in enumerate(f):
-            # if(i >= 10000):
-            #     break
+            if(i >= 10000):
+                break
             line = line.split('\n')[0]  # removes trailing '\n' in line
             fname = line.split()[0]
             fnames_array.append(fname)
