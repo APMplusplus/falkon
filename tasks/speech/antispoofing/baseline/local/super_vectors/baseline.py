@@ -24,6 +24,8 @@ ETC_DIR = BASE_DIR + '/etc'
 sys.path.append(FALCON_DIR)
 from src.nn import logger as l
 
+OUTPUT_FILE = 'output.txt'
+
 ## Flags and variables - This is not the best way to code log file since we want log file to get appended when reloading model
 exp_name = 'exp_dnn'
 exp_dir = EXP_DIR + '/' + exp_name
@@ -127,8 +129,9 @@ with open(DATA_DIR + '/train_soundnet_loader.pkl', 'rb') as f:
 with open(DATA_DIR + '/val_soundnet_loader.pkl', 'rb') as f:
      val_loader = pickle.load(f)
 
-def val(model, criterion):
+def val(model, criterion, ouf_path='output.txt'):
     model.eval()
+    g = open(ouf_path, 'w')
     with torch.no_grad():
         l = 0
         y_true = []
@@ -148,12 +151,15 @@ def val(model, criterion):
                 y_true.append(t.item())
                 y_pred.append(p)
             l += loss.item()
+            vals, predicteds = return_valsnclasses(logits)
+            g.write(str(fnames_array[i]) + ' - ' + str(int2label[predicteds.item()]) + ' ' + str(vals.item()) + '\n')
 
     if log_flag:
         logger.scalar_summary('Val Loss', l * 1.0 / (i+1) , updates)
 
     recall = get_metrics(y_true, y_pred)
     print("Recall for the validation set:  ", recall)
+    g.close()
     return l/(i+1), recall
 
 def train(model, optimizer, criterion):
@@ -203,14 +209,15 @@ def main(verbose=True):
     for epoch in range(max_epochs):
         epoch_start_time = time.time()
         train_loss = train(model, optimizer, criterion)
-        val_loss, recall = val(model, criterion)
+        val_loss, recall = val(model, criterion, OUTPUT_FILE)
         g = open(logfile_name,'a')
         g.write("Train loss after epoch " + str(epoch) + ' ' + str(train_loss)  + " and the val loss: " + str(val_loss) + ' It took ' +  str(time.time() - epoch_start_time) + " Val Recall is " + str(recall) + '\n')
         g.close()
 
-        fname = model_name + '_epoch_' + str(epoch).zfill(3) + '.pth'
-        with open(fname, 'wb') as f:
-            torch.save(model, f)
+        if epoch % 10 == 1:
+            fname = model_name + '_epoch_' + str(epoch).zfill(3) + '.pth'
+            with open(fname, 'wb') as f:
+                torch.save(model, f)
 
 if __name__ == "__main__":
     main()
