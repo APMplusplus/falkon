@@ -138,7 +138,7 @@ def val(model, criterion, ouf_path='output.txt'):
         # y_true = torch.cat(y_true, 0)
         # y_pred = torch.cat(y_pred, 0)
 
-    recall, precision, f1_score, acc = get_metrics(y_true, y_pred)
+    recall, precision, f1_score, acc = get_metrics(y_pred, y_true)
     print('recall: ', recall, 'precision: ', precision, 'f1_score: ', f1_score, 'acc: ', acc)
 
     g.close()
