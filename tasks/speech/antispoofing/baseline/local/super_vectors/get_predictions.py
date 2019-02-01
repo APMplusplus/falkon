@@ -130,6 +130,9 @@ def val(model, criterion, ouf_path='output.txt'):
       if i % 300 == 1:
          print("Processed ", i, " files and loss: ", l/(i+1))
 
+    recall, precision, f1_score, acc = get_metrics(y_true, y_pred)
+    print('recall: ', recall, 'precision: ', precision, 'f1_score: ', f1_score, 'acc: ', acc)
+
   g.close()
   return l/(i+1)
 

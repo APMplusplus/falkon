@@ -59,7 +59,7 @@ class antispoofing_dataset(Dataset):
     getitem returns an x,y pair
     all labels are either 'bonafide' or 'spoof'
     '''
-    def __init__(self, tdd_file = ETC_DIR + '/tdd.la.train', feats_dir=FEATS_DIR):
+    def __init__(self, tdd_file, feats_dir):
 
         self.tdd_file = tdd_file
         self.feats_dir = feats_dir
@@ -119,7 +119,7 @@ train_loader = DataLoader(train_set,
 '''
 
 tdd_file = ETC_DIR + '/tdd.la.dev'
-val_set = antispoofing_dataset(tdd_file)
+val_set = antispoofing_dataset(tdd_file, feats_dir=FEATS_DIR)
 val_loader = DataLoader(val_set,
                           batch_size=1,
                           shuffle=False,
@@ -160,13 +160,13 @@ def val(model, criterion, ouf_path='output.txt'):
             vals, predicteds = return_valsnclasses(logits)
             g.write(str(fnames_array[i]) + ' - ' + str(int2label[predicteds.item()]) + ' ' + str(vals.item()) + '\n')
 
-            if i % 300 == 1:
-                print("Processed ", i, " files and loss: ", l/(i+1))
+            # if i % 300 == 1:
+            #     print("Processed ", i, " files and loss: ", l/(i+1))
 
     if log_flag:
         logger.scalar_summary('Val Loss', l * 1.0 / (i+1) , updates)
 
-    recall = get_metrics(y_true, y_pred)
+    recall, _, _, _ = get_metrics(y_true, y_pred)
     print("Recall for the validation set:  ", recall)
     g.close()
     return l/(i+1), recall
