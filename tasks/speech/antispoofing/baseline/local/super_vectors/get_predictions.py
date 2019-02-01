@@ -39,7 +39,10 @@ int2label = {i:w for w,i in label_dict.items()}
 fnames_array = []
 
 class antispoofing_dataset(Dataset):
-
+    '''
+    getitem returns an x,y pair
+    all labels are either 'bonafide' or 'spoof'
+    '''
     def __init__(self, tdd_file = ETC_DIR + '/tdd.la.train', feats_dir=FEATS_DIR):
 
         self.tdd_file = tdd_file
@@ -50,11 +53,11 @@ class antispoofing_dataset(Dataset):
         for i, line in enumerate(f):
             if(i >= 10000):
                 break
-            line = line.split('\n')[0]
+            line = line.split('\n')[0]  # removes trailing '\n' in line
             fname = line.split()[0]
             fnames_array.append(fname)
             feats_fname = feats_dir + '/' + fname + '.npz'
-            feats = np.load(feats_fname)
+            feats = np.load(feats_fname, encoding='latin1')
             feats = feats['arr_0']
             self.feats_array.append(feats)
             label = line.split()[1]
@@ -64,7 +67,7 @@ class antispoofing_dataset(Dataset):
           return self.feats_array[index], self.labels_array[index]
 
     def __len__(self):
-           return len(self.labels_array)
+           return 10000 # len(self.labels_array)
 
 
 def collate_fn_chopping(batch):
