@@ -105,11 +105,10 @@ def val(model, criterion, ouf_path='output.txt'):
     model.eval()
     g = open(ouf_path, 'w')
 
-    y_true = []
-    y_pred = []
-    
     with torch.no_grad():
-        # l = 0
+        y_true = []
+        y_pred = []
+
         for i, (ccoeffs, labels) in enumerate(val_loader):
             inputs = torch.FloatTensor(ccoeffs)
             targets = torch.LongTensor(labels)
@@ -132,8 +131,8 @@ def val(model, criterion, ouf_path='output.txt'):
             if i % 300 == 1:
                 print("Processed ", i, " files")# and loss: ", l/(i+1))
 
-    y_true = torch.cat(y_true, 0)
-    y_pred = torch.cat(y_pred, 0)
+        y_true = torch.cat(y_true, 0)
+        y_pred = torch.cat(y_pred, 0)
 
     recall, precision, f1_score, acc = get_metrics(y_true, y_pred)
     print('recall: ', recall, 'precision: ', precision, 'f1_score: ', f1_score, 'acc: ', acc)
