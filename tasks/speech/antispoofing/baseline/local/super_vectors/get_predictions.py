@@ -47,7 +47,7 @@ class antispoofing_dataset(Dataset):
         self.labels_array = []
         self.feats_array = [] 
         f = open(self.tdd_file)
-        for line in f:
+        for i, line in enumerate(f):
             if(i >= 10000):
                 break
             line = line.split('\n')[0]
