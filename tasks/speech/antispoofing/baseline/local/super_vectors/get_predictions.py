@@ -24,6 +24,8 @@ ETC_DIR = BASE_DIR + '/etc'
 sys.path.append(FALCON_DIR)
 from src.nn import logger as l
 
+OUTPUT_FILE = 'output.txt'
+
 ## Flags and variables - This is not the best way to code log file since we want log file to get appended when reloading model
 exp_name = 'exp_regularizer'
 exp_dir = EXP_DIR + '/' + exp_name
@@ -97,7 +99,7 @@ val_loader = DataLoader(val_set,
 
 def val(model, criterion, ouf_path='output.txt'):
   model.eval()
-  g = open('t', 'w')
+  g = open(ouf_path, 'w')
   with torch.no_grad():
     l = 0
     y_true = []
