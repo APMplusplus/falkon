@@ -5,7 +5,6 @@ import torch.nn as nn
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 from torch.autograd import Variable
-from model import baseline_lstm
 import time
 from collections import defaultdict
 from utils import *
@@ -27,7 +26,7 @@ from src.nn import logger as l
 OUTPUT_FILE = 'output.txt'
 
 ## Flags and variables - This is not the best way to code log file since we want log file to get appended when reloading model
-exp_name = 'exp_regularizer'
+exp_name = 'exp_dnn'
 exp_dir = EXP_DIR + '/' + exp_name
 if not os.path.exists(exp_dir):
    os.mkdir(exp_dir)
