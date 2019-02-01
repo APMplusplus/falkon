@@ -120,10 +120,14 @@ def val(model, criterion, ouf_path='output.txt'):
 
             logits = model.forward_eval(inputs)
             # loss = criterion(logits, targets)
-            # predicteds = return_classes(logits).cpu().numpy()
+            predicteds = return_classes(logits).cpu().numpy()
             
-            y_true.append(targets)
-            y_pred.append(logits)
+            for (t,p) in list(zip(targets, predicteds)):  
+                y_true.append(t.item())
+                y_pred.append(p)
+
+            # y_true.append(targets)
+            # y_pred.append(logits)
             # l += loss.item()
             vals, predicteds = return_valsnclasses(logits)
             g.write(str(fnames_array[i]) + ' - ' + str(int2label[predicteds.item()]) + ' ' + str(vals.item()) + '\n')
@@ -131,8 +135,8 @@ def val(model, criterion, ouf_path='output.txt'):
             if i % 300 == 1:
                 print("Processed ", i, " files")# and loss: ", l/(i+1))
 
-        y_true = torch.cat(y_true, 0)
-        y_pred = torch.cat(y_pred, 0)
+        # y_true = torch.cat(y_true, 0)
+        # y_pred = torch.cat(y_pred, 0)
 
     recall, precision, f1_score, acc = get_metrics(y_true, y_pred)
     print('recall: ', recall, 'precision: ', precision, 'f1_score: ', f1_score, 'acc: ', acc)
