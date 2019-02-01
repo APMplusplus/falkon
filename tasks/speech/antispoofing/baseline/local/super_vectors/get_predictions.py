@@ -104,10 +104,11 @@ val_loader = DataLoader(val_set,
 def val(model, criterion, ouf_path='output.txt'):
     model.eval()
     g = open(ouf_path, 'w')
+
+    y_true = []
+    y_pred = []
     with torch.no_grad():
-        l = 0
-        y_true = []
-        y_pred = []
+        # l = 0
         for i, (ccoeffs, labels) in enumerate(val_loader):
             inputs = torch.FloatTensor(ccoeffs)
             targets = torch.LongTensor(labels)
@@ -118,22 +119,25 @@ def val(model, criterion, ouf_path='output.txt'):
 
             logits = model.forward_eval(inputs)
             loss = criterion(logits, targets)
-            predicteds = return_classes(logits).cpu().numpy()
-            for (t,p) in list(zip(targets, predicteds)):  
-                y_true.append(t.item())
-                y_pred.append(p)
-            l += loss.item()
+            # predicteds = return_classes(logits).cpu().numpy()
+            
+            y_true.append(targets)
+            y_pred.append(logits)
+            # l += loss.item()
             vals, predicteds = return_valsnclasses(logits)
             g.write(str(fnames_array[i]) + ' - ' + str(int2label[predicteds.item()]) + ' ' + str(vals.item()) + '\n')
 
-        if i % 300 == 1:
-            print("Processed ", i, " files and loss: ", l/(i+1))
+            if i % 300 == 1:
+                print("Processed ", i, " files"# and loss: ", l/(i+1))
+
+    y_true = torch.cat(y_true, 0)
+    y_pred = torch.cat(y_pred, 0)
 
     recall, precision, f1_score, acc = get_metrics(y_true, y_pred)
     print('recall: ', recall, 'precision: ', precision, 'f1_score: ', f1_score, 'acc: ', acc)
 
     g.close()
-    return l/(i+1)
+    # return l/(i+1)
 
 def main(verbose=True):
     # model = DNN()
@@ -147,7 +151,8 @@ def main(verbose=True):
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
 
-    val_loss = val(model, criterion, OUTPUT_FILE)
+    # val_loss = 
+    val(model, criterion, OUTPUT_FILE)
 
 if __name__ == "__main__":
     main()
