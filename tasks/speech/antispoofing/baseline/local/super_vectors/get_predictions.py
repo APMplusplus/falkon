@@ -15,7 +15,7 @@ FALCON_DIR = os.environ.get('FALCON_DIR')
 BASE_DIR = os.environ.get('base_dir')
 DATA_DIR = os.environ.get('data_dir')
 EXP_DIR = os.environ.get('exp_dir')
-FEATS_DIR = os.environ.get('feats_dir')
+FEATS_DIR = '/home/srallaba/challenges/antispoofing2019/feats/soundnet_feats/LA'
 assert ( all (['FALCON_DIR', 'BASE_DIR', 'DATA_DIR', 'EXP_DIR']) is not None)
 
 ETC_DIR = BASE_DIR + '/etc'
@@ -48,15 +48,17 @@ class antispoofing_dataset(Dataset):
         self.feats_array = [] 
         f = open(self.tdd_file)
         for line in f:
-          line = line.split('\n')[0]
-          fname = line.split()[0]
-          fnames_array.append(fname)
-          feats_fname = feats_dir + '/' + fname + '.npz'
-          feats = np.load(feats_fname)
-          feats = feats['arr_0']
-          self.feats_array.append(feats)
-          label = line.split()[1]
-          self.labels_array.append(label)
+            if(i >= 10000):
+                break
+            line = line.split('\n')[0]
+            fname = line.split()[0]
+            fnames_array.append(fname)
+            feats_fname = feats_dir + '/' + fname + '.npz'
+            feats = np.load(feats_fname)
+            feats = feats['arr_0']
+            self.feats_array.append(feats)
+            label = line.split()[1]
+            self.labels_array.append(label)
 
     def __getitem__(self, index):
           return self.feats_array[index], self.labels_array[index]
