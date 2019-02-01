@@ -43,7 +43,7 @@ class antispoofing_dataset(Dataset):
     getitem returns an x,y pair
     all labels are either 'bonafide' or 'spoof'
     '''
-    def __init__(self, tdd_file = ETC_DIR + '/tdd.la.train', feats_dir=FEATS_DIR):
+    def __init__(self, tdd_file, feats_dir):
 
         self.tdd_file = tdd_file
         self.feats_dir = feats_dir
@@ -93,7 +93,7 @@ def collate_fn_chopping(batch):
     return a_batch, b_batch
 
 tdd_file = ETC_DIR + '/tdd.la.dev'
-val_set = antispoofing_dataset(tdd_file)
+val_set = antispoofing_dataset(tdd_file, FEATS_DIR)
 val_loader = DataLoader(val_set,
                           batch_size=1,
                           shuffle=False,
