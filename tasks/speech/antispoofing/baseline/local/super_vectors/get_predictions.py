@@ -102,39 +102,38 @@ val_loader = DataLoader(val_set,
                           )
 
 def val(model, criterion, ouf_path='output.txt'):
-  model.eval()
-  g = open(ouf_path, 'w')
-  with torch.no_grad():
-    l = 0
-    y_true = []
-    y_pred = []
-    for i, (ccoeffs, labels) in enumerate(val_loader):
+    model.eval()
+    g = open(ouf_path, 'w')
+    with torch.no_grad():
+        l = 0
+        y_true = []
+        y_pred = []
+        for i, (ccoeffs, labels) in enumerate(val_loader):
+            inputs = torch.FloatTensor(ccoeffs)
+            targets = torch.LongTensor(labels)
+            inputs, targets = Variable(inputs), Variable(targets)
+            if torch.cuda.is_available():
+                inputs = inputs.cuda()
+                targets = targets.cuda()
 
-      inputs = torch.FloatTensor(ccoeffs)
-      targets = torch.LongTensor(labels)
-      inputs, targets = Variable(inputs), Variable(targets)
-      if torch.cuda.is_available():
-        inputs = inputs.cuda()
-        targets = targets.cuda()
+            logits = model.forward_eval(inputs)
+            loss = criterion(logits, targets)
+            predicteds = return_classes(logits).cpu().numpy()
+            for (t,p) in list(zip(targets, predicteds)):  
+                y_true.append(t.item())
+                y_pred.append(p)
+            l += loss.item()
+            vals, predicteds = return_valsnclasses(logits)
+            g.write(str(fnames_array[i]) + ' - ' + str(int2label[predicteds.item()]) + ' ' + str(vals.item()) + '\n')
 
-      logits = model.forward_eval(inputs)
-      loss = criterion(logits, targets)
-      predicteds = return_classes(logits).cpu().numpy()
-      for (t,p) in list(zip(targets, predicteds)):  
-         y_true.append(t.item())
-         y_pred.append(p)
-      l += loss.item()
-      vals, predicteds = return_valsnclasses(logits)
-      g.write(str(fnames_array[i]) + ' - ' + str(int2label[predicteds.item()]) + ' ' + str(vals.item()) + '\n')
-
-      if i % 300 == 1:
-         print("Processed ", i, " files and loss: ", l/(i+1))
+        if i % 300 == 1:
+            print("Processed ", i, " files and loss: ", l/(i+1))
 
     recall, precision, f1_score, acc = get_metrics(y_true, y_pred)
     print('recall: ', recall, 'precision: ', precision, 'f1_score: ', f1_score, 'acc: ', acc)
 
-  g.close()
-  return l/(i+1)
+    g.close()
+    return l/(i+1)
 
 def main(verbose=True):
     # model = DNN()
