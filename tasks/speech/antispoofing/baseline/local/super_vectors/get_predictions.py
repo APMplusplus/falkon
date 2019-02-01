@@ -128,7 +128,7 @@ def val(model, criterion, ouf_path='output.txt'):
             g.write(str(fnames_array[i]) + ' - ' + str(int2label[predicteds.item()]) + ' ' + str(vals.item()) + '\n')
 
             if i % 300 == 1:
-                print("Processed ", i, " files"# and loss: ", l/(i+1))
+                print("Processed ", i, " files")# and loss: ", l/(i+1))
 
     y_true = torch.cat(y_true, 0)
     y_pred = torch.cat(y_pred, 0)
