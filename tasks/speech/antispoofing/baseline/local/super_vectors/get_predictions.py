@@ -107,18 +107,20 @@ def val(model, criterion, ouf_path='output.txt'):
 
     y_true = []
     y_pred = []
+    
     with torch.no_grad():
         # l = 0
         for i, (ccoeffs, labels) in enumerate(val_loader):
             inputs = torch.FloatTensor(ccoeffs)
             targets = torch.LongTensor(labels)
             inputs, targets = Variable(inputs), Variable(targets)
+            
             if torch.cuda.is_available():
                 inputs = inputs.cuda()
                 targets = targets.cuda()
 
             logits = model.forward_eval(inputs)
-            loss = criterion(logits, targets)
+            # loss = criterion(logits, targets)
             # predicteds = return_classes(logits).cpu().numpy()
             
             y_true.append(targets)
