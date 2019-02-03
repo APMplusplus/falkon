@@ -27,7 +27,7 @@ Tasks:
 - [ ] Morphological Inflection 
 - [ ] Speech Feature Extraction
 - [X] Source Separation [Week 04]
-- [X] Speech Enhancement
+- [X] Speech Enhancement [Week 04]
 
 Layers -> Modules -> Models
 
