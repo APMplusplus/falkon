@@ -22,6 +22,7 @@ Tasks:
 - [ ] Voice Conversion
 - [X] Spoofing Detection from Speech [Week 02]
 - [ ] Sentiment Analysis
+- [ ] Named Entity Recognition
 - [ ] Toxicity Detection from Text
 - [ ] Multi Target Speaker Detection and Identification
 - [ ] Morphological Inflection 
