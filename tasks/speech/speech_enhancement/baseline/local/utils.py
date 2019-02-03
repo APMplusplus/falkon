@@ -39,6 +39,6 @@ def return_classes(logits, dim=-1):
    #print(predicted.shape)
    return predicted 
 
-def get_metrics(targets, predicteds):
+def get_metrics(predicteds, targets):
    print(classification_report(targets, predicteds))
    return recall_score(predicteds, targets,average='macro')

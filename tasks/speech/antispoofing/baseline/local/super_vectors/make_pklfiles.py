@@ -68,7 +68,7 @@ def collate_fn_chopping(batch):
 tdd_file = ETC_DIR + '/tdd.la.train'
 train_set = antispoofing_dataset(tdd_file)
 train_loader = DataLoader(train_set,
-                          batch_size=16,
+                          batch_size=64,
                           shuffle=True,
                           num_workers=4,
                           collate_fn=collate_fn_chopping
@@ -77,7 +77,7 @@ train_loader = DataLoader(train_set,
 tdd_file = ETC_DIR + '/tdd.la.dev'
 val_set = antispoofing_dataset(tdd_file)
 val_loader = DataLoader(val_set,
-                          batch_size=16,
+                          batch_size=64,
                           shuffle=False,
                           num_workers=1,
                           collate_fn=collate_fn_chopping
