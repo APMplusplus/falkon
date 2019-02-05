@@ -118,6 +118,7 @@ train_loader = DataLoader(train_set,
                           )
 '''
 
+'''
 tdd_file = ETC_DIR + '/tdd.la.dev'
 val_set = antispoofing_dataset(tdd_file, feats_dir=FEATS_DIR)
 val_loader = DataLoader(val_set,
@@ -126,14 +127,17 @@ val_loader = DataLoader(val_set,
                           num_workers=1,
                           collate_fn=collate_fn_chopping
                           )
+'''
 
-with open(DATA_DIR + '/train_soundnet_loader.pkl', 'rb') as f:
+# with open(DATA_DIR + '/train_soundnet_loader.pkl', 'rb') as f:
+with open(DATA_DIR + '/train_loader.pkl', 'rb') as f:
      train_loader = pickle.load(f)
 
-'''
-with open(DATA_DIR + '/val_soundnet_loader.pkl', 'rb') as f:
+
+# with open(DATA_DIR + '/val_soundnet_loader.pkl', 'rb') as f:
+with open(DATA_DIR + '/val_loader.pkl', 'rb') as f:
      val_loader = pickle.load(f)
-'''
+
 
 def val(model, criterion, ouf_path='output.txt'):
     model.eval()
