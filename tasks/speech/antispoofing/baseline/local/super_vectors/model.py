@@ -6,7 +6,7 @@ class DNN(nn.Module):
         super(DNN, self).__init__()
     
         self.fc1 = nn.Sequential( \
-            nn.Linear(128, 64), nn.ReLU())
+            nn.Linear(512, 64), nn.ReLU())
         self.fc2 = nn.Sequential( \
             nn.Linear(64, 32), nn.ReLU())
         self.output = nn.Linear(32, 2)

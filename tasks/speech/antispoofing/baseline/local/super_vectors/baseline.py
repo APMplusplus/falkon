@@ -101,7 +101,7 @@ def collate_fn_chopping(batch):
         a_batch: batch-length array of float-array x values
         b_batch: batch-length array of int y values
     '''
-    a = np.array([np.mean(x[0][2], 0) for x in batch], dtype=np.float)
+    a = np.array([np.mean(x[0][4], 0) for x in batch], dtype=np.float)
     b = np.array([label_dict[x[1]] for _, x in enumerate(batch)], dtype=np.int)
     a_batch = torch.FloatTensor(a)
     b_batch = torch.LongTensor(b)
