@@ -18,7 +18,7 @@ Tasks:
 - [X] Speech Synthesis [Week 01]
 - [ ] Speaker Diarization
 - [ ] Machine Translation
-- [X] Visual Question Answering
+- [X] Visual Question Answering [Week 05]
 - [ ] Voice Conversion
 - [X] Spoofing Detection from Speech [Week 02]
 - [ ] Sentiment Analysis
