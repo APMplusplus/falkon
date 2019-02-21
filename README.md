@@ -1,6 +1,8 @@
 # falkon
 Towards an ecosystem of tasks related to Language Technologies. Inspired by [Google Research](https://arxiv.org/ftp/arxiv/papers/1702/1702.01715.pdf)
-This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kaldi) and festvox(https://github.com/festvox/festvox) but has quirks of its own.  
+This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kaldi) and festvox(https://github.com/festvox/festvox) but has quirks of its own.
+
+- Each page has a reading ( + implementation) list of its own. For example, list [for Emotion Recognition from Speech](https://github.com/APMplusplus/falkon/blob/master/tasks/speech/self_assessed_affect/baseline/README.md)
 
 The goal is to make it easier to build and compare against baselines across tasks.
 Since there are many tasks, it might not be feasible to put all dependencies. Two alternatives: (1) Use a virtual env for each task like AWS (2) Put a docker image
