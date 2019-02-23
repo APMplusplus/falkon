@@ -32,6 +32,9 @@ Tasks:
 - [X] Source Separation [Week 04]
 - [X] Speech Enhancement [Week 04]
 
+Concepts:
+- [X] Disentanglement
+
 Layers -> Modules -> Models
 
 For example,
