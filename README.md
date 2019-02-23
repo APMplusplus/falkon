@@ -33,7 +33,7 @@ Tasks:
 - [X] Speech Enhancement [Week 04]
 
 Concepts:
-- [X] Disentanglement
+- [X] Disentanglement[Week 07]
 
 Layers -> Modules -> Models
 
