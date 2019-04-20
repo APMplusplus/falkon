@@ -38,7 +38,7 @@ Concepts:
 - [X] Disentanglement[Week 07]
 
 Paradigms:
-- [] Variational Inference[Week 16]
+- [X] Variational Inference[Week 16]
 
 Layers -> Modules -> Models
 
