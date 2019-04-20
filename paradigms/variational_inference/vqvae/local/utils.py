@@ -1,6 +1,7 @@
 import numpy as np
 import multiprocessing as mp
 from collections import defaultdict
+import sys
 
 import torch
 import torch.nn as nn
@@ -38,12 +39,22 @@ class vcc2018_dataset(Dataset):
 
           x = audio[start_sample:end_sample]
           c = mel[start_frame:end_frame]
-          #print("Lengths of x and c: ", x.shape, c.shape)
-          return x, c, speaker
+          return x, c, int(speaker)
 
     def __len__(self):
            return len(self.files_array)
 
+
+def collate_fn(batch):
+    audio_batch = [x[0] for x in batch]
+    mel_batch = [x[1] for x in batch]
+    speakers = [x[2] for x in batch]
+
+    audio_batch = torch.FloatTensor(audio_batch)
+    mel_batch = torch.FloatTensor(mel_batch)   
+    spk_batch = torch.LongTensor(np.array(speakers))
+
+    return audio_batch, mel_batch, spk_batch
 
 def get_dataloaders(data_dir):
 
@@ -62,14 +73,16 @@ def get_dataloaders(data_dir):
    train_loader = DataLoader(train_set,
                           batch_size=16,
                           shuffle=True,
-                          num_workers=4
+                          num_workers=4,
+                          collate_fn = collate_fn
                           )
 
    val_set = vcc2018_dataset(test_files, data_dir, files2speakers_dict)
    val_loader = DataLoader(val_set,
                           batch_size=16,
                           shuffle=True,
-                          num_workers=4
+                          num_workers=4,
+                          collate_fn = collate_fn
                           )
 
    return train_loader, val_loader

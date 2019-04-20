@@ -14,6 +14,8 @@ import math
 sys.path.append('/home/srallaba/development/repos/falkon/')
 import src.nn.layers as falcon_layers
 
+print_flag = 0
+
 class DownsamplingEncoder(nn.Module):
     """
         Input: (N, samples_i) numeric tensor
@@ -72,8 +74,8 @@ class DownsamplingEncoder(nn.Module):
         self.final_conv_0.bias.data.zero_()
         self.final_conv_1 = nn.Conv1d(channels, channels, 1)
         
-
-        print("   Layer: Lengths of self.convs_wide: ", len(self.convs_wide)) 
+        if print_flag:
+           print("   Layer: Lengths of self.convs_wide: ", len(self.convs_wide)) 
 
     def gating_function(self, conv_wide, conv_1x1, x):
         x = conv_wide(x)
@@ -84,11 +86,12 @@ class DownsamplingEncoder(nn.Module):
 
     def forward(self, samples):
         x = samples.transpose(1,2)
-        print("   Layer: Shape of x input to the downsampling encoder: ", x.shape)
+        if print_flag:
+           print("   Layer: Shape of x input to the downsampling encoder: ", x.shape)
 
         for i, stuff in enumerate(zip(self.convs_wide, self.convs_1x1, self.layer_specs, self.skips)):
-              
-            print("   Layer: Going through loop ", i) 
+            if print_flag:       
+               print("   Layer: Going through loop ", i) 
             conv_wide, conv_1x1, layer_specs, skip = stuff
             stride, ksz, dilation_factor = layer_specs
            

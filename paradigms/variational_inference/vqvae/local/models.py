@@ -7,6 +7,7 @@ from layers import *
 sys.path.append('/home/srallaba/development/repos/falkon/')
 import src.nn.layers as falcon_layers
 
+print_flag = 0
 
 class baseline_vqvae(nn.Module):
 
@@ -16,10 +17,12 @@ class baseline_vqvae(nn.Module):
         self.encoder = DownsamplingEncoder(256)
 
     def forward(self, x):
-        print("  Model: Shape of input to the model: ", x.shape)
+        if print_flag:
+           print("  Model: Shape of input to the model: ", x.shape)
         x = x.unsqueeze(-1)
         encoded = self.encoder(x)
-        print("  Model: Shape of output from the encoder: ", encoded.shape)
+        if print_flag:
+           print("  Model: Shape of output from the encoder: ", encoded.shape)
         return self.encoder(x)
 
 
