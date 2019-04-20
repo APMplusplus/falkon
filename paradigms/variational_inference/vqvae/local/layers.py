@@ -91,16 +91,7 @@ class DownsamplingEncoder(nn.Module):
             print("   Layer: Going through loop ", i) 
             conv_wide, conv_1x1, layer_specs, skip = stuff
             stride, ksz, dilation_factor = layer_specs
-
-            '''
-            x1 = conv_wide(x)
-            x1_a, x1_b = x1.split(x1.size(1) // 2, dim=1)
-            x2 = torch.tanh(x1_a) * torch.sigmoid(x1_b)
-            x3 = conv_1x1(x2)
-            x3_gating = self.gating_function(conv_wide, conv_1x1, x)
-            print("   Layer:Shape of x3 from normal: ", x3.shape, " and that from gating: ", x3_gating.shape , " skip: ", skip) 
-            '''
-
+           
             x_gating = self.gating_function(conv_wide, conv_1x1, x)
 
             if i == 0:
