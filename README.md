@@ -37,6 +37,9 @@ Tasks:
 Concepts:
 - [X] Disentanglement[Week 07]
 
+Paradigms:
+- [X] Variational Inference[Week 16]
+
 Layers -> Modules -> Models
 
 For example,
