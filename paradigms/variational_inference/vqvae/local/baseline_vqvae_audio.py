@@ -8,7 +8,7 @@ import os, sys
 import logging
 
 from utils import *
-from models import *
+from models import baseline_vqvae
 
 ## Flags and locations
 FALCON_DIR = os.environ.get('FALCON_DIR')
@@ -24,9 +24,11 @@ def train(model):
    for (audio, mel, spk) in train_loader:
        if torch.cuda.is_available():
           audio, mel, spk = audio.cuda(), mel.cuda(), spk.cuda()
-       encoder_output = model(audio)
+       quantized_output = model(audio)
        if print_flag:
-          print("Shape of encoder output: ", encoder_output.shape)
+          print("Shape of quantized output: ", quantized_output.shape)
+          print("Shape of audio: ", audio.shape) 
+
 
 ## Eval loop
 

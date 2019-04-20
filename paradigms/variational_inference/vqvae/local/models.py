@@ -2,27 +2,47 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from layers import *
+from encoders import *
+from layers import VectorQuantizer
+from decoders import *
 
 sys.path.append('/home/srallaba/development/repos/falkon/')
 import src.nn.layers as falcon_layers
 
-print_flag = 0
+print_flag = 1
 
 class baseline_vqvae(nn.Module):
 
     def __init__(self):
         super().__init__()
 
-        self.encoder = DownsamplingEncoder(256)
+        ### Encoder
+        self.dimensions_encoder = 256
+        self.encoder = DownsamplingEncoder(self.dimensions_encoder)
+
+        ### Vector Quantization
+        self.dimensions_vq = self.dimensions_encoder
+        self.num_classes_vq = 64
+        self.quantizer = VectorQuantizer(self.num_classes_vq, self.dimensions_vq)
+
+        ### Decoder
+        self.decoder = wavenet_baseline()
 
     def forward(self, x):
+
+        ### Encoder
         if print_flag:
            print("  Model: Shape of input to the model: ", x.shape)
         x = x.unsqueeze(-1)
         encoded = self.encoder(x)
         if print_flag:
            print("  Model: Shape of output from the encoder: ", encoded.shape)
-        return self.encoder(x)
 
+
+        ### Quantization
+        latents = self.quantizer(encoded)
+        if print_flag:
+           print("  Model: Shape of output from the quantizer: ", latents.shape)
+
+        return latents
 
