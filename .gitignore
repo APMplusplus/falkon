@@ -124,3 +124,5 @@ tasks/*/*/topline
 *top*
 *MoL*
 concepts/data
+*.tar.gz
+*.npy
