@@ -11,7 +11,7 @@ import numpy as np
 from utils import *
 
 print_flag = 0
-frame_period= 256
+frame_period= 86
 
 class wavenet_baseline(nn.Module):
 
@@ -38,7 +38,7 @@ class wavenet_baseline(nn.Module):
         self.final_fc1 = SequenceWise(nn.Linear(64, 512))
         self.final_fc2 = SequenceWise(nn.Linear(512, 259))
 
-        self.upsample_fc = SequenceWise(nn.Linear(80,60))
+        self.upsample_fc = SequenceWise(nn.Linear(256,60))
 
         self.nlayers = 1
         self.nhid = 128

@@ -9,7 +9,7 @@ from decoders import *
 sys.path.append('/home/srallaba/development/repos/falkon/')
 import src.nn.layers as falcon_layers
 
-print_flag = 1
+print_flag = 0
 
 class baseline_vqvae(nn.Module):
 
@@ -28,7 +28,7 @@ class baseline_vqvae(nn.Module):
         ### Decoder
         self.decoder = wavenet_baseline()
 
-    def forward(self, x):
+    def forward(self, x, mel):
 
         ### Encoder
         if print_flag:
@@ -44,5 +44,8 @@ class baseline_vqvae(nn.Module):
         if print_flag:
            print("  Model: Shape of output from the quantizer: ", latents.shape)
 
-        return latents
+        ### Decoder
+        y_hat = self.decoder( x, latents)
+ 
+        return y_hat
 

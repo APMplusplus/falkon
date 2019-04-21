@@ -24,9 +24,10 @@ def train(model):
    for (audio, mel, spk) in train_loader:
        if torch.cuda.is_available():
           audio, mel, spk = audio.cuda(), mel.cuda(), spk.cuda()
-       quantized_output = model(audio)
+       output = model(audio, mel)
+       audio = audio[:,:output.shape[1]]
        if print_flag:
-          print("Shape of quantized output: ", quantized_output.shape)
+          print("Shape of  output: ", output.shape)
           print("Shape of audio: ", audio.shape) 
 
 

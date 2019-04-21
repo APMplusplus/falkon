@@ -83,8 +83,12 @@ class residualconvmodule(nn.Module):
         if print_flag:
            print("   Module: Shape of ca and cb in the module: ", ca.shape, cb.shape)
 
+        a = a[:,:ca.shape[1],:]
+        b = b[:,:cb.shape[1],:]
+        residual = residual[:,:,:ca.shape[1]]
+        #print("The shape of residual: ", residual.shape)
         a, b = a + ca, b + cb
-
+       
         # Combine
         x = torch.tanh(a) * torch.sigmoid(b)
         if print_flag:
