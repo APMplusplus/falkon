@@ -55,4 +55,4 @@ ImageCaptioning is a model built on top of VariationalEncoderDecoder
 
 src.nn hosts all of these. 
 
-The directoy 'tasks' contains the individual tasks. Updated a sample speech task. The timeline on this repo looks like end of Summer 2019 (33 weeks). 
+The directoy 'tasks' contains the individual tasks. Updated a sample speech task. I have other pressing things and so the timeline on this repo looks like end of Summer 2020. 
