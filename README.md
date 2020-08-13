@@ -1,3 +1,4 @@
+# Depreciated. Falcon is now part of festvox(https://github.com/festvox/festvox)
 # falkon
 Towards an ecosystem of tasks related to Language Technologies. Inspired by [Google Research](https://arxiv.org/ftp/arxiv/papers/1702/1702.01715.pdf). 
 This repo combines design principles from Kaldi(https://github.com/kaldi-asr/kaldi) and festvox(https://github.com/festvox/festvox) but has quirks of its own.
